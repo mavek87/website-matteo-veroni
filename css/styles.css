@@ -64,9 +64,17 @@ a.link_primary {
 
 a.link_secondary {
     color: var(--light-color);
+    text-decoration: underline;
+    text-underline-offset: .4rem;
 }
 
-a.link_secondary:hover {
+a.link_secondary_not_underlined {
+    color: var(--light-color);
+    text-decoration: none;
+    text-underline-offset: .4rem;
+}
+
+a.link_secondary:hover, a.link_secondary_not_underlined:hover{
     color: var(--secondary-color);
 }
 
@@ -150,7 +158,7 @@ form > section#buttons_showcase {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 8rem;
+    margin-top: 4rem;
 }
 
 #main-section {
