@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--    <script src="./js/brands.min.js"></script>-->
+    <!---->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.8.162/build/pdf.min.js"></script>-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.8.162/web/pdf_viewer.min.css" rel="stylesheet">-->
+
+    <title>Matteo Veroni</title>
+</head>
+
+<body>
+<main>
+    <header id="main-header">
+        <section id="main-header__logo"><img src="img/foto-matteo.jpeg" alt="Foto Matteo Veroni"/></section>
+        <h1>Matteo Veroni</h1>
+        <nav id="main_header__nav-menu">
+            <ul>
+                <li><a href="#chi-sono">chi sono</a></li>
+                <li><a href="#curriculum">curriculum</a></li>
+                <li><a href="#consulenza">consulenza</a></li>
+                <li><a href="#contatti">contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="main-section">
+        <section id="main-section__chi-sono">
+            <h2>Chi sono</h2>
+            <a id="chi-sono"></a>
+            <hr/>
+            <p>Mi chiamo Matteo Veroni, lavoro nel campo dell'informatica da oltre 10 anni come backend software
+                developer.
+                Utilizzo prevalentemente tecnologie legate al mondo Java, ed ho maturato conoscenze di Dev-Ops (Docker,
+                Kubernetes),
+                amministrazione di server Linux (Debian, Ubuntu) e di Cloud Computing (Amazon AWS).</p>
+        </section>
+
+        <br/>
+
+        <section id="main-section__curriculum">
+            <!-- Canvas to place the PDF -->
+            <!--            <canvas id="canvas_curriculum_container"-->
+            <!--                    class="main-section__curriculum__canvas_curriculum_container"></canvas>-->
+        </section>
+
+        <br/>
+
+        <section>
+            <h2>Vivere Programmando...</h2>
+            <hr/>
+            <p>
+                Lavoro da oltre 10 anni nel campo dell'informatica e sono un Consulente Informatico ed IT Coach.
+            </p>
+            <p>Se vuoi scoprire come posso aiutarti o sei curioso di sapere di che cosa mi occupo contattami</p>
+            <form>
+                <section id="buttons_showcase">
+                    <button class="btn_primary">Prova</button>
+                    <button class="btn_primary">Un altro bottone</button>
+                    <button class="btn_primary">Un altro bottone</button>
+                    <button class="btn_primary">Un altro bottone</button>
+                </section>
+            </form>
+        </section>
+
+        <br/>
+
+        <section id="main-section__contatti">
+            <a id="contatti"></a>
+            <h2>Contatti</h2>
+            <hr/>
+            <!--https://fontawesome.com/search?o=r&f=brands-->
+            <p>
+            <ul id="main_section__contatti__list">
+                <li><a class="link_secondary" href="https://www.linkedin.com/in/matteoveroni/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i>&nbsp;Linkedin</a></li>
+                <li><a class="link_secondary" href="https://github.com/mavek87" target="_blank"><i
+                        class="fa-brands fa-github"></i>&nbsp;GitHub</a></li>
+                <li><a class="link_secondary" href="https://www.youtube.com/channel/UC-8TwBZjhBVXV5QJJhxyt_w"
+                       target="_blank"><i class="fa-brands fa-youtube"></i>&nbsp;Youtube</a></li>
+                <li><a class="link_secondary" href="mailto:matver87@gmail.com" target="_blank"><i
+                        class="fa-regular fa-envelope"></i>&nbsp;E-mail</a></li>
+            </ul>
+            </p>
+        </section>
+    </section>
+    <footer>Copyright &copy; 2023 Matteo Veroni</footer>
+</main>
+
+<!-- Load PDF.js -->
+<script src="./js/libs/pdf.js"></script>
+<script src="./js/index.js"></script>
+
+</body>
+</html>
