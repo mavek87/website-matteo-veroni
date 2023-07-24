@@ -61,6 +61,126 @@ var dictionary = {
         "training": "formación",
         "development": "desarrollo",
         "collaborations": "colaboraciones"
+    },
+    "de": {
+        "about_me": "über mich",
+        "about_me_paragraph": "Ich heiße Matteo Veroni und arbeite seit über 10 Jahren als Backend-Softwareentwickler im Bereich der Informatik. Ich liebe es, effiziente Software zu entwerfen und zu schreiben, die komplexe Probleme vereinfachen oder Zeit sparen kann, indem sie ansonsten lange und repetitive Prozesse automatisiert.",
+        "resume": "Lebenslauf",
+        "resume_paragraph": "Ich nutze hauptsächlich Technologien aus dem Java-Ökosystem (Java, Gradle, Jenkins) und habe Kenntnisse in DevOps (Docker, Kubernetes), Linux-Serveradministration (Debian, Ubuntu), der Verwaltung von relationalen Datenbanken (PostgreSQL) und Cloud Computing (Amazon AWS) erworben. In meiner Freizeit halte ich mich gerne auf dem Laufenden, studiere neue Themen und experimentiere mit Technologien aus dem Frontend-Bereich (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Für weitere Informationen schau dir meinen vollständigen Lebenslauf ",
+        "resume_paragraph_call_to_action_link": "hier",
+        "services": "Dienstleistungen",
+        "services_paragraph": "Ich kann dir helfen, deine Ziele zu erreichen, indem ich dir diese Dienstleistungen anbiete.",
+        "contact_me": "Kontakt",
+        "consulting": "Beratung",
+        "training": "Training",
+        "development": "Entwicklung",
+        "collaborations": "Kooperationen"
+    },
+    "fr": {
+        "about_me": "à propos de moi",
+        "about_me_paragraph": "Je m'appelle Matteo Veroni, je travaille dans le domaine de l'informatique depuis plus de 10 ans en tant que développeur de logiciels backend. J'aime concevoir et écrire des logiciels efficaces capables de simplifier des problèmes complexes ou d'économiser du temps en automatisant des processus autrement longs et répétitifs.",
+        "resume": "curriculum",
+        "resume_paragraph": "J'utilise principalement des technologies liées à l'écosystème Java (Java, Gradle, Jenkins) et j'ai acquis des connaissances en DevOps (Docker, Kubernetes), en administration de serveurs Linux (Debian, Ubuntu), en gestion de bases de données relationnelles (PostgreSQL) et en Cloud Computing (Amazon AWS). Pendant mon temps libre, j'aime me tenir informé, étudier de nouveaux sujets et expérimenter avec des technologies liées au frontend (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Pour plus d'informations, consultez mon curriculum vitae complet ",
+        "resume_paragraph_call_to_action_link": "ici",
+        "services": "services",
+        "services_paragraph": "Je peux vous aider à atteindre vos objectifs en vous proposant ces services.",
+        "contact_me": "contact",
+        "consulting": "conseil",
+        "training": "formation",
+        "development": "développement",
+        "collaborations": "collaborations"
+    },
+    "pt": {
+        "about_me": "sobre mim",
+        "about_me_paragraph": "Meu nome é Matteo Veroni, trabalho na área de informática há mais de 10 anos como desenvolvedor de software backend. Gosto de projetar e escrever software eficiente capaz de simplificar problemas complexos ou economizar tempo automatizando processos que de outra forma seriam longos e repetitivos.",
+        "resume": "currículo",
+        "resume_paragraph": "Utilizo principalmente tecnologias relacionadas ao ecossistema Java (Java, Gradle, Jenkins) e adquiri conhecimentos em DevOps (Docker, Kubernetes), administração de servidores Linux (Debian, Ubuntu), gerenciamento de bancos de dados relacionais (PostgreSQL) e Computação em Nuvem (Amazon AWS). No meu tempo livre, gosto de me manter atualizado, estudar novos temas e experimentar tecnologias relacionadas ao mundo frontend (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Para mais informações, consulte o meu currículo completo ",
+        "resume_paragraph_call_to_action_link": "aqui",
+        "services": "serviços",
+        "services_paragraph": "Posso ajudá-lo a alcançar seus objetivos, fornecendo-lhe estes serviços.",
+        "contact_me": "contato",
+        "consulting": "consultoria",
+        "training": "treinamento",
+        "development": "desenvolvimento",
+        "collaborations": "colaborações"
+    },
+    "zh": {
+        "about_me": "关于我",
+        "about_me_paragraph": "我叫Matteo Veroni，作为后端软件开发人员，我已经在计算机科学领域工作了十多年。我喜欢设计和编写高效的软件，能够简化复杂的问题，或者通过自动化长而重复的流程来节省时间。",
+        "resume": "简历",
+        "resume_paragraph": "我主要使用与Java生态系统相关的技术（Java、Gradle、Jenkins），并掌握了DevOps（Docker、Kubernetes）、Linux服务器管理（Debian、Ubuntu）、关系型数据库管理（PostgreSQL）和云计算（Amazon AWS）等方面的知识。在业余时间，我喜欢保持更新，学习新知识，并尝试前端技术（Javascript、ReactJS）。",
+        "resume_paragraph_call_to_action": "更多信息，请查看我的完整简历 ",
+        "resume_paragraph_call_to_action_link": "这里",
+        "services": "服务",
+        "services_paragraph": "我可以通过提供这些服务来帮助您实现您的目标。",
+        "contact_me": "联系方式",
+        "consulting": "咨询",
+        "training": "培训",
+        "development": "开发",
+        "collaborations": "合作"
+    },
+    "ja": {
+        "about_me": "私について",
+        "about_me_paragraph": "私の名前はマッテオ・ヴェローニです。バックエンドのソフトウェア開発者として、10年以上にわたりコンピュータ科学の分野で働いています。複雑な問題を簡単にする効率的なソフトウェアの設計と記述が好きで、それによって長くて繰り返しの多いプロセスを自動化し、時間を節約することができます。",
+        "resume": "履歴書",
+        "resume_paragraph": "主にJavaエコシステムに関連する技術（Java、Gradle、Jenkins）を使用し、DevOps（Docker、Kubernetes）、Linuxサーバーの管理（Debian、Ubuntu）、リレーショナルデータベースの管理（PostgreSQL）、クラウドコンピューティング（Amazon AWS）などの知識を持っています。空き時間には常に最新情報を把握し、新しいトピックを学び、フロントエンド技術（Javascript、ReactJS）を試しています。",
+        "resume_paragraph_call_to_action": "詳細については、私の完全な履歴書をこちらでご覧ください ",
+        "resume_paragraph_call_to_action_link": "ここで",
+        "services": "サービス",
+        "services_paragraph": "これらのサービスを提供することで、あなたの目標達成をサポートできます。",
+        "contact_me": "お問い合わせ",
+        "consulting": "コンサルティング",
+        "training": "トレーニング",
+        "development": "開発",
+        "collaborations": "コラボレーション"
+    },
+    "ru": {
+        "about_me": "обо мне",
+        "about_me_paragraph": "Меня зовут Маттео Верони, я работаю в области информационных технологий более 10 лет в качестве разработчика программного обеспечения для backend. Мне нравится проектировать и писать эффективное программное обеспечение, способное упрощать сложные задачи или экономить время, автоматизируя иначе длительные и повторяющиеся процессы.",
+        "resume": "резюме",
+        "resume_paragraph": "Я в основном использую технологии, связанные с экосистемой Java (Java, Gradle, Jenkins), и получил знания в области DevOps (Docker, Kubernetes), администрирования Linux-серверов (Debian, Ubuntu), управления реляционными базами данных (PostgreSQL) и облачных вычислений (Amazon AWS). В свободное время мне нравится быть в курсе новостей, изучать новые темы и экспериментировать с технологиями frontend (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Для получения дополнительной информации ознакомьтесь с моим полным резюме ",
+        "resume_paragraph_call_to_action_link": "здесь",
+        "services": "услуги",
+        "services_paragraph": "Я могу помочь вам достичь ваших целей, предоставляя вам эти услуги.",
+        "contact_me": "контакты",
+        "consulting": "консультации",
+        "training": "обучение",
+        "development": "разработка",
+        "collaborations": "сотрудничество"
+    },
+    "ar": {
+        "about_me": "من أنا",
+        "about_me_paragraph": "أنا ماتيو فيروني، أعمل في مجال علوم الحاسوب لأكثر من 10 سنوات كمطور برمجيات خلفية (Backend). أحب تصميم وكتابة برامج فعالة قادرة على تبسيط المشكلات المعقدة أو توفير الوقت من خلال أتمتة العمليات الطويلة والمكررة.",
+        "resume": "السيرة الذاتية",
+        "resume_paragraph": "أستخدم بشكل أساسي التقنيات المرتبطة ببيئة جافا (Java، Gradle، Jenkins) وقد اكتسبت معرفة في DevOps (Docker، Kubernetes)، وإدارة خوادم Linux (Debian، Ubuntu)، وإدارة قواعد بيانات ذات علاقات (PostgreSQL) والحوسبة السحابية (Amazon AWS). في وقت فراغي، أحب أن أبقى على اطلاع، وأدرس مواضيع جديدة وأجرب التقنيات المرتبطة بالواجهة الأمامية (JavaScript، ReactJS).",
+        "resume_paragraph_call_to_action": "للمزيد من المعلومات، يرجى الاطلاع على السيرة الذاتية الكاملة ",
+        "resume_paragraph_call_to_action_link": "هنا",
+        "services": "الخدمات",
+        "services_paragraph": "يمكنني مساعدتك في تحقيق أهدافك من خلال تقديم هذه الخدمات.",
+        "contact_me": "التواصل",
+        "consulting": "الاستشارات",
+        "training": "التدريب",
+        "development": "التطوير",
+        "collaborations": "التعاون"
+    },
+    "nl": {
+        "about_me": "over mij",
+        "about_me_paragraph": "Mijn naam is Matteo Veroni en ik werk al meer dan 10 jaar als backend software ontwikkelaar in de informatica. Ik geniet ervan om efficiënte software te ontwerpen en te schrijven die complexe problemen kan vereenvoudigen of tijd kan besparen door anders lange en repetitieve processen te automatiseren.",
+        "resume": "cv",
+        "resume_paragraph": "Ik maak voornamelijk gebruik van technologieën gerelateerd aan het Java ecosysteem (Java, Gradle, Jenkins) en ik heb kennis van DevOps (Docker, Kubernetes), Linux serverbeheer (Debian, Ubuntu), relationele databasebeheer (PostgreSQL) en Cloud Computing (Amazon AWS) opgedaan. In mijn vrije tijd houd ik ervan om up-to-date te blijven, nieuwe onderwerpen te bestuderen en te experimenteren met frontend technologieën (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Voor meer informatie kunt u mijn volledige curriculum vitae ",
+        "resume_paragraph_call_to_action_link": "hier",
+        "services": "diensten",
+        "services_paragraph": "Ik kan u helpen uw doelen te bereiken door u deze diensten aan te bieden.",
+        "contact_me": "contact",
+        "consulting": "advies",
+        "training": "training",
+        "development": "ontwikkeling",
+        "collaborations": "samenwerkingen"
     }
 }
 
@@ -127,7 +247,7 @@ function setLocalizationCookieValue(lang) {
 }
 
 function reloadLocalization(lang) {
-    if(lang !== localizationCookieValue) {
+    if (lang !== localizationCookieValue) {
         setLocalizationCookieValue(lang);
         location.reload()
     }
