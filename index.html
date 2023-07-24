@@ -14,28 +14,40 @@
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
+
     <title>Matteo Veroni</title>
 </head>
 
 <body>
+<aside class="top_right_fixed">
+    <section id="localization_panel">
+        <button onclick="reloadLocalization('en')" class="btn_primary capitalized-text"><span class="fi fi-us"></span></button>
+        <button onclick="reloadLocalization('it')" class="btn_primary capitalized-text"><span class="fi fi-it"></span></button>
+    </section>
+</aside>
+
 <main>
     <header id="main-header">
         <section id="main-header__logo"><img src="img/foto-matteo.jpeg" alt="Foto Matteo Veroni"/></section>
         <h1>Matteo Veroni</h1>
         <nav id="main_header__nav-menu">
             <ul>
-                <li><a href="#chi-sono">chi sono</a></li>
-                <li><a href="#curriculum">curriculum</a></li>
-                <li><a href="#servizi">servizi</a></li>
-                <li><a href="#contatti">contatti</a></li>
+                <li><a href="#who-am-i"><localized-text key="who_am_i"></localized-text></a></li>
+                <li><a href="#resume"><localized-text key="resume"></localized-text></a></li>
+                <li><a href="#services"><localized-text key="services"></localized-text></a></li>
+                <li><a href="#contacts"><localized-text key="contacts"></localized-text></a></li>
             </ul>
         </nav>
     </header>
 
-    <a id="chi-sono"></a>
+    <a id="who-am-i"></a>
     <section id="main-section">
         <section id="main-section__chi-sono">
-            <h2>Chi sono</h2>
+            <h2><localized-text key="who_am_i" ></localized-text></h2>
             <hr/>
             <p>Mi chiamo Matteo Veroni, lavoro nel campo dell'informatica da oltre 10 anni come backend software
                 developer.
@@ -46,9 +58,9 @@
 
         <br/>
 
-        <a id="curriculum"></a>
-        <section id="main-section__curriculum">
-            <h2>Curriculum</h2>
+        <a id="resume"></a>
+        <section id="main-section__resume">
+            <h2><localized-text key="resume"></localized-text></h2>
             <hr/>
             <p>Consulta il mio curriculum vitae a
                 <a class="link_secondary" href="./media/Resume-MatteoVeroni.pdf" target="_blank">questo indirizzo</a>
@@ -57,17 +69,17 @@
 
         <br/>
 
-        <a id="servizi"></a>
-        <section id="main-section__servizi">
-            <h2>Servizi</h2>
+        <a id="services"></a>
+        <section id="main-section__serrvices">
+            <h2><localized-text key="services"></localized-text></h2>
             <hr/>
             <p>Se vuoi scoprire come posso aiutarti o sei curioso di sapere di che cosa mi occupo contattami</p>
             <form>
                 <section id="buttons_showcase">
-                    <button class="btn_primary">Consulenza</button>
-                    <button class="btn_primary">Training</button>
-                    <button class="btn_primary">Sviluppo</button>
-                    <button class="btn_primary">Collaborazione</button>
+                    <button class="btn_primary capitalized-text"><localized-text key="consulting"></localized-text></button>
+                    <button class="btn_primary capitalized-text"><localized-text key="training"></localized-text></button>
+                    <button class="btn_primary capitalized-text"><localized-text key="development"></localized-text></button>
+                    <button class="btn_primary capitalized-text"><localized-text key="collaborations"></localized-text></button>
                 </section>
             </form>
         </section>
@@ -75,8 +87,8 @@
         <br/>
 
         <section id="main-section__contatti">
-            <a id="contatti"></a>
-            <h2>Contatti</h2>
+            <a id="contacts"></a>
+            <h2><localized-text key="contacts"></localized-text></h2>
             <hr/>
             <!--https://fontawesome.com/search?o=r&f=brands-->
             <p>
