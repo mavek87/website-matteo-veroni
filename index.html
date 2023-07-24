@@ -26,36 +26,46 @@
 <main>
     <aside class="top_right_fixed">
         <section id="localization_panel">
-            <button onclick="reloadLocalization('en')" class="btn_primary capitalized-text"><span class="fi fi-us"></span>
+            <button onclick="reloadLocalization('en')" class="btn_primary capitalized-text"><span
+                    class="fi fi-us"></span>
             </button>
-            <button onclick="reloadLocalization('it')" class="btn_primary capitalized-text"><span class="fi fi-it"></span>
+            <button onclick="reloadLocalization('it')" class="btn_primary capitalized-text"><span
+                    class="fi fi-it"></span>
             </button>
         </section>
     </aside>
     <header id="main-header">
-        <section id="main-header__logo"><img src="img/foto-matteo.jpeg" alt="Foto Matteo Veroni"/></section>
+        <section id="main-header__logo"><img src="img/foto-matteo.jpeg" alt="Matteo Veroni"/></section>
         <h1>Matteo Veroni</h1>
         <nav id="main_header__nav-menu">
             <ul>
-                <li><a href="#who-am-i">
-                    <localized-text key="who_am_i"></localized-text>
-                </a></li>
-                <li><a href="#resume">
-                    <localized-text key="resume"></localized-text>
-                </a></li>
-                <li><a href="#services">
-                    <localized-text key="services"></localized-text>
-                </a></li>
-                <li><a href="#contacts">
-                    <localized-text key="contacts"></localized-text>
-                </a></li>
+                <li>
+                    <a href="#who-am-i">
+                        <localized-text key="who_am_i"></localized-text>
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume">
+                        <localized-text key="resume"></localized-text>
+                    </a>
+                </li>
+                <li>
+                    <a href="#services">
+                        <localized-text key="services"></localized-text>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contacts">
+                        <localized-text key="contacts"></localized-text>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <a id="who-am-i"></a>
     <section id="main-section">
-        <section id="main-section__chi-sono">
+        <section id="main-section__who-am-i">
             <h2>
                 <localized-text key="who_am_i"></localized-text>
             </h2>
@@ -75,8 +85,12 @@
             <hr/>
             <p>
                 <localized-text key="resume_paragraph"></localized-text>
+            </p>
+            <br/>
+            <p>
+                <localized-text key="resume_paragraph_call_to_action"></localized-text>
                 <a class="link_secondary" href="./media/Resume-MatteoVeroni.pdf" target="_blank">
-                    <localized-text key="resume_paragraph_link"></localized-text>
+                    <localized-text key="resume_paragraph_call_to_action_link"></localized-text>
                 </a>
             </p>
         </section>
@@ -84,7 +98,7 @@
         <br/>
 
         <a id="services"></a>
-        <section id="main-section__serrvices">
+        <section id="main-section__services">
             <h2>
                 <localized-text key="services"></localized-text>
             </h2>
@@ -116,25 +130,39 @@
 
         <br/>
 
-        <section id="main-section__contatti">
+        <section id="main-section__contacts">
             <a id="contacts"></a>
             <h2>
                 <localized-text key="contacts"></localized-text>
             </h2>
+
             <hr/>
-            <!--https://fontawesome.com/search?o=r&f=brands-->
+
             <p>
-            <ul id="main_section__contatti__list">
-                <li><a class="link_secondary_not_underlined" href="mailto:matver87@gmail.com" target="_blank"><i
-                        class="fa-regular fa-envelope"></i>&nbsp;E-mail</a></li>
-                <li><a class="link_secondary_not_underlined" href="https://www.linkedin.com/in/matteoveroni/"
-                       target="_blank"><i
-                        class="fa-brands fa-linkedin"></i>&nbsp;Linkedin</a></li>
-                <li><a class="link_secondary_not_underlined" href="https://github.com/mavek87" target="_blank"><i
-                        class="fa-brands fa-github"></i>&nbsp;GitHub</a></li>
-                <li><a class="link_secondary_not_underlined"
+            <ul id="main_section__contact__list">
+                <li>
+                    <a class="link_secondary_not_underlined" href="mailto:matver87@gmail.com" target="_blank">
+                        <i class="fa-regular fa-envelope"></i>&nbsp;E-mail
+                    </a>
+                </li>
+                <li>
+                    <a class="link_secondary_not_underlined" href="https://www.linkedin.com/in/matteoveroni/"
+                       target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>&nbsp;Linkedin
+                    </a>
+                </li>
+                <li>
+                    <a class="link_secondary_not_underlined" href="https://github.com/mavek87" target="_blank">
+                        <i class="fa-brands fa-github"></i>&nbsp;GitHub
+                    </a>
+                </li>
+                <li>
+                    <a class="link_secondary_not_underlined"
                        href="https://www.youtube.com/channel/UC-8TwBZjhBVXV5QJJhxyt_w"
-                       target="_blank"><i class="fa-brands fa-youtube"></i>&nbsp;Youtube</a></li>
+                       target="_blank">
+                        <i class="fa-brands fa-youtube"></i>&nbsp;Youtube
+                    </a>
+                </li>
             </ul>
             </p>
         </section>
