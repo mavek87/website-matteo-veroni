@@ -46,6 +46,21 @@ var dictionary = {
         "training": "training",
         "development": "sviluppo",
         "collaborations": "collaborazioni"
+    },
+    "es": {
+        "about_me": "quién soy",
+        "about_me_paragraph": "Mi nombre es Matteo Veroni, he estado trabajando en el campo de la informática por más de 10 años como desarrollador de software backend. Disfruto diseñar y escribir software eficiente capaz de simplificar problemas complejos o ahorrar tiempo automatizando procesos que de otro modo serían largos y repetitivos.",
+        "resume": "currículum",
+        "resume_paragraph": "Principalmente utilizo tecnologías relacionadas con el ecosistema de Java (Java, Gradle, Jenkins) y he adquirido conocimientos en DevOps (Docker, Kubernetes), administración de servidores Linux (Debian, Ubuntu), gestión de bases de datos relacionales (PostgreSQL) y Cloud Computing (Amazon AWS). En mi tiempo libre, me gusta mantenerme actualizado, estudiar nuevos temas y experimentar con tecnologías relacionadas con el mundo frontend (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Para obtener más información, consulta mi currículum vitae completo ",
+        "resume_paragraph_call_to_action_link": "aquí",
+        "services": "servicios",
+        "services_paragraph": "Puedo ayudarte a alcanzar tus objetivos brindándote estos servicios.",
+        "contact_me": "contacto",
+        "consulting": "consultoría",
+        "training": "formación",
+        "development": "desarrollo",
+        "collaborations": "colaboraciones"
     }
 }
 
