@@ -23,23 +23,32 @@
 </head>
 
 <body>
-<aside class="top_right_fixed">
-    <section id="localization_panel">
-        <button onclick="reloadLocalization('en')" class="btn_primary capitalized-text"><span class="fi fi-us"></span></button>
-        <button onclick="reloadLocalization('it')" class="btn_primary capitalized-text"><span class="fi fi-it"></span></button>
-    </section>
-</aside>
-
 <main>
+    <aside class="top_right_fixed">
+        <section id="localization_panel">
+            <button onclick="reloadLocalization('en')" class="btn_primary capitalized-text"><span class="fi fi-us"></span>
+            </button>
+            <button onclick="reloadLocalization('it')" class="btn_primary capitalized-text"><span class="fi fi-it"></span>
+            </button>
+        </section>
+    </aside>
     <header id="main-header">
         <section id="main-header__logo"><img src="img/foto-matteo.jpeg" alt="Foto Matteo Veroni"/></section>
         <h1>Matteo Veroni</h1>
         <nav id="main_header__nav-menu">
             <ul>
-                <li><a href="#who-am-i"><localized-text key="who_am_i"></localized-text></a></li>
-                <li><a href="#resume"><localized-text key="resume"></localized-text></a></li>
-                <li><a href="#services"><localized-text key="services"></localized-text></a></li>
-                <li><a href="#contacts"><localized-text key="contacts"></localized-text></a></li>
+                <li><a href="#who-am-i">
+                    <localized-text key="who_am_i"></localized-text>
+                </a></li>
+                <li><a href="#resume">
+                    <localized-text key="resume"></localized-text>
+                </a></li>
+                <li><a href="#services">
+                    <localized-text key="services"></localized-text>
+                </a></li>
+                <li><a href="#contacts">
+                    <localized-text key="contacts"></localized-text>
+                </a></li>
             </ul>
         </nav>
     </header>
@@ -47,23 +56,28 @@
     <a id="who-am-i"></a>
     <section id="main-section">
         <section id="main-section__chi-sono">
-            <h2><localized-text key="who_am_i" ></localized-text></h2>
+            <h2>
+                <localized-text key="who_am_i"></localized-text>
+            </h2>
             <hr/>
-            <p>Mi chiamo Matteo Veroni, lavoro nel campo dell'informatica da oltre 10 anni come backend software
-                developer.
-                Utilizzo prevalentemente tecnologie legate al mondo Java, ed ho maturato conoscenze di Dev-Ops (Docker,
-                Kubernetes),
-                amministrazione di server Linux (Debian, Ubuntu) e di Cloud Computing (Amazon AWS).</p>
+            <p>
+                <localized-text key="who_am_i_paragraph"></localized-text>
+            </p>
         </section>
 
         <br/>
 
         <a id="resume"></a>
         <section id="main-section__resume">
-            <h2><localized-text key="resume"></localized-text></h2>
+            <h2>
+                <localized-text key="resume"></localized-text>
+            </h2>
             <hr/>
-            <p>Consulta il mio curriculum vitae a
-                <a class="link_secondary" href="./media/Resume-MatteoVeroni.pdf" target="_blank">questo indirizzo</a>
+            <p>
+                <localized-text key="resume_paragraph"></localized-text>
+                <a class="link_secondary" href="./media/Resume-MatteoVeroni.pdf" target="_blank">
+                    <localized-text key="resume_paragraph_link"></localized-text>
+                </a>
             </p>
         </section>
 
@@ -71,15 +85,31 @@
 
         <a id="services"></a>
         <section id="main-section__serrvices">
-            <h2><localized-text key="services"></localized-text></h2>
+            <h2>
+                <localized-text key="services"></localized-text>
+            </h2>
             <hr/>
-            <p>Se vuoi scoprire come posso aiutarti o sei curioso di sapere di che cosa mi occupo contattami</p>
+            <p>
+                <localized-text key="services_paragraph"></localized-text>
+            </p>
             <form>
                 <section id="buttons_showcase">
-                    <button class="btn_primary capitalized-text"><localized-text key="consulting"></localized-text></button>
-                    <button class="btn_primary capitalized-text"><localized-text key="training"></localized-text></button>
-                    <button class="btn_primary capitalized-text"><localized-text key="development"></localized-text></button>
-                    <button class="btn_primary capitalized-text"><localized-text key="collaborations"></localized-text></button>
+                    <button class="btn_primary capitalized-text">
+                        <i class="fa-regular fa-lightbulb fa-xl"></i>&nbsp;&nbsp;
+                        <localized-text key="consulting"></localized-text>
+                    </button>
+                    <button class="btn_primary capitalized-text">
+                        <i class="fa-solid fa-user-graduate fa-xl"></i>&nbsp;&nbsp;
+                        <localized-text key="training"></localized-text>
+                    </button>
+                    <button class="btn_primary capitalized-text">
+                        <i class="fa-solid fa-code fa-xl"></i>&nbsp;&nbsp;
+                        <localized-text key="development"></localized-text>
+                    </button>
+                    <button class="btn_primary capitalized-text">
+                        <i class="fa-regular fa-handshake fa-xl"></i>&nbsp;&nbsp;
+                        <localized-text key="collaborations"></localized-text>
+                    </button>
                 </section>
             </form>
         </section>
@@ -88,7 +118,9 @@
 
         <section id="main-section__contatti">
             <a id="contacts"></a>
-            <h2><localized-text key="contacts"></localized-text></h2>
+            <h2>
+                <localized-text key="contacts"></localized-text>
+            </h2>
             <hr/>
             <!--https://fontawesome.com/search?o=r&f=brands-->
             <p>

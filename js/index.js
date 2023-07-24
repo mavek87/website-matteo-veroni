@@ -3,18 +3,27 @@
 var dictionary = {
     "_": { // when language is not supported
         "who_am_i": "who am i",
+        "who_am_i_paragraph": "My name is Matteo Veroni, I'm in the IT for more than 10 years as backend software developer. I work mainly with technologies connected with the Java ecosystem, and I also matured knowledge in Dev-Ops (Docker, Kubernetes), Linux server administration (Debian, Ubuntu) and Cloud Computing (Amazon AWS)",
         "resume": "resume",
+        "resume_paragraph": "Check my resume at ",
+        "resume_paragraph_link": "this address",
         "services": "services",
+        "services_paragraph": "I can help you reaching your goals through these services",
         "contacts": "contacts",
         "consulting": "consulting",
         "training": "training",
         "development": "development",
-        "collaborations": "collaborations"
+        "collaborations": "collaborations",
+
     },
     "en": {
         "who_am_i": "who am i",
+        "who_am_i_paragraph": "My name is Matteo Veroni, I'm in the IT for more than 10 years as backend software developer. I work mainly with technologies connected with the Java ecosystem, and I also matured knowledge in Dev-Ops (Docker, Kubernetes), Linux server administration (Debian, Ubuntu) and Cloud Computing (Amazon AWS)",
         "resume": "resume",
+        "resume_paragraph": "Check my resume at ",
+        "resume_paragraph_link": "this address",
         "services": "services",
+        "services_paragraph": "I can help you reaching your goals through these services",
         "contacts": "contacts",
         "consulting": "consulting",
         "training": "training",
@@ -23,8 +32,12 @@ var dictionary = {
     },
     "it": {
         "who_am_i": "chi sono",
+        "who_am_i_paragraph": "Mi chiamo Matteo Veroni, lavoro nel campo dell'informatica da oltre 10 anni come backend software developer. Utilizzo prevalentemente tecnologie legate al mondo Java, ed ho maturato conoscenze di Dev-Ops (Docker, Kubernetes), amministrazione di server Linux (Debian, Ubuntu) e Cloud Computing (Amazon AWS)",
         "resume": "curriculum",
+        "resume_paragraph": "Consulta il mio curriculum vitae a ",
+        "resume_paragraph_link": "questo indirizzo",
         "services": "servizi",
+        "services_paragraph": "Posso aiutarti a raggiungere i tuoi obbiettivi fornendoti questi servizi",
         "contacts": "contatti",
         "consulting": "consulenza",
         "training": "training",
