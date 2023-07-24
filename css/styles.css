@@ -76,7 +76,7 @@ a.link_secondary_not_underlined {
     text-underline-offset: .4rem;
 }
 
-a.link_secondary:hover, a.link_secondary_not_underlined:hover{
+a.link_secondary:hover, a.link_secondary_not_underlined:hover {
     color: var(--secondary-color);
 }
 
@@ -91,8 +91,30 @@ h1, h2, h3, h4, h5, h6 {
 hr {
     border: none;
     height: .1rem;
-    color: var(--light-color);  /* old IE */
+    color: var(--light-color); /* old IE */
     background-color: var(--light-color); /* Modern Browsers */
+}
+
+/*.unselectable {*/
+/*    -webkit-user-select: none; !* Safari *!*/
+/*    user-select: none;*/
+/*}*/
+
+select, select option {
+    text-transform: capitalize;
+    outline: none !important;
+}
+
+select {
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    background-color: #f2f2f2;
+    border: .1rem solid #ccc;
+    border-radius: .5rem;
+    padding: .8rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .capitalized-text {

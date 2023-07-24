@@ -107,6 +107,21 @@ var dictionary = {
         "development": "desenvolvimento",
         "collaborations": "colaborações"
     },
+    "nl": {
+        "about_me": "over mij",
+        "about_me_paragraph": "Mijn naam is Matteo Veroni en ik werk al meer dan 10 jaar als backend software ontwikkelaar in de informatica. Ik geniet ervan om efficiënte software te ontwerpen en te schrijven die complexe problemen kan vereenvoudigen of tijd kan besparen door anders lange en repetitieve processen te automatiseren.",
+        "resume": "cv",
+        "resume_paragraph": "Ik maak voornamelijk gebruik van technologieën gerelateerd aan het Java ecosysteem (Java, Gradle, Jenkins) en ik heb kennis van DevOps (Docker, Kubernetes), Linux serverbeheer (Debian, Ubuntu), relationele databasebeheer (PostgreSQL) en Cloud Computing (Amazon AWS) opgedaan. In mijn vrije tijd houd ik ervan om up-to-date te blijven, nieuwe onderwerpen te bestuderen en te experimenteren met frontend technologieën (Javascript, ReactJS).",
+        "resume_paragraph_call_to_action": "Voor meer informatie kunt u mijn volledige curriculum vitae ",
+        "resume_paragraph_call_to_action_link": "hier",
+        "services": "diensten",
+        "services_paragraph": "Ik kan u helpen uw doelen te bereiken door u deze diensten aan te bieden.",
+        "contact_me": "contact",
+        "consulting": "advies",
+        "training": "training",
+        "development": "ontwikkeling",
+        "collaborations": "samenwerkingen"
+    },
     "zh": {
         "about_me": "关于我",
         "about_me_paragraph": "我叫Matteo Veroni，作为后端软件开发人员，我已经在计算机科学领域工作了十多年。我喜欢设计和编写高效的软件，能够简化复杂的问题，或者通过自动化长而重复的流程来节省时间。",
@@ -166,61 +181,63 @@ var dictionary = {
         "training": "التدريب",
         "development": "التطوير",
         "collaborations": "التعاون"
-    },
-    "nl": {
-        "about_me": "over mij",
-        "about_me_paragraph": "Mijn naam is Matteo Veroni en ik werk al meer dan 10 jaar als backend software ontwikkelaar in de informatica. Ik geniet ervan om efficiënte software te ontwerpen en te schrijven die complexe problemen kan vereenvoudigen of tijd kan besparen door anders lange en repetitieve processen te automatiseren.",
-        "resume": "cv",
-        "resume_paragraph": "Ik maak voornamelijk gebruik van technologieën gerelateerd aan het Java ecosysteem (Java, Gradle, Jenkins) en ik heb kennis van DevOps (Docker, Kubernetes), Linux serverbeheer (Debian, Ubuntu), relationele databasebeheer (PostgreSQL) en Cloud Computing (Amazon AWS) opgedaan. In mijn vrije tijd houd ik ervan om up-to-date te blijven, nieuwe onderwerpen te bestuderen en te experimenteren met frontend technologieën (Javascript, ReactJS).",
-        "resume_paragraph_call_to_action": "Voor meer informatie kunt u mijn volledige curriculum vitae ",
-        "resume_paragraph_call_to_action_link": "hier",
-        "services": "diensten",
-        "services_paragraph": "Ik kan u helpen uw doelen te bereiken door u deze diensten aan te bieden.",
-        "contact_me": "contact",
-        "consulting": "advies",
-        "training": "training",
-        "development": "ontwikkeling",
-        "collaborations": "samenwerkingen"
     }
 }
 
+var selectedLocale;
+var selectedLocaleIndex;
 var localizationCookieValue;
+const select = document.getElementById("localization_panel__localization_select");
 
-class HTMLLocalizer {
-    constructor() {
-        customElements.define('localized-text', LocalizedTextElement);
-    }
-}
+window.addEventListener("xyz", (e) => setTimeout(() => {  reloadLocalization(e.detail.selectedLocale) }, 1000));
 
-class LocalizedTextElement extends HTMLElement {
-    constructor() {
-        super();
-    }
+window.addEventListener("load", function () {
+    console.log('load');
+    console.log("selectedLocale " + selectedLocale);
+    console.log("selectedLocaleIndex " + selectedLocaleIndex);
+//
+//     if(selectedLocale) {
+//
+//     } else {
+//         lang = getLangFromBrowser();
+//         if(lang) {
+//
+//         }
+//     }
+//
+//     // var selectParent = select.parentNode;
+//     // if (selectedLocale) {
+//     //     selectedLocale = undefined;
+//     // reloadLocalization(select.value);
+//     // console.log("ci entro");
+//     // for (var i = 0; i < select.options.length; i++) {
+//     //     var locale = select.options[i];
+//     //     console.log("locale " + locale.value);
+//     //     if (locale.value === selectedLocale) {
+//     //         locale.setAttribute('selected', 'selected');
+//     //         selectParent.replaceChild(locale, locale)
+//     //     } else {
+//     //         locale.removeAttribute('selected');
+//     //     }
+//     // }
+});
 
-    connectedCallback() {
-        var key = this.hasAttribute('key') ? this.getAttribute('key') : '';
-        var lang = this.hasAttribute('lang') ? this.getAttribute('lang') : this.getLang();
-        this.innerHTML = this.translate(key, lang);
-    }
+select.addEventListener("change", function (e) {
+    console.log("change event listener");
+    // console.log("e.target.value " + e.target.value);
+    // console.log("select.value " + select.value);
+    selectedLocale = select.value;
+    selectedLocaleIndex = select.selectedIndex;
+    console.log("selectedLocale " + selectedLocale);
+    console.log("selectedLocaleIndex " + selectedLocaleIndex);
+    dispatchEvent(new CustomEvent("xyz", { detail: { "selectedLocale": selectedLocale, "selectedLocaleIndex": selectedLocaleIndex }}));
 
-    getLang() {
-        localizationCookieValue = getLocalizationCookieValue();
-        if (localizationCookieValue) {
-            return localizationCookieValue;
-        } else {
-            var lang = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
-            // Ignore country code (example: en-US -> en)
-            return lang.split("-")[0];
-        }
-    }
-
-    translate(key, lang) {
-        var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
-        return key in dict ? dict[key] : key;
-    }
-}
-
-new HTMLLocalizer();
+    // reloadLocalization(selectedLocale);
+    // new HTMLLocalizer();
+    // setLocalizationCookieValue(select.value);
+    // e.preventDefault()
+    // reloadLocalization(selectedLocale);
+});
 
 function getLocalizationCookieValue() {
     if (document.cookie) {
@@ -248,7 +265,55 @@ function setLocalizationCookieValue(lang) {
 
 function reloadLocalization(lang) {
     if (lang !== localizationCookieValue) {
+        // select.value = localizationCookieValue;
         setLocalizationCookieValue(lang);
         location.reload()
     }
 }
+
+
+
+/**********************************/
+
+
+class HTMLLocalizer {
+    constructor() {
+        customElements.define('localized-text', LocalizedTextElement);
+    }
+}
+
+class LocalizedTextElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        var key = this.hasAttribute('key') ? this.getAttribute('key') : '';
+        var lang = this.hasAttribute('lang') ? this.getAttribute('lang') : this.getLang();
+        this.innerHTML = this.translate(key, lang);
+    }
+
+    getLang() {
+        localizationCookieValue = getLocalizationCookieValue();
+        if (localizationCookieValue) {
+            // select.value = localizationCookieValue;
+            return localizationCookieValue;
+        } else {
+            getLangFromBrowser();
+        }
+    }
+
+    translate(key, lang) {
+        var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
+        return key in dict ? dict[key] : key;
+    }
+}
+
+function getLangFromBrowser() {
+    var langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
+    // Ignore country code (example: en-US -> en)
+    var lang = langAndContryCode.split("-")[0];
+    return lang;
+}
+
+new HTMLLocalizer();
