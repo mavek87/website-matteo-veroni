@@ -88,10 +88,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
 
-p {
-    text-align: justify;
-}
-
 hr {
     border: none;
     height: .1rem;
@@ -104,18 +100,12 @@ hr {
 }
 
 /* ASIDE */
+
 .top_right_fixed {
     position: fixed;
-    /*width: 100%;*/
     right: 0;
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: space-around;*/
-    /*right: 0;*/
-    /*top: 0;*/
-    /*background: #CCC;*/
     padding: 0 1rem;
-    color: #fff;
+    color: var(--light-color);
     font-size: 1.2em;
 }
 
@@ -133,16 +123,13 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-
     min-height: 25vh;
-    /*padding: 5rem calc(1rem + 10vw);*/
     padding: 5rem 5rem;
-
     background-color: var(--light-color);
 }
 
 #main-header__logo > img {
-    border: .35rem solid var(--primary-color);
+    border: .30rem solid var(--primary-color);
     border-radius: 100%;
     width: 15rem;
     height: 15rem;
@@ -187,7 +174,10 @@ main {
 #main-section {
     flex-grow: 1;
     border-top: 2px solid #ccc;
-    background-color: var(--primary-color);
+    /*background-color: var(--primary-color);*/
+    /*background-image: linear-gradient(to top, #0057b0, #005dc0, #0062d1, #0968e1, #176df2);*/
+    /*background-image: linear-gradient(to top, #0057b0, #0059bb, #005bc6, #005dd1, #0d5edc);*/
+    background-image: linear-gradient(to top, #0057b0, #0158b6, #0558bc, #0b59c1, #1359c7);
     line-height: 4.6rem;
     padding: 5rem calc(1rem + 10vw);
 }
@@ -201,7 +191,7 @@ main {
     margin-top: 3rem;
 }
 
-#main_section__contact__list {
+#main_section__contact_me__list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -250,8 +240,8 @@ footer {
     }
 
     #main-header__logo > img {
-        width: 10rem;
-        height: 10rem;
+        width: 11rem;
+        height: 11rem;
         border: .2rem solid var(--primary-color);
     }
 
@@ -364,7 +354,6 @@ footer {
     #main-header__logo > img {
         width: 13rem;
         height: 13rem;
-        border: .3rem solid var(--primary-color);
     }
 
     header#main-header > h1 {
@@ -402,7 +391,6 @@ footer {
     #main-header__logo > img {
         width: 14rem;
         height: 14rem;
-        border: .35rem solid var(--primary-color);
     }
 
     header#main-header > h1 {
