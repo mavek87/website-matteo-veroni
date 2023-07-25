@@ -24,10 +24,10 @@ module.exports = {
                     preset: [
                         "default",
                         {
-                            discardComments: { removeAll: true },
-                        },
-                    ],
-                },
+                            discardComments: { removeAll: true }
+                        }
+                    ]
+                }
             }),
             new TerserPlugin({
                 parallel: true
@@ -55,19 +55,19 @@ module.exports = {
                                                     addAttributesToSVGElement: {
                                                         params: {
                                                             attributes: [
-                                                                { xmlns: "http://www.w3.org/2000/svg" },
-                                                            ],
+                                                                { xmlns: "http://www.w3.org/2000/svg" }
+                                                            ]
                                                         },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    ],
-                                },
-                            ],
-                        ],
-                    },
-                },
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                }
             })
         ]
     },
@@ -95,18 +95,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             hash: true,
             filename: path.resolve(__dirname, "./dist/index.html"),
-            template: path.resolve(__dirname, "./src/index.html"),
+            template: path.resolve(__dirname, "./src/index.html")
         }),
         new MiniCssExtractPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, "./src/assets"),
-                    to: path.resolve(__dirname, "./dist/assets"),
+                    to: path.resolve(__dirname, "./dist/assets")
                 }
             ],
             options: {
-                concurrency: 100,
+                concurrency: 100
             },
         }),
     ],
