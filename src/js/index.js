@@ -11,7 +11,7 @@ import '../css/styles.css';
 (
     // why window, document and undefined are passed: https://stackoverflow.com/questions/2716069/how-does-this-javascript-jquery-syntax-work-function-window-undefined
     function (window, document, undefined) {
-        var dictionary = {
+        const dictionary = {
             "_": { // when language is not supported
                 "about_me": "about me",
                 "about_me_paragraph": "My name is Matteo Veroni, and I have been working in the field of Computer Science for over 10 years as a backend software developer. I enjoy designing and writing efficient software capable of simplifying complex problems or saving time by automating otherwise lengthy and repetitive processes.",
@@ -194,12 +194,12 @@ import '../css/styles.css';
             }
         }
 
-        var localizationCookieLang;
+        let localizationCookieLang;
 
         /**
          * This listener is called after the page is fully loaded to select the right language in the combobox
          */
-        window.addEventListener("load", function () {
+        window.addEventListener("load", () => {
             if (localizationCookieLang) {
                 selectDefaultLangOption(localizationCookieLang);
             } else {
@@ -214,7 +214,7 @@ import '../css/styles.css';
         function selectDefaultLangOption(lang) {
             document
                 .querySelectorAll("#localization_panel__localization_select > option")
-                .forEach(function (option) {
+                .forEach(option => {
                     if (lang === option.value) {
                         option.setAttribute('selected', 'selected');
                     } else {
@@ -228,7 +228,7 @@ import '../css/styles.css';
          * @returns {string} The language of the browser. For example if language and country code of the browser are en_US, just en is returned
          */
         function getLangFromBrowser() {
-            var langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
+            const langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
             // Ignore country code (example: en-US -> en)
             return langAndContryCode.split("-")[0];
         }
@@ -238,7 +238,7 @@ import '../css/styles.css';
          */
         document
             .getElementById("localization_panel__localization_select")
-            .addEventListener("change", function (e) {
+            .addEventListener("change", e => {
                 setLocalization(e.target.value);
             });
 
@@ -250,8 +250,8 @@ import '../css/styles.css';
             setLocalizationCookieLang(lang);
             document
                 .querySelectorAll("localized-text")
-                .forEach(function (localizedText) {
-                    var key = localizedText.getAttribute("key");
+                .forEach(localizedText => {
+                    const key = localizedText.getAttribute("key");
                     if (key) {
                         localizedText.innerText = translate(key, lang);
                     }
@@ -263,8 +263,8 @@ import '../css/styles.css';
          * @param lang The language saved in the cookie
          */
         function setLocalizationCookieLang(lang) {
-            var expirationTime = 86400e3; // 1 day from now
-            var date = new Date(Date.now() + expirationTime);
+            const expirationTime = 86400e3; // 1 day from now
+            let date = new Date(Date.now() + expirationTime);
             date = date.toUTCString();
             document.cookie = "wmvlocale=" + lang + "; expires=" + date + "; samesite=strict";
         }
@@ -275,13 +275,13 @@ import '../css/styles.css';
          */
         function getLocalizationCookieLang() {
             if (document.cookie) {
-                var cookies = document.cookie.split(";");
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = cookies[i];
-                    var keyValue = cookie.split("=");
+                const cookies = document.cookie.split(";");
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i];
+                    const keyValue = cookie.split("=");
                     if (keyValue && keyValue.length > 1) {
-                        var key = keyValue[0];
-                        var value = keyValue[1];
+                        const key = keyValue[0];
+                        const value = keyValue[1];
                         if ("wmvlocale" === key) {
                             return value;
                         }
@@ -298,7 +298,7 @@ import '../css/styles.css';
          * @returns {*} The translation in that language for that key, or the key itself if a translation doesn't exist
          */
         function translate(key, lang) {
-            var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
+            const dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
             return key in dict ? dict[key] : key;
         }
 
@@ -321,8 +321,8 @@ import '../css/styles.css';
             }
 
             connectedCallback() {
-                var key = this.hasAttribute('key') ? this.getAttribute('key') : '';
-                var lang = this.hasAttribute('lang') ? this.getAttribute('lang') : this.getLang();
+                const key = this.hasAttribute('key') ? this.getAttribute('key') : '';
+                const lang = this.hasAttribute('lang') ? this.getAttribute('lang') : this.getLang();
                 this.innerHTML = this.translate(key, lang);
             }
 
@@ -330,14 +330,14 @@ import '../css/styles.css';
                 if (localizationCookieLang) {
                     return localizationCookieLang;
                 } else {
-                    var langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
+                    const langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
                     // Ignore country code (example: en-US -> en)
                     return langAndContryCode.split("-")[0];
                 }
             }
 
             translate(key, lang) {
-                var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
+                const dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
                 return key in dict ? dict[key] : key;
             }
         }

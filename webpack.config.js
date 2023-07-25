@@ -74,10 +74,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                loader: 'babel-loader'
+                exclude: /(node_modules|bower_components)/,
+                test: /\.js$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]  //Preset used for env setup
+                    }
+                }
             },
             {
+                exclude: /(node_modules|bower_components)/,
                 test: /\.css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -86,6 +93,7 @@ module.exports = {
                 ]
             },
             {
+                exclude: /(node_modules|bower_components)/,
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 type: "asset"
             }
