@@ -1,3 +1,6 @@
+import '../css/styles.css';
+// import profilePicture from './assets/img/foto-matteo.jpeg';
+
 /**
  * To completely avoid any clash in namespace, the executor function (comparable to Java’s main method), needs to execute anonymously.
  * This can be achieved with IIFE — immediately invoked function expression.
