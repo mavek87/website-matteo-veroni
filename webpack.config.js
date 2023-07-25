@@ -13,11 +13,12 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: "[name].bundle.js"
+        filename: "app.bundle.js"
     },
     optimization: {
         minimize: true,
         minimizer: [
+            // CSS minification
             new CssMinimizerPlugin({
                 parallel: true,
                 minimizerOptions: {
@@ -29,9 +30,11 @@ module.exports = {
                     ]
                 }
             }),
+            // JS minification
             new TerserPlugin({
                 parallel: true
             }),
+            // Images minification
             new ImageMinimizerPlugin({
                 minimizer: {
                     implementation: ImageMinimizerPlugin.imageminGenerate,
