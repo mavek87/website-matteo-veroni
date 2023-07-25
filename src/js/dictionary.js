@@ -1,4 +1,4 @@
-export const dictionary = {
+const dictionary = {
     "_": { // when language is not supported
         "about_me": "about me",
         "about_me_paragraph": "My name is Matteo Veroni, and I have been working in the field of Computer Science for over 10 years as a backend software developer. I enjoy designing and writing efficient software capable of simplifying complex problems or saving time by automating otherwise lengthy and repetitive processes.",
@@ -180,3 +180,5 @@ export const dictionary = {
         "collaborations": "التعاون"
     }
 }
+
+export default dictionary;
