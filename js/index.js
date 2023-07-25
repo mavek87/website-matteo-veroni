@@ -184,60 +184,41 @@ var dictionary = {
     }
 }
 
-var selectedLocale;
-var selectedLocaleIndex;
-var localizationCookieValue;
-const select = document.getElementById("localization_panel__localization_select");
-
-window.addEventListener("xyz", (e) => setTimeout(() => {  reloadLocalization(e.detail.selectedLocale) }, 1000));
+var localizationCookieLang;
 
 window.addEventListener("load", function () {
-    console.log('load');
-    console.log("selectedLocale " + selectedLocale);
-    console.log("selectedLocaleIndex " + selectedLocaleIndex);
-//
-//     if(selectedLocale) {
-//
-//     } else {
-//         lang = getLangFromBrowser();
-//         if(lang) {
-//
-//         }
-//     }
-//
-//     // var selectParent = select.parentNode;
-//     // if (selectedLocale) {
-//     //     selectedLocale = undefined;
-//     // reloadLocalization(select.value);
-//     // console.log("ci entro");
-//     // for (var i = 0; i < select.options.length; i++) {
-//     //     var locale = select.options[i];
-//     //     console.log("locale " + locale.value);
-//     //     if (locale.value === selectedLocale) {
-//     //         locale.setAttribute('selected', 'selected');
-//     //         selectParent.replaceChild(locale, locale)
-//     //     } else {
-//     //         locale.removeAttribute('selected');
-//     //     }
-//     // }
+    if (localizationCookieLang) {
+        selectDefaultLocalizationLangOption(localizationCookieLang);
+    }
 });
 
-select.addEventListener("change", function (e) {
-    console.log("change event listener");
-    // console.log("e.target.value " + e.target.value);
-    // console.log("select.value " + select.value);
-    selectedLocale = select.value;
-    selectedLocaleIndex = select.selectedIndex;
-    console.log("selectedLocale " + selectedLocale);
-    console.log("selectedLocaleIndex " + selectedLocaleIndex);
-    dispatchEvent(new CustomEvent("xyz", { detail: { "selectedLocale": selectedLocale, "selectedLocaleIndex": selectedLocaleIndex }}));
-
-    // reloadLocalization(selectedLocale);
-    // new HTMLLocalizer();
-    // setLocalizationCookieValue(select.value);
-    // e.preventDefault()
-    // reloadLocalization(selectedLocale);
+document.getElementById("localization_panel__localization_select").addEventListener("change", function (e) {
+    setLocalization(e.target.value);
 });
+
+function selectDefaultLocalizationLangOption(lang) {
+    document
+        .querySelectorAll("#localization_panel__localization_select > option")
+        .forEach(function (option) {
+            if (lang === option.value) {
+                option.setAttribute('selected', 'selected');
+            } else {
+                option.removeAttribute('selected');
+            }
+        });
+}
+
+function setLocalization(lang) {
+    setLocalizationCookieValue(lang);
+    document
+        .querySelectorAll("localized-text")
+        .forEach(function (localizedText) {
+            var key = localizedText.getAttribute("key");
+            if (key) {
+                localizedText.innerText = translate(key, lang);
+            }
+        });
+}
 
 function getLocalizationCookieValue() {
     if (document.cookie) {
@@ -258,23 +239,13 @@ function getLocalizationCookieValue() {
 }
 
 function setLocalizationCookieValue(lang) {
-    var date = new Date(Date.now() + 86400e3);
+    var expirationTime = 86400e3; // 1 day from now
+    var date = new Date(Date.now() + expirationTime);
     date = date.toUTCString();
     document.cookie = "wmvlocale=" + lang + "; expires=" + date + "; samesite=strict";
 }
 
-function reloadLocalization(lang) {
-    if (lang !== localizationCookieValue) {
-        // select.value = localizationCookieValue;
-        setLocalizationCookieValue(lang);
-        location.reload()
-    }
-}
-
-
-
 /**********************************/
-
 
 class HTMLLocalizer {
     constructor() {
@@ -294,20 +265,31 @@ class LocalizedTextElement extends HTMLElement {
     }
 
     getLang() {
-        localizationCookieValue = getLocalizationCookieValue();
-        if (localizationCookieValue) {
-            // select.value = localizationCookieValue;
-            return localizationCookieValue;
+        localizationCookieLang = getLocalizationCookieValue();
+        if (localizationCookieLang) {
+            // select.value = localizationCookieLang;
+            return localizationCookieLang;
         } else {
-            getLangFromBrowser();
+            var langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
+            // Ignore country code (example: en-US -> en)
+            var lang = langAndContryCode.split("-")[0];
+            return lang;
         }
     }
 
+    // TODO: da eliminare
     translate(key, lang) {
         var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
         return key in dict ? dict[key] : key;
     }
 }
+
+function translate(key, lang) {
+    var dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
+    return key in dict ? dict[key] : key;
+}
+
+new HTMLLocalizer();
 
 function getLangFromBrowser() {
     var langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
@@ -315,5 +297,3 @@ function getLangFromBrowser() {
     var lang = langAndContryCode.split("-")[0];
     return lang;
 }
-
-new HTMLLocalizer();
