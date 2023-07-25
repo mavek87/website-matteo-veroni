@@ -306,6 +306,7 @@ footer {
     }
 
     #buttons_showcase > button {
+        min-width: 10rem;
         min-height: 10rem;
     }
 }
