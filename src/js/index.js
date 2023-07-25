@@ -1,8 +1,9 @@
 import '../css/styles.css';
-import dictionary from './dictionary.js'
+import constants from './constants.js';
 import localization from './localization.js';
 
 let localizationCookieLang;
+let browserLang;
 
 /**
  * This listener is called after the page is fully loaded to select the right language in the combobox
@@ -23,7 +24,7 @@ function selectDefaultLangOption(lang) {
     document
         .querySelectorAll("#localization_panel__localization_select > option")
         .forEach(option => {
-            if (lang === option.value) {
+            if (option.value === lang) {
                 option.setAttribute('selected', 'selected');
             } else {
                 option.removeAttribute('selected');
@@ -48,7 +49,7 @@ document
  */
 class HTMLLocalizer {
     constructor() {
-        customElements.define('localized-text', LocalizedTextElement);
+        customElements.define(constants.LOCALIZED_TEXT_ELEMENT_NAME, LocalizedTextElement);
     }
 }
 
@@ -56,27 +57,17 @@ class LocalizedTextElement extends HTMLElement {
     constructor() {
         super();
         localizationCookieLang = localization.getLocalizationCookieLang();
+        browserLang = localization.getLangFromBrowser();
     }
 
     connectedCallback() {
-        const key = this.hasAttribute('key') ? this.getAttribute('key') : '';
-        const lang = this.hasAttribute('lang') ? this.getAttribute('lang') : this.getLang();
-        this.innerHTML = this.translate(key, lang);
+        const key = this.hasAttribute(constants.LOCALIZED_TEXT_ELEMENT_KEY) ? this.getAttribute(constants.LOCALIZED_TEXT_ELEMENT_KEY) : '';
+        const lang = this.hasAttribute(constants.LOCALIZED_TEXT_ELEMENT_LANG) ? this.getAttribute(constants.LOCALIZED_TEXT_ELEMENT_LANG) : this.getLangInUse();
+        this.innerHTML = localization.translate(key, lang);
     }
 
-    getLang() {
-        if (localizationCookieLang) {
-            return localizationCookieLang;
-        } else {
-            const langAndCountryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
-            // Ignore country code (example: en-US -> en)
-            return langAndCountryCode.split("-")[0];
-        }
-    }
-
-    translate(key, lang) {
-        const dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
-        return key in dict ? dict[key] : key;
+    getLangInUse() {
+        return localizationCookieLang ? localizationCookieLang : browserLang;
     }
 }
 

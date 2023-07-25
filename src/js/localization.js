@@ -1,4 +1,5 @@
-import dictionary from "./dictionary";
+import dictionary from './dictionary';
+import constants from "./constants";
 
 /**
  * Get the language of the browser
@@ -19,7 +20,7 @@ function setLocalization(lang) {
     document
         .querySelectorAll("localized-text")
         .forEach(localizedText => {
-            const key = localizedText.getAttribute("key");
+            const key = localizedText.getAttribute(constants.LOCALIZED_TEXT_ELEMENT_KEY);
             if (key) {
                 localizedText.innerText = translate(key, lang);
             }
@@ -31,10 +32,11 @@ function setLocalization(lang) {
  * @param lang The language saved in the cookie
  */
 function setLocalizationCookieLang(lang) {
+    console.log("setLocalizationCookieLang " + lang)
     const expirationTime = 86400e3; // 1 day from now
     let date = new Date(Date.now() + expirationTime);
     date = date.toUTCString();
-    document.cookie = "wmvlocale=" + lang + "; expires=" + date + "; samesite=strict";
+    document.cookie = `${constants.COOKIE_LOCALE_NAME}=${lang}; expires=${date}; samesite=strict`;
 }
 
 /**
@@ -50,7 +52,7 @@ function getLocalizationCookieLang() {
             if (keyValue && keyValue.length > 1) {
                 const key = keyValue[0];
                 const value = keyValue[1];
-                if ("wmvlocale" === key) {
+                if (key === constants.COOKIE_LOCALE_NAME) {
                     return value;
                 }
             }
@@ -66,7 +68,7 @@ function getLocalizationCookieLang() {
  * @returns {*} The translation in that language for that key, or the key itself if a translation doesn't exist
  */
 function translate(key, lang) {
-    const dict = (lang in dictionary) ? dictionary[lang] : dictionary['_']
+    const dict = (lang in dictionary) ? dictionary[lang] : dictionary[constants.DEFAULT_DICTIONARY_NAME]
     return key in dict ? dict[key] : key;
 }
 
