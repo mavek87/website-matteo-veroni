@@ -16,3 +16,4 @@ This is the source code of my personal website (Matteo Veroni)
 ### Useful material:
 
 - How to setup webpack: https://www.youtube.com/watch?v=HNb6bapmsyI
+- Chatgpt for translations
