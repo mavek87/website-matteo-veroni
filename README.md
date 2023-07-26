@@ -17,3 +17,4 @@ This is the source code of my personal website (Matteo Veroni)
 
 - How to setup webpack: https://www.youtube.com/watch?v=HNb6bapmsyI
 - Chatgpt for translations
+- A Hassle-Free Way to Self-Host Google Fonts https://gwfh.mranftl.com/fonts

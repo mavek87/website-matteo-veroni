@@ -114,7 +114,23 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, "./src/assets"),
                     to: path.resolve(__dirname, "./dist/assets")
+                },
+                {
+                    from: path.resolve(__dirname, "./src/libs/fontawesome-free-6.4.0-web/css/all.min.css"),
+                    to: path.resolve(__dirname, "./dist/css/all.min.css")
+                },
+                {
+                    from: path.resolve(__dirname, "./src/libs/fontawesome-free-6.4.0-web/webfonts"),
+                    to: path.resolve(__dirname, "./dist/webfonts")
                 }
+                // {
+                //     from: path.resolve(__dirname, "./src/fonts"),
+                //     to: path.resolve(__dirname, "./dist/fonts")
+                // }
+                // {
+                //     from: path.resolve(__dirname, "./src/libs/google-fonts/webfonts"),
+                //     to: path.resolve(__dirname, "./dist/webfonts")
+                // }
             ],
             options: {
                 concurrency: 100
