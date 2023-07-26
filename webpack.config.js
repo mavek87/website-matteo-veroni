@@ -134,7 +134,7 @@ module.exports = {
             ],
             options: {
                 concurrency: 100
-            },
-        }),
-    ],
+            }
+        })
+    ]
 }
