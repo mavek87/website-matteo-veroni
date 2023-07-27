@@ -105,11 +105,6 @@ hr {
     background-color: var(--light-color); /* Modern Browsers */
 }
 
-/*.unselectable {*/
-/*    -webkit-user-select: none; !* Safari *!*/
-/*    user-select: none;*/
-/*}*/
-
 select, select option {
     text-transform: capitalize;
     outline: none !important;
@@ -207,8 +202,6 @@ main {
     flex-grow: 1;
     border-top: 2px solid #ccc;
     /*background-color: var(--primary-color);*/
-    /*background-image: linear-gradient(to top, #0057b0, #005dc0, #0062d1, #0968e1, #176df2);*/
-    /*background-image: linear-gradient(to top, #0057b0, #0059bb, #005bc6, #005dd1, #0d5edc);*/
     background-image: linear-gradient(to top, #0057b0, #0158b6, #0558bc, #0b59c1, #1359c7);
     line-height: 4.6rem;
     padding: 5rem calc(1rem + 10vw);
