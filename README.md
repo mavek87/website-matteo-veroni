@@ -11,9 +11,18 @@ This is the source code of my personal website (Matteo Veroni)
 - To build the project into the **dist** folder run the command ```npm run build```
 
 ### How to deploy:
-- After rebuilding the project for production with ```npm run build``` publish the **dist** folder content on a web server.
 
-### Useful material:
+- **Manual Deployment (Deprecated)**
+  - Run ```npm run build``` to get the updated contents in the **dist** folder and upload it manually.
+- **Automatic Deplopyment**
+  - Just push on **main** branch in **github** and the pipeline setup in **netlify** will do the rest (build and deploy).
+
+### Services used in production
+
+- https://www.namecheap.com/ - for the domain (www.matteoveroni.com)
+- https://www.netlify.com/ - to host the website and handle the auto deploy procedure
+
+### Other useful material:
 
 - How to setup webpack: https://www.youtube.com/watch?v=HNb6bapmsyI
 - Chatgpt for translations
