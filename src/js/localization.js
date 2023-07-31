@@ -2,13 +2,14 @@ import dictionary from './dictionary';
 import constants from "./constants";
 
 /**
- * Get the language of the browser
- * @returns {string} The language of the browser. For example if language and country code of the browser are en_US, just en is returned
+ * Translate a key of the dictionary given a language
+ * @param key The key of the dictionary to translate
+ * @param lang The language of the translation
+ * @returns {*} The translation in that language for that key, or the key itself if a translation doesn't exist
  */
-function getLangFromBrowser() {
-    const langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
-    // Ignore country code (example: en-US -> en)
-    return langAndContryCode.split("-")[0];
+function translate(key, lang) {
+    const dict = (lang in dictionary) ? dictionary[lang] : dictionary[constants.DEFAULT_DICTIONARY_NAME]
+    return key in dict ? dict[key] : key;
 }
 
 /**
@@ -25,6 +26,25 @@ function setLocalization(lang) {
                 localizedText.innerText = translate(key, lang);
             }
         });
+}
+
+/**
+ * Gets the language in use. First it checks the presence of the cookie, otherwise gets the default language from the browser
+ * @returns {string} The current language in use
+ */
+function getLocalization() {
+    const localizationCookieLang = getLocalizationCookieLang();
+    return localizationCookieLang ? localizationCookieLang : getLocalizationFromBrowser();
+}
+
+/**
+ * Get the language of the browser
+ * @returns {string} The language of the browser. For example if language and country code of the browser are en_US, just en is returned
+ */
+function getLocalizationFromBrowser() {
+    const langAndContryCode = (navigator.languages !== undefined) ? navigator.languages[0] : navigator.language;
+    // Ignore country code (example: en-US -> en)
+    return langAndContryCode.split("-")[0];
 }
 
 /**
@@ -61,23 +81,13 @@ function getLocalizationCookieLang() {
     return null;
 }
 
-/**
- * Translate a key of the dictionary given a language
- * @param key The key of the dictionary to translate
- * @param lang The language of the translation
- * @returns {*} The translation in that language for that key, or the key itself if a translation doesn't exist
- */
-function translate(key, lang) {
-    const dict = (lang in dictionary) ? dictionary[lang] : dictionary[constants.DEFAULT_DICTIONARY_NAME]
-    return key in dict ? dict[key] : key;
-}
-
 const localization = {
-    getLangFromBrowser: getLangFromBrowser,
+    translate: translate,
     setLocalization: setLocalization,
+    getLocalization: getLocalization,
+    getLocalizationFromBrowser: getLocalizationFromBrowser,
     setLocalizationCookieLang: setLocalizationCookieLang,
-    getLocalizationCookieLang: getLocalizationCookieLang,
-    translate: translate
+    getLocalizationCookieLang: getLocalizationCookieLang
 }
 
 export default localization;

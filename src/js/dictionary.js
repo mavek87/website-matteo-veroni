@@ -12,7 +12,11 @@ const dictionary = {
         "consulting": "consulting",
         "training": "training",
         "development": "development",
-        "collaborations": "collaborations"
+        "collaborations": "collaborations",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "en": {
         "about_me": "about me",
@@ -27,7 +31,11 @@ const dictionary = {
         "consulting": "consulting",
         "training": "training",
         "development": "development",
-        "collaborations": "collaborations"
+        "collaborations": "collaborations",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "it": {
         "about_me": "chi sono",
@@ -42,7 +50,11 @@ const dictionary = {
         "consulting": "consulenza",
         "training": "formazione",
         "development": "sviluppo",
-        "collaborations": "collaborazioni"
+        "collaborations": "collaborazioni",
+        "consulting_request": "Richiesta di consulenza",
+        "training_request": "Richiesta di formazione",
+        "development_request": "Richiesta di sviluppo",
+        "collaboration_request": "Richiesta di collaborazione"
     },
     "es": {
         "about_me": "sobre mí",
@@ -57,7 +69,11 @@ const dictionary = {
         "consulting": "asesoramiento",
         "training": "capacitación",
         "development": "desarrollo",
-        "collaborations": "colaboraciones"
+        "collaborations": "colaboraciones",
+        "consulting_request": "Solicitud de consultoría",
+        "training_request": "Solicitud de capacitación",
+        "development_request": "Solicitud de desarrollo",
+        "collaboration_request": "Solicitud de colaboración"
     },
     "de": {
         "about_me": "über mich",
@@ -72,7 +88,11 @@ const dictionary = {
         "consulting": "Beratung",
         "training": "Training",
         "development": "Entwicklung",
-        "collaborations": "Kooperationen"
+        "collaborations": "Kooperationen",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "fr": {
         "about_me": "à propos de moi",
@@ -87,7 +107,11 @@ const dictionary = {
         "consulting": "consultation",
         "training": "formation",
         "development": "développement",
-        "collaborations": "collaborations"
+        "collaborations": "collaborations",
+        "consulting_request": "Demande de consultation",
+        "training_request": "Demande de formation",
+        "development_request": "Demande de développement",
+        "collaboration_request": "Demande de collaboration"
     },
     "pt": {
         "about_me": "sobre mim",
@@ -102,7 +126,11 @@ const dictionary = {
         "consulting": "consultoria",
         "training": "treinamento",
         "development": "desenvolvimento",
-        "collaborations": "colaborações"
+        "collaborations": "colaborações",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "nl": {
         "about_me": "over mij",
@@ -117,7 +145,11 @@ const dictionary = {
         "consulting": "advies",
         "training": "opleiding",
         "development": "ontwikkeling",
-        "collaborations": "samenwerkingen"
+        "collaborations": "samenwerkingen",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "zh": {
         "about_me": "关于我",
@@ -132,7 +164,11 @@ const dictionary = {
         "consulting": "咨询",
         "training": "培训",
         "development": "开发",
-        "collaborations": "合作"
+        "collaborations": "合作",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "ja": {
         "about_me": "自己紹介",
@@ -147,7 +183,11 @@ const dictionary = {
         "consulting": "コンサルティング",
         "training": "トレーニング",
         "development": "開発",
-        "collaborations": "協力"
+        "collaborations": "協力",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "ru": {
         "about_me": "Обо мне",
@@ -162,7 +202,11 @@ const dictionary = {
         "consulting": "Консультации",
         "training": "Обучение",
         "development": "Разработка",
-        "collaborations": "Сотрудничество"
+        "collaborations": "Сотрудничество",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     },
     "ar": {
         "about_me": "نبذة عني",
@@ -177,7 +221,11 @@ const dictionary = {
         "consulting": "الاستشارات",
         "training": "التدريب",
         "development": "التطوير",
-        "collaborations": "التعاون"
+        "collaborations": "التعاون",
+        "consulting_request": "Consulting request",
+        "training_request": "Training request",
+        "development_request": "Development request",
+        "collaboration_request": "Collaboration request"
     }
 }
 
