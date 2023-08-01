@@ -32,3 +32,10 @@ This is the source code of my personal website (Matteo Veroni)
 - Chatgpt for translations
 - A Hassle-Free Way to Self-Host Google Fonts https://gwfh.mranftl.com/fonts
 - mailto tips and tricks: https://stackoverflow.com/questions/4782068/can-i-set-subject-content-of-email-using-mailto
+- netlify with cloudflare as dns: https://stevepolito.design/blog/configure-cloudflare-dns-to-work-with-netlify
+- css load async: https://www.holisticseo.digital/pagespeed/async-css/
+- other on css load async: https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
+### To test the performance:
+
+- https://gtmetrix.com/
+- 
