@@ -34,7 +34,10 @@ This is the source code of my personal website (Matteo Veroni)
 - mailto tips and tricks: https://stackoverflow.com/questions/4782068/can-i-set-subject-content-of-email-using-mailto
 - netlify with cloudflare as dns: https://stevepolito.design/blog/configure-cloudflare-dns-to-work-with-netlify
 - css load async: https://www.holisticseo.digital/pagespeed/async-css/
-- other on css load async: https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
+- css load async: https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
+- responsive images: https://medium.com/@woutervanderzee/responsive-images-with-srcset-and-sizes-fc434845e948
+- responsive image: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images?retiredLocale=it
+
 ### To test the performance:
 
 - https://gtmetrix.com/

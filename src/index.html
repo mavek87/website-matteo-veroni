@@ -25,12 +25,18 @@
     <!-- Media type (print) doesn't match the current environment, so browser decides it's not that important and loads the stylesheet asynchronously (without delaying page rendering). On load, we change media type so that the stylesheet gets applied to screens. -->
     <link rel="stylesheet" href="./css/all.min.css" media="print" onload="this.media='all'">
     <!-- Fallback that only gets inserted when JavaScript is disabled, in which case we can't load CSS asynchronously. -->
-    <noscript><link rel="stylesheet" href="./css/all.min.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="./css/all.min.css">
+    </noscript>
 
     <title>Matteo Veroni</title>
 </head>
 
 <body>
+
+<noscript>
+    <h1>Javascript is disabled. Enable Javascript otherwise this website could not work correctly!</h1>
+</noscript>
 
 <aside class="top_right_fixed">
     <section id="localization_panel">
@@ -51,7 +57,14 @@
 </aside>
 
 <header id="main-header">
-    <section id="main-header__logo"><img src="./assets/img/foto-matteo.jpg" alt="Matteo Veroni"/></section>
+    <section id="main-header__logo">
+        <img
+                srcset="./assets/img/matteo-veroni-135w.webp 135w, ./assets/img/matteo-veroni-270w.webp 270w"
+                sizes="(max-width: 600px) 135px, 100vw"
+                src="./assets/img/matteo-veroni-270w.webp"
+                alt="Matteo Veroni"
+        />
+    </section>
     <h1>Matteo Veroni</h1>
     <nav id="main_header__nav-menu">
         <menu>
