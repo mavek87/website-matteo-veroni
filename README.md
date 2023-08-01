@@ -1,5 +1,9 @@
 This is the source code of my personal website (Matteo Veroni)
 
+### Status of the last deploy:
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0b57d60e-9688-4889-a665-c538a0aecff9/deploy-status)](https://app.netlify.com/sites/matteoveroni/deploys)
+
 ### Structure of the project:
 
 - All the source code can be found in the **src** folder.
