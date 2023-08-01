@@ -221,6 +221,7 @@ main {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 4rem;
 }
 
 #buttons_showcase {
@@ -296,13 +297,6 @@ footer {
         margin-left: 0;
     }
 
-    #main_section__contact_me__list {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
     #buttons_showcase {
         flex-direction: column;
         justify-content: space-around;
@@ -351,10 +345,7 @@ footer {
     }
 
     #main_section__contact_me__list {
-        display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
-        justify-content: space-between;
     }
 
     #buttons_showcase {
@@ -391,6 +382,10 @@ footer {
     #main_header__nav-menu > menu {
         font-size: 2.5rem;
         font-weight: 500;
+    }
+
+    #main_section__contact_me__list {
+        justify-content: space-evenly;
     }
 
     #buttons_showcase {

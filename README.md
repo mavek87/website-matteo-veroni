@@ -37,6 +37,7 @@ This is the source code of my personal website (Matteo Veroni)
 - css load async: https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
 - responsive images: https://medium.com/@woutervanderzee/responsive-images-with-srcset-and-sizes-fc434845e948
 - responsive image: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images?retiredLocale=it
+- pdf compressor online: https://www.adobe.com/acrobat/online/compress-pdf.html
 
 ### To test the performance:
 
