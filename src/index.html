@@ -27,53 +27,55 @@
 </head>
 
 <body>
-<main>
-    <aside class="top_right_fixed">
-        <section id="localization_panel">
-            <select id="localization_panel__localization_select">
-                <option value="en"><span>🇺🇸&nbsp;&nbsp;english</span></option>
-                <option value="it"><span>🇮🇹&nbsp;&nbsp;italiano</span></option>
-                <option value="es"><span>🇪🇸&nbsp;&nbsp;español</span></option>
-                <option value="de"><span>🇩🇪&nbsp;&nbsp;deutsch</span></option>
-                <option value="fr"><span>🇫🇷&nbsp;&nbsp;français</span></option>
-                <option value="pt"><span>🇵🇹&nbsp;&nbsp;português</span></option>
-                <option value="nl"><span>🇳🇱&nbsp;&nbsp;nederlands</span></option>
-                <option value="zh"><span>🇨🇳&nbsp;&nbsp;普通话</span></option>
-                <option value="ja"><span>🇯🇵&nbsp;&nbsp;日本語</span></option>
-                <option value="ru"><span>🇷🇺&nbsp;&nbsp;русский</span></option>
-                <option value="ar"><span>🇸🇦&nbsp;&nbsp;العربية</span></option>
-            </select>
-        </section>
-    </aside>
-    <header id="main-header">
-        <section id="main-header__logo"><img src="./assets/img/foto-matteo.jpg" alt="Matteo Veroni"/></section>
-        <h1>Matteo Veroni</h1>
-        <nav id="main_header__nav-menu">
-            <ul>
-                <li>
-                    <a href="#about-me">
-                        <localized-text key="about_me"></localized-text>
-                    </a>
-                </li>
-                <li>
-                    <a href="#resume">
-                        <localized-text key="resume"></localized-text>
-                    </a>
-                </li>
-                <li>
-                    <a href="#services">
-                        <localized-text key="services"></localized-text>
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact_me">
-                        <localized-text key="contact_me"></localized-text>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
 
+<aside class="top_right_fixed">
+    <section id="localization_panel">
+        <select id="localization_panel__localization_select">
+            <option value="en">🇺🇸&nbsp;&nbsp;english</option>
+            <option value="it">🇮🇹&nbsp;&nbsp;italiano</option>
+            <option value="es">🇪🇸&nbsp;&nbsp;español</option>
+            <option value="de">🇩🇪&nbsp;&nbsp;deutsch</option>
+            <option value="fr">🇫🇷&nbsp;&nbsp;français</option>
+            <option value="pt">🇵🇹&nbsp;&nbsp;português</option>
+            <option value="nl">🇳🇱&nbsp;&nbsp;nederlands</option>
+            <option value="zh">🇨🇳&nbsp;&nbsp;普通话</option>
+            <option value="ja">🇯🇵&nbsp;&nbsp;日本語</option>
+            <option value="ru">🇷🇺&nbsp;&nbsp;русский</option>
+            <option value="ar">🇸🇦&nbsp;&nbsp;العربية</option>
+        </select>
+    </section>
+</aside>
+
+<header id="main-header">
+    <section id="main-header__logo"><img src="./assets/img/foto-matteo.jpg" alt="Matteo Veroni"/></section>
+    <h1>Matteo Veroni</h1>
+    <nav id="main_header__nav-menu">
+        <menu>
+            <li>
+                <a href="#about-me">
+                    <localized-text key="about_me"></localized-text>
+                </a>
+            </li>
+            <li>
+                <a href="#resume">
+                    <localized-text key="resume"></localized-text>
+                </a>
+            </li>
+            <li>
+                <a href="#services">
+                    <localized-text key="services"></localized-text>
+                </a>
+            </li>
+            <li>
+                <a href="#contact_me">
+                    <localized-text key="contact_me"></localized-text>
+                </a>
+            </li>
+        </menu>
+    </nav>
+</header>
+
+<main role="main">
     <section id="main-section">
 
         <section id="main-section__about_me">
@@ -177,7 +179,7 @@
             </p>
         </section>
     </section>
-    <footer>Copyright &copy; 2023 Matteo Veroni</footer>
 </main>
+<footer>Copyright &copy; 2023 Matteo Veroni</footer>
 </body>
 </html>
