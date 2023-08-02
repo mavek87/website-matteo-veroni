@@ -218,29 +218,29 @@ main {
       }
     }
   }
+}
 
-  #main__services__buttons_showcase {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 4rem;
-    row-gap: 4rem;
-    column-gap: 3rem;
-  }
+#main__services__buttons_showcase {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 4rem;
+  row-gap: 4rem;
+  column-gap: 3rem;
+}
 
-  #main__services__buttons_showcase > button {
-    min-width: 35rem;
-    min-height: 30rem;
-  }
+#main__services__buttons_showcase > button {
+  min-width: 35rem;
+  min-height: 30rem;
+}
 
-  #main__contact_me__list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 4rem;
-  }
+#main__contact_me__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 4rem;
 }
 
 /* FOOTER */
