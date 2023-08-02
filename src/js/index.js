@@ -69,28 +69,28 @@ new HTMLLocalizer();
  */
 
 document
-    .getElementById('buttons_showcase__btn_consulting')
+    .getElementById('main__services__buttons_showcase__btn_consulting')
     .addEventListener('click', e => {
         e.preventDefault();
         mail.mailTo(constants.EMAIL_ADDRESS, localization.translate('consulting_request', localization.getLocalization()));
     });
 
 document
-    .getElementById('buttons_showcase__btn_training')
+    .getElementById('main__services__buttons_showcase__btn_training')
     .addEventListener('click', e => {
         e.preventDefault();
         mail.mailTo(constants.EMAIL_ADDRESS, localization.translate('training_request',  localization.getLocalization()));
     });
 
 document
-    .getElementById('buttons_showcase__btn_development')
+    .getElementById('main__services__buttons_showcase__btn_development')
     .addEventListener('click', e => {
         e.preventDefault();
         mail.mailTo(constants.EMAIL_ADDRESS, localization.translate('development_request',  localization.getLocalization()));
     });
 
 document
-    .getElementById('buttons_showcase__btn_collaborations')
+    .getElementById('main__services__buttons_showcase__btn_collaborations')
     .addEventListener('click', e => {
         e.preventDefault();
         mail.mailTo(constants.EMAIL_ADDRESS, localization.translate('collaboration_request',  localization.getLocalization()));

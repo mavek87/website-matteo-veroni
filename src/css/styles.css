@@ -1,4 +1,3 @@
-/* inter-500 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
@@ -15,7 +14,6 @@
 
     --primary-color: #0057B0;
     --secondary-color: #0094E4;
-    --tertiary-color: #6BCB77;
 
     --light-color: white;
     --default-color: var(--primary-color);
@@ -181,7 +179,6 @@ main {
     margin-left: 3rem;
 }
 
-
 #main_header__nav-menu > menu {
     display: flex;
     flex-direction: row;
@@ -207,35 +204,26 @@ main {
     margin-left: 3rem;
 }
 
-/* MAIN-SECTION */
+/* MAIN */
 
-#main-section {
+main {
     flex-grow: 1;
     border-top: 2px solid #ccc;
-    /*background-color: var(--primary-color);*/
     background-image: linear-gradient(to top, #0057b0, #0158b6, #0558bc, #0b59c1, #1359c7);
     line-height: 4.6rem;
     padding: 5rem calc(1rem + 10vw);
 }
 
-#main-section > h2 {
+main > h2 {
     font-size: 3rem;
     margin: 4rem 0 4rem 0;
 }
 
-#main-section > section > p:first-of-type {
+main > section > p:first-of-type {
     margin-top: 3rem;
 }
 
-#main_section__contact_me__list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 4rem;
-}
-
-#buttons_showcase {
+#main__services__buttons_showcase {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -245,9 +233,17 @@ main {
     column-gap: 3rem;
 }
 
-#buttons_showcase > button {
+#main__services__buttons_showcase > button {
     min-width: 35rem;
     min-height: 30rem;
+}
+
+#main__contact_me__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 4rem;
 }
 
 /* FOOTER */
@@ -272,7 +268,11 @@ footer {
         font-size: 1.75rem;
     }
 
-    header#main-header {
+    p {
+        line-height: 4rem;
+    }
+
+    #main-header {
         flex-direction: column;
     }
 
@@ -282,13 +282,13 @@ footer {
         border: .2rem solid var(--primary-color);
     }
 
-    header#main-header > h1 {
+    #main-header > h1 {
         font-size: 4rem;
         padding: 5rem 0;
         margin: 0;
     }
 
-    header#main-header > h1 {
+    #main-header > h1 {
         font-size: 2.7rem;
         padding: 2.5rem 0;
         margin: 0;
@@ -308,14 +308,18 @@ footer {
         margin-left: 0;
     }
 
-    #buttons_showcase {
+    #main__services__buttons_showcase {
         flex-direction: column;
         justify-content: space-around;
     }
 
-    #buttons_showcase > button {
+    #main__services__buttons_showcase > button {
         min-width: 10rem;
         min-height: 10rem;
+    }
+
+    #main__contact_me__list {
+        flex-direction: column;
     }
 }
 
@@ -325,7 +329,11 @@ footer {
         font-size: 1.85rem;
     }
 
-    header#main-header {
+    p {
+        line-height: 4.4rem;
+    }
+
+    #main-header {
         flex-direction: column;
     }
 
@@ -335,7 +343,7 @@ footer {
         border: .25rem solid var(--primary-color);
     }
 
-    header#main-header > h1 {
+    #main-header > h1 {
         font-size: 3.5rem;
         padding: 3rem 0;
         margin: 0;
@@ -355,17 +363,17 @@ footer {
         margin-left: 0;
     }
 
-    #main_section__contact_me__list {
-        flex-direction: column;
-    }
-
-    #buttons_showcase {
+    #main__services__buttons_showcase {
         flex-direction: column;
         justify-content: space-around;
     }
 
-    #buttons_showcase > button {
+    #main__services__buttons_showcase > button {
         min-height: 12.5rem;
+    }
+
+    #main__contact_me__list {
+        flex-direction: column;
     }
 }
 
@@ -375,7 +383,11 @@ footer {
         font-size: 1.9rem;
     }
 
-    header#main-header {
+    p {
+        line-height: 4.9rem;
+    }
+
+    #main-header {
         flex-direction: column;
     }
 
@@ -384,7 +396,7 @@ footer {
         height: 13rem;
     }
 
-    header#main-header > h1 {
+    #main-header > h1 {
         font-size: 4.25rem;
         padding: 3rem 0;
         margin: 0;
@@ -395,19 +407,18 @@ footer {
         font-weight: 500;
     }
 
-    #main_section__contact_me__list {
-        justify-content: space-evenly;
-    }
-
-    #buttons_showcase {
+    #main__services__buttons_showcase {
         flex-direction: column;
         justify-content: space-around;
     }
 
-    #buttons_showcase > button {
+    #main__services__buttons_showcase > button {
         min-height: 15rem;
     }
 
+    #main__contact_me__list {
+        justify-content: space-evenly;
+    }
 }
 
 /* For Medium PC */
@@ -416,7 +427,11 @@ footer {
         font-size: 1.95rem;
     }
 
-    header#main-header {
+    p {
+        line-height: 5.3rem;
+    }
+
+    #main-header {
         flex-direction: column;
     }
 
@@ -425,7 +440,7 @@ footer {
         height: 14rem;
     }
 
-    header#main-header > h1 {
+    #main-header > h1 {
         font-size: 5.5rem;
         padding: 3rem 0;
         margin: 0;
@@ -436,7 +451,7 @@ footer {
         font-weight: 500;
     }
 
-    #buttons_showcase > button {
+    #main__services__buttons_showcase > button {
         min-height: 25rem;
     }
 }
