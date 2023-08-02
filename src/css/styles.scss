@@ -46,49 +46,62 @@ button {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 1rem 0;
+
+  &:hover, &.btn_primary:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: .25rem solid var(--light-color);
+    transition-duration: .38s;
+    transition-delay: .11s;
+  }
+
+  &.btn_secondary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: .25rem solid var(--light-color);
+  }
 }
 
-button:hover,
-button.btn_primary:hover {
-  background-color: var(--secondary-color);
-  color: var(--light-color);
-  border: .25rem solid var(--light-color);
-  transition-duration: .38s;
-  transition-delay: .11s;
-}
-
-button.btn_secondary {
-  background-color: var(--primary-color);
-  color: var(--light-color);
-  border: .25rem solid var(--light-color);
-}
-
-a {
-  text-decoration: none;
+@mixin definition-dark-link {
   color: var(--primary-color);
-
+  text-decoration: none;
   &:hover {
     color: var(--secondary-color);
   }
+}
 
-  &.link_primary {
-    color: var(--primary-color);
-  }
-
-  &.link_secondary {
-    color: var(--light-color);
-    text-decoration: underline;
-    text-underline-offset: .4rem;
-  }
-
-  &.link_secondary_not_underlined {
-    color: var(--light-color);
-    text-decoration: none;
-    text-underline-offset: .4rem;
-  }
-
-  &.link_secondary:hover, &.link_secondary_not_underlined:hover {
+@mixin definition-light-link {
+  color: var(--light-color);
+  text-decoration: none;
+  &:hover {
     color: var(--secondary-color);
+  }
+}
+
+@mixin definition-underlined {
+  text-decoration: underline;
+  text-underline-offset: .4rem;
+}
+
+a {
+  @include definition-dark-link;
+
+  &.link_dark {
+    @include definition-dark-link;
+  }
+
+  &.link_light {
+    @include definition-light-link;
+  }
+
+  &.link_dark_underlined {
+    @include definition-dark-link;
+    @include definition-underlined;
+  }
+
+  &.link_light_underlined {
+    @include definition-light-link;
+    @include definition-underlined;
   }
 }
 
