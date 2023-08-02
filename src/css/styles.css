@@ -129,10 +129,10 @@ select {
 
 /* ASIDE */
 
-.top_right_fixed {
+#aside-locale {
     position: fixed;
     right: 0;
-    padding: 0 1rem;
+    padding: .4rem .4rem;
     color: var(--light-color);
     font-size: 1.2em;
 }
@@ -270,6 +270,12 @@ footer {
 
     p {
         line-height: 4rem;
+    }
+
+    #aside-locale {
+        position: fixed;
+        right: 0;
+        bottom: 0;
     }
 
     #main-header {
