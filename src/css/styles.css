@@ -4,8 +4,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    src: url('../fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('../fonts/inter-v12-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+    src: url('../fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ url('../fonts/inter-v12-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 :root,
@@ -165,6 +164,14 @@ main {
     width: 15rem;
     height: 15rem;
     object-fit: cover;
+}
+
+#main-header__logo > img:hover {
+    transform: scale(1.13);
+    -webkit-transform: scale(1.13);
+    transition: all .71s ease;
+    -webkit-transition: all .71s ease;
+    transition-delay: .09s;
 }
 
 #main-header > h1 {
