@@ -401,35 +401,41 @@ footer {
 
   #main-header {
     flex-direction: column;
+
+    h1 {
+      font-size: 4.25rem;
+      padding: 3rem 0;
+      margin: 0;
+    }
+
+    #main-header__logo {
+      img {
+        width: 13rem;
+        height: 13rem;
+      }
+    }
+
+    #main_header__nav-menu {
+      menu {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+    }
   }
 
-  #main-header__logo > img {
-    width: 13rem;
-    height: 13rem;
-  }
+  main {
+    #main__services__buttons_showcase {
+      flex-direction: column;
+      justify-content: space-around;
 
-  #main-header > h1 {
-    font-size: 4.25rem;
-    padding: 3rem 0;
-    margin: 0;
-  }
+      button {
+        min-height: 15rem;
+      }
+    }
 
-  #main_header__nav-menu > menu {
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
-
-  #main__services__buttons_showcase {
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  #main__services__buttons_showcase > button {
-    min-height: 15rem;
-  }
-
-  #main__contact_me__list {
-    justify-content: space-evenly;
+    #main__contact_me__list {
+      justify-content: space-evenly;
+    }
   }
 }
 
