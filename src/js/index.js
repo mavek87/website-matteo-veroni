@@ -1,4 +1,4 @@
-import '../css/styles.css';
+import '../css/styles.scss';
 import constants from './constants.js';
 import localization from './localization.js';
 import mail from './mail.js';

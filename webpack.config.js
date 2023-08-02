@@ -88,11 +88,13 @@ module.exports = {
             },
             {
                 exclude: /(node_modules|bower_components)/,
-                test: /\.css$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    // "sass-loader"
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader"
                 ]
             },
             {

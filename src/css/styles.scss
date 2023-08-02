@@ -65,30 +65,30 @@ button.btn_secondary {
 a {
     text-decoration: none;
     color: var(--primary-color);
-}
 
-a:hover {
-    color: var(--secondary-color);
-}
+    :hover {
+        color: var(--secondary-color);
+    }
 
-a.link_primary {
-    color: var(--primary-color);
-}
+    &.link_primary {
+        color: var(--primary-color);
+    }
 
-a.link_secondary {
-    color: var(--light-color);
-    text-decoration: underline;
-    text-underline-offset: .4rem;
-}
+    &.link_secondary {
+        color: var(--light-color);
+        text-decoration: underline;
+        text-underline-offset: .4rem;
+    }
 
-a.link_secondary_not_underlined {
-    color: var(--light-color);
-    text-decoration: none;
-    text-underline-offset: .4rem;
-}
+    &.link_secondary_not_underlined {
+        color: var(--light-color);
+        text-decoration: none;
+        text-underline-offset: .4rem;
+    }
 
-a.link_secondary:hover, a.link_secondary_not_underlined:hover {
-    color: var(--secondary-color);
+    &.link_secondary:hover, &.link_secondary_not_underlined:hover {
+        color: var(--secondary-color);
+    }
 }
 
 ol, ul {
