@@ -35,6 +35,10 @@ body {
     color: var(--light-color);
 }
 
+p {
+    line-height: 5.5rem;
+}
+
 button {
     background-color: var(--light-color);
     color: var(--primary-color);
