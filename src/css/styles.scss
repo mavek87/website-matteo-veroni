@@ -237,7 +237,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 4rem;
     row-gap: 4rem;
     column-gap: 3rem;
@@ -324,7 +324,6 @@ footer {
   main {
     #main__services__buttons_showcase {
       flex-direction: column;
-      justify-content: space-around;
 
       button {
         min-width: 10rem;
@@ -385,7 +384,6 @@ footer {
   main {
     #main__services__buttons_showcase {
       flex-direction: column;
-      justify-content: space-around;
 
       button {
         min-height: 12.5rem;
@@ -482,9 +480,22 @@ footer {
     }
   }
 
-  #main__services__buttons_showcase {
-    button {
-      min-height: 25rem;
+  main {
+    #main__services__buttons_showcase {
+      justify-content: space-around;
+
+      button {
+        min-height: 25rem;
+      }
+    }
+  }
+}
+
+/* For Medium/Large PC */
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
+  main {
+    #main__services__buttons_showcase {
+      justify-content: space-around;
     }
   }
 }
