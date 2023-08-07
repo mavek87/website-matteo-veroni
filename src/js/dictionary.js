@@ -208,7 +208,7 @@ const dictionary = {
         "development_request": "Development request",
         "collaboration_request": "Collaboration request"
     },
-    "ar": {
+    "sa": {
         "about_me": "نبذة عني",
         "about_me_paragraph": "اسمي ماتيو فيروني، ولقد عملت في مجال علوم الحاسوب لأكثر من 10 سنوات كمطور برامج خلفية. أستمتع بتصميم وكتابة برمجيات فعالة قادرة على تبسيط المشكلات المعقدة أو توفير الوقت من خلال أتمتة العمليات المطولة والمتكررة.",
         "resume": "السيرة الذاتية",
