@@ -153,7 +153,7 @@ select {
 #aside-locale {
   position: fixed;
   right: 0;
-  padding: .4rem .4rem;
+  padding: .6rem .5rem;
   color: var(--light-color);
   font-size: 1.2em;
 }
@@ -289,12 +289,6 @@ footer {
     line-height: 4rem;
   }
 
-  #aside-locale {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-  }
-
   #main-header {
     flex-direction: column;
 
@@ -351,6 +345,15 @@ footer {
 
   p {
     line-height: 4.4rem;
+  }
+
+  #aside-locale {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+    padding: 0;
+    bottom: 0;
   }
 
   #main-header {
