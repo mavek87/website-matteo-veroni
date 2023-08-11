@@ -1,4 +1,4 @@
-const mailTo = (emailAddress, emailSubject) => {
+export const mailTo = (emailAddress, emailSubject) => {
     let mailtoLink = `mailto:${emailAddress}`;
 
     if (emailSubject) {
@@ -7,9 +7,3 @@ const mailTo = (emailAddress, emailSubject) => {
 
     window.location.href = mailtoLink;
 }
-
-const mail = {
-    mailTo: mailTo
-}
-
-export default mail;

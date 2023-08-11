@@ -1,7 +1,7 @@
 import '../css/styles.scss';
 import constants from './constants.js';
-import localization from './localization.js';
-import mail from './mail.js';
+import * as localization from './localization.js';
+import * as mail from './mail.js';
 
 let currentLanguage = localization.getLocalization();
 
