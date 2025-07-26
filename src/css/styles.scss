@@ -178,7 +178,7 @@ select {
 
 #main-header__logo {
   img {
-    border: .30rem solid var(--primary-color);
+    border: .20rem solid var(--primary-color);
     border-radius: 100%;
     width: 15rem;
     height: 15rem;
@@ -212,10 +212,15 @@ select {
       margin: 0 0;
       padding-left: 3rem;
       text-transform: capitalize;
+      text-underline-offset: 6px;
 
       &:first-child {
         padding-left: 0;
         margin-left: 3rem;
+      }
+
+      :hover {
+        text-decoration: underline;
       }
     }
   }
@@ -253,7 +258,7 @@ main {
 
   button {
     min-width: 35rem;
-    min-height: 30rem;
+    min-height: 25rem;
   }
 }
 

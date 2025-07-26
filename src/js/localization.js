@@ -66,8 +66,7 @@ const setLocalizationCookieLang = (lang) => {
 const getLocalizationCookieLang = () => {
     if (document.cookie) {
         const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i];
+        for (const cookie of cookies) {
             const keyValue = cookie.split("=");
             if (keyValue && keyValue.length > 1) {
                 const key = keyValue[0];
