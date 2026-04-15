@@ -4,5 +4,6 @@ dist
 package-lock.json
 
 # AI-related excluded folders
-.claude
 .opencode
+!.claude/skills/
+!.claude/skills/**
