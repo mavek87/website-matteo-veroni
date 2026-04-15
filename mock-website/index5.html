@@ -60,6 +60,23 @@
         }
         @keyframes blink-cursor { from, to { color: transparent; } 50% { color: #00e5ff; } }
 
+        .lang-nav { display: flex; gap: 10px; align-items: center; opacity: 0.7; }
+        .lang-sep { color: #f4f4f5; }
+        .lang-btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            border: none;
+            background: transparent;
+            color: #f4f4f5;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .lang-btn:hover {
+            color: #1ccbdf;
+            opacity: 1;
+        }
+
         .hero { margin-bottom: 100px; }
         h1 {
             font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1;
@@ -252,7 +269,13 @@
 <div class="container">
     <header>
         <div class="logo">MATTEO_VERONI<span class="cursor">_</span></div>
-        <div style="opacity: 0.7;">EN | IT | ES</div>
+        <nav class="lang-nav">
+            <a href="#" class="lang-btn">EN</a>
+            <span class="lang-sep">|</span>
+            <a href="#" class="lang-btn">IT</a>
+            <span class="lang-sep">|</span>
+            <a href="#" class="lang-btn">ES</a>
+        </nav>
     </header>
 
     <section class="hero">
@@ -326,7 +349,7 @@
     </section>
 
     <footer class="footer">
-        <span>© 2026 MATTEO_VERONI // v2.0.0-PROD</span>
+        <span>© 2026 MATTEO_VERONI</span>
         <span>EN | IT</span>
     </footer>
 </div>
