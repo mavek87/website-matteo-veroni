@@ -2,6 +2,12 @@
 
 This file provides guidance to the AI Agents when working with code in this repository.
 
+## Agent Rules
+
+- Always **use English**.
+- Always **be honest and objective**. Unjustified complacency would harm me. In such cases, state your opposing views and provide your reasoning.
+- If in doubt, **ask questions to clarify unclear points**. Acting in a state of indecision or doubt would harm me.
+
 ## Commands
 
 ```bash
