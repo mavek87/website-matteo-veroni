@@ -7,7 +7,7 @@ This file provides guidance to the AI Agents when working with code in this repo
 
 ```bash
 pnpm install        # Install dependencies
-pnpm run build      # Build and minify into dist/ (production only, no dev server)
+pnpm build          # Build and minify into dist/ (production only, no dev server)
 ```
 
 There is no dev server, linter, or test suite configured.
