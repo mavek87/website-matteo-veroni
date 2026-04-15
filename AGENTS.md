@@ -2,9 +2,17 @@
 
 This file provides guidance to the AI Agents when working with code in this repository.
 
+## Project Knowledge
+
+Project knowledge lives in `project-knowledge/`.
+
+- **Read** `project-knowledge/KNOWLEDGE.md` for the full schema, rules, and workflows.
+- **Read** `wiki/index.md` first, then drill into relevant pages — only when relevant to the current task.
+- **Write** only when explicitly requested by the user.
+
 ## Agent Rules
 
-- Always **use English**.
+- Always **use English** when you write into files.
 - Always **be honest and objective**. Unjustified complacency would harm me. In such cases, state your opposing views and provide your reasoning.
 - If in doubt, **ask questions to clarify unclear points**. Acting in a state of indecision or doubt would harm me.
 
