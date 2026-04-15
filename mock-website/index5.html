@@ -144,6 +144,7 @@
         /* =========================================
            EXECUTION LOGS
            ========================================= */
+        .section-prompt { color: #00e5ff; }
         .logs-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
         .logs-container {
             background: rgba(0,0,0,0.4); border: 1px solid #27272a;
@@ -192,6 +193,37 @@
         .io-item:hover .io-icon { color: #00e5ff; }
 
         /* =========================================
+           I/O CHANNELS
+           ========================================= */
+        .io-section { margin-top: 80px; }
+        .io-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .io-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .io-item {
+            display: block;
+            padding: 28px 24px;
+            border: 1px solid #27272a;
+            background: rgba(24, 24, 27, 0.4);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .io-item .io-icon { font-size: 1.8rem; color: #3f3f46; margin-bottom: 12px; transition: all 0.25s; }
+        .io-item .io-value { font-size: 1rem; color: #f4f4f5; }
+        .io-item:hover {
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.05);
+            transform: translateY(-4px);
+        }
+        .io-item:hover .io-value { color: #00e5ff; }
+        .io-item:hover .io-icon { color: #00e5ff; }
+
+        /* =========================================
            FOOTER
            ========================================= */
         .footer {
@@ -223,6 +255,10 @@
         <a href="#" class="cta-btn">> RUN_CONSULTATION</a>
     </section>
 
+    <section style="margin-bottom: 30px;">
+        <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem;"><span class="section-prompt">></span> Services</h3>
+    </section>
+
     <section class="services-grid">
         <div class="card">
             <h2><span>[SYS]</span> Architecture</h2>
@@ -251,7 +287,7 @@
     </section>
 
     <section class="logs-section">
-        <h3>> Execution_Logs</h3>
+        <h3><span class="section-prompt">></span> Execution_Logs</h3>
         <div class="logs-container">
             <div class="log-box"><span class="accent">[SUCCESS]</span> Migrazione database e sistemi cloud su AWS con zero downtime.</div>
             <div class="log-box"><span class="accent">[SUCCESS]</span> Creazione pipeline CI/CD da zero: tempi di rilascio dimezzati.</div>
@@ -261,7 +297,7 @@
     </section>
 
     <section class="io-section">
-        <h3>> I/O_Channels <span style="font-size:0.9rem; color:#52525b;">// NET_SOCKETS</span></h3>
+        <h3><span class="section-prompt">></span> I/O_Channels</h3>
         <div class="io-grid">
             <a href="https://www.linkedin.com/in/matteoveroni" class="io-item" target="_blank" rel="noopener">
                 <div class="io-icon"><i class="fa-brands fa-linkedin"></i></div>
