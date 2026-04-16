@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Software Architect & Engineer</title>
+    <meta name="description" content="Software Architect, Fullstack Developer and AI & DevOps Engineer with 9+ years in production. I build systems that evolve with you — not against you.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .card { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .card p { transition: color 0.3s ease; }
+        .cta-btn { transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+        .lang-btn { transition: color 0.2s ease, opacity 0.2s ease; }
+        .io-item { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .io-item .io-icon, .io-item .io-value { transition: color 0.3s ease; }
+        .io-item::before { transition: opacity 0.3s ease; }
+        .card-cta { transition: opacity 0.2s ease, letter-spacing 0.2s ease; }
+
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            font-family: 'Space Grotesk', sans-serif;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: ''; position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(0,229,255,0.14) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+        body::after {
+            content: ''; position: fixed; bottom: -10%; right: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(0,229,255,0.05) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px 60px; }
+
+        /* HEADER */
+        .site-header {
+            position: sticky; top: 0; z-index: 100;
+            font-family: 'JetBrains Mono', monospace;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(9,9,11,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .header-inner {
+            max-width: 1400px; margin: 0 auto; padding: 20px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .site-header.scrolled {
+            border-bottom-color: rgba(255,255,255,0.13);
+            background: rgba(9,9,11,0.96);
+        }
+
+        .header-logo { font-size: 1.85rem; font-weight: 800; letter-spacing: -1px; color: #f4f4f5; }
+        .header-logo .cursor { color: #00e5ff; animation: blink-cursor 1.1s step-end infinite; }
+        @keyframes blink-cursor { from, to { color: transparent; } 50% { color: #00e5ff; } }
+
+        .header-right { display: flex; align-items: center; gap: 32px; }
+
+        /* Section nav links */
+        .header-nav { display: flex; align-items: center; gap: 28px; }
+        .nav-link {
+            font-family: 'JetBrains Mono', monospace; font-size: 1.4rem;
+            color: #f4f4f5; text-decoration: none; letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover { color: #00e5ff; }
+
+        /* Language combobox */
+        .lang-select-wrapper {
+            position: relative; display: flex; align-items: center; gap: 6px;
+            font-family: 'JetBrains Mono', monospace; font-size: 1.4rem;
+            color: #f4f4f5; cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .lang-select-wrapper:hover { color: #00e5ff; }
+        .lang-select-wrapper i { font-size: 0.85rem; }
+        .lang-select {
+            position: absolute; inset: 0; opacity: 0; cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .lang-label { pointer-events: none; }
+        .lang-caret { font-size: 0.65rem; pointer-events: none; opacity: 0.6; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer; padding: 4px;
+        }
+        .hamburger span {
+            display: block; width: 22px; height: 2px;
+            background: #a1a1aa; border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile nav overlay */
+        .mobile-nav {
+            display: none; position: fixed; inset: 0; top: 65px; z-index: 99;
+            background: rgba(9,9,11,0.97); backdrop-filter: blur(16px);
+            flex-direction: column; align-items: center; justify-content: center;
+            gap: 36px;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav .nav-link { font-size: 1.4rem; color: #a1a1aa; }
+        .mobile-nav .nav-link:hover { color: #00e5ff; }
+        .mobile-nav .lang-select-wrapper { font-size: 1rem; color: #71717a; margin-top: 16px; }
+
+        @media (max-width: 768px) {
+            .header-nav { display: none; }
+            .lang-select-wrapper { display: none; }
+            .hamburger { display: flex; }
+        }
+
+        /* Push content below sticky header */
+        .header-spacer { height: 80px; }
+
+        /* HERO */
+        .hero { margin-bottom: 100px; }
+        h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1; margin-bottom: 30px; letter-spacing: -1.5px; }
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+            color: #00e5ff; letter-spacing: 2px; margin-bottom: 18px; opacity: 0.85;
+        }
+        .hero p { font-size: 1.25rem; line-height: 1.6; color: #c2c2c9; max-width: 650px; margin-bottom: 28px; }
+
+        .hero-pills {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 40px;
+        }
+        .hero-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.92rem;
+            color: #a1a1aa;
+            border: 1px solid #52525b;
+            border-radius: 4px;
+            padding: 6px 14px;
+            letter-spacing: 0.5px;
+            background: rgba(24,24,27,0.5);
+        }
+        .cta-btn {
+            display: inline-block; background: transparent; color: #00e5ff;
+            font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700;
+            padding: 16px 32px; text-decoration: none; cursor: pointer;
+            border: 2px solid #00e5ff; box-shadow: 6px 6px 0px rgba(0,229,255,0.3); border-radius: 4px;
+        }
+        .cta-btn:hover { background: #00e5ff; color: #09090b; transform: translate(2px,2px); box-shadow: 4px 4px 0px rgba(0,229,255,0.8); }
+
+        /* =============================================
+           OPTION B — SERVICES
+           Layout 2x2 invariato + barra animata in cima
+           ============================================= */
+        .section-prompt { color: #96969f; }
+        .section-title { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Colori per card */
+        :root {
+            --c1: #1ccbdf;
+            --c2: #20c48a;
+            --c3: #b96ef9;
+            --c4: #d4b235;
+        }
+
+        .card {
+            background: rgba(24,24,27,0.6);
+            backdrop-filter: blur(10px);
+            border: 0.75px solid #323238;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow: hidden; /* necessario per la barra */
+            padding: 0; /* padding gestito internamente */
+        }
+
+        /* Barra colorata in cima — animazione al load via JS class */
+        .card-bar {
+            height: 1px;
+            width: 0%;
+            opacity: 0.35;
+            transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+        .card:hover .card-bar { opacity: 1; height: 2px; }
+        .card:nth-child(1):hover .card-bar { box-shadow: 0 0 6px var(--c1); }
+        .card:nth-child(2):hover .card-bar { box-shadow: 0 0 6px var(--c2); }
+        .card:nth-child(3):hover .card-bar { box-shadow: 0 0 6px var(--c3); }
+        .card:nth-child(4):hover .card-bar { box-shadow: 0 0 6px var(--c4); }
+        .card:nth-child(1) .card-bar { background: var(--c1); }
+        .card:nth-child(2) .card-bar { background: var(--c2); }
+        .card:nth-child(3) .card-bar { background: var(--c3); }
+        .card:nth-child(4) .card-bar { background: var(--c4); }
+
+        /* Quando la classe .loaded viene aggiunta, la barra si estende */
+        .card.loaded .card-bar { width: 100%; }
+
+
+        .card-body { padding: 34px; display: flex; flex-direction: column; gap: 22px; flex-grow: 1; }
+
+        .card:nth-child(1) { box-shadow: 8px 8px 0px var(--c1); }
+        .card:nth-child(2) { box-shadow: 8px 8px 0px var(--c2); }
+        .card:nth-child(3) { box-shadow: 8px 8px 0px var(--c3); }
+        .card:nth-child(4) { box-shadow: 8px 8px 0px var(--c4); }
+
+        .card:hover { transform: translateY(-8px); background: rgba(30,30,35,0.85); border-color: rgba(255,255,255,0.2); }
+        .card:hover p { color: #c0c0c6; }
+
+        .card h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .card:nth-child(1) h2 span { color: var(--c1); }
+        .card:nth-child(2) h2 span { color: var(--c2); }
+        .card:nth-child(3) h2 span { color: var(--c3); }
+        .card:nth-child(4) h2 span { color: var(--c4); }
+
+        .card p { color: #b4b4bc; line-height: 1.6; flex-grow: 1; font-size: 1.1rem; }
+
+        /* Tech tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tag {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
+            padding: 4px 10px; border-radius: 4px; border: 1px solid;
+            letter-spacing: 0.5px;
+        }
+        .card:nth-child(1) .tag { border-color: rgba(28,203,223,0.35); color: var(--c1); background: rgba(28,203,223,0.07); }
+        .card:nth-child(2) .tag { border-color: rgba(27,174,122,0.35); color: var(--c2); background: rgba(24,168,118,0.07); }
+        .card:nth-child(3) .tag { border-color: rgba(168,85,247,0.35); color: var(--c3); background: rgba(124,98,224,0.07); }
+        .card:nth-child(4) .tag { border-color: rgba(221,188,56,0.35); color: var(--c4); background: rgba(221,188,56,0.07); }
+
+        /* CTA link */
+        .card-cta {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 700;
+            text-decoration: none; margin-top: 4px; align-self: flex-end;
+        }
+        .card:nth-child(1) .card-cta { color: var(--c1); }
+        .card:nth-child(2) .card-cta { color: var(--c2); }
+        .card:nth-child(3) .card-cta { color: var(--c3); }
+        .card:nth-child(4) .card-cta { color: var(--c4); }
+        .card-cta:hover { opacity: 0.7; letter-spacing: 1px; }
+
+        /* LOGS */
+        .logs-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .log-container {
+            background: #000; border: 1px solid #27272a; border-radius: 12px;
+            font-size: 0.85rem; height: 220px; overflow-y: auto;
+            padding: 20px 24px; font-family: 'JetBrains Mono', monospace;
+        }
+        .log-container::-webkit-scrollbar { width: 5px; }
+        .log-container::-webkit-scrollbar-track { background: transparent; }
+        .log-container::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.2); border-radius: 2px; }
+        .log-container::-webkit-scrollbar-thumb:hover { background: rgba(0,229,255,0.5); }
+        .log-line { margin-bottom: 6px; display: flex; gap: 10px; align-items: baseline; }
+        .log-line .ts { color: #52525b; white-space: nowrap; }
+        .log-line .lvl { color: #10b981; font-weight: bold; white-space: nowrap; }
+        .log-line .msg { color: #d4d4d8; }
+
+        /* I/O */
+        .io-section { margin-top: 80px; }
+        .io-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .io-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .io-item {
+            display: block; padding: 28px 24px; border: 1px solid #27272a;
+            background: rgba(24,24,27,0.4); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace; text-align: center; border-radius: 8px;
+            position: relative; overflow: hidden;
+        }
+        .io-item::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px;
+            background: #00e5ff; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .io-item:hover::before { opacity: 0.5; }
+        .io-item .io-icon { font-size: 1.8rem; color: #71717a; margin-bottom: 12px; }
+        .io-item .io-value { font-size: 1rem; color: #f4f4f5; }
+        .io-item:hover { border-color: rgba(255,255,255,0.2); border-width: 0.75px; background: rgba(30,30,35,0.85); transform: translateY(-4px); box-shadow: 5px 5px 0px rgba(0,229,255,0.3); }
+        .io-item:hover .io-value, .io-item:hover .io-icon { color: #00e5ff; }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 80px; padding-top: 30px; border-top: 1px solid #27272a;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.87rem; color: #52525b;
+        }
+        .footer-status { display: flex; align-items: center; gap: 8px; line-height: 1; }
+        .status-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #16a34a;
+            box-shadow: 0 0 5px rgba(34,197,94,0.5);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 5px rgba(34,197,94,0.5); }
+            50% { opacity: 0.4; box-shadow: 0 0 2px rgba(34,197,94,0.2); }
+        }
+        @media (max-width: 600px) { .footer { flex-direction: column; gap: 10px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo"><span style="color:#00e5ff;">></span> <span id="logo-text"></span><span class="cursor" id="logo-cursor" style="visibility:hidden;">_</span></div>
+        <div class="header-right">
+            <nav class="header-nav" aria-label="Site navigation">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#blog" class="nav-link">Blog</a>
+            </nav>
+            <div class="lang-select-wrapper" title="Change language">
+                <i class="fa-solid fa-globe"></i>
+                <span class="lang-label" id="langLabel">EN</span>
+                <span class="lang-caret">▾</span>
+                <select class="lang-select" id="langSelect" aria-label="Select language">
+                    <option value="de">DE</option>
+                    <option value="en" selected>EN</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                    <option value="it">IT</option>
+                </select>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <div class="lang-select-wrapper" title="Change language">
+            <i class="fa-solid fa-globe"></i>
+            <span class="lang-label" id="langLabelMobile">EN</span>
+            <span class="lang-caret">▾</span>
+            <select class="lang-select" id="langSelectMobile" aria-label="Select language">
+                <option value="de">DE</option>
+                <option value="en" selected>EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+                <option value="it">IT</option>
+            </select>
+        </div>
+    </nav>
+
+<div class="container">
+    <div class="header-spacer"></div>
+
+    <section class="hero">
+<h1>Engineering <span style="color:#00e5ff;">Resilience.</span><br>Architecting <span style="color:#00e5ff;">Scale.</span></h1>
+        <p>Software should solve your problems — not become one.<br><br>
+        I build systems that evolve with you — not against you.</p>
+        <div class="hero-pills">
+            <span class="hero-pill">10+ yrs experience</span>
+            <span class="hero-pill">100K+ daily users</span>
+            <span class="hero-pill">legacy rescue</span>
+            <span class="hero-pill">cloud migration</span>
+            <span class="hero-pill">end-to-end</span>
+        </div>
+        <a href="#" class="cta-btn">> RUN_CONSULTATION</a>
+    </section>
+
+    <section style="margin-bottom: 30px;">
+        <h3 class="section-title"><span class="section-prompt">></span> Services</h3>
+    </section>
+
+    <section class="services-grid">
+
+        <div class="card">
+            <div class="card-bar"></div>
+            <div class="card-body">
+                <h2><span>[ARCH]</span> Architecture & Consulting</h2>
+                <p>Before you build, make sure you're building the right thing. I review, design, and validate system architectures — so you don't pay to redo it in two years.</p>
+                <div class="tags">
+                    <span class="tag">#AWS</span><span class="tag">#Kubernetes</span><span class="tag">#Docker</span><span class="tag">#CI/CD</span><span class="tag">#Terraform</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-bar"></div>
+            <div class="card-body">
+                <h2><span>[BUILD]</span> Software Development</h2>
+                <p>New features, legacy rescue, or full systems from scratch. Clean, maintainable code that your team can evolve — without calling me every time.</p>
+                <div class="tags">
+                    <span class="tag">#Java</span><span class="tag">#Spring Boot</span><span class="tag">#Gradle</span><span class="tag">#React</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-bar"></div>
+            <div class="card-body">
+                <h2><span>[AUTO]</span> AI & DevOps Automation</h2>
+                <p>Repetitive tasks, slow deployments, manual workflows — I automate what slows you down. From CI/CD pipelines to AI agents that work while you sleep.</p>
+                <div class="tags">
+                    <span class="tag">#LLM</span><span class="tag">#Agents</span><span class="tag">#Python</span><span class="tag">#n8n</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-bar"></div>
+            <div class="card-body">
+                <h2><span>[EDU]</span> Mentorship & Training</h2>
+                <p>For developers who want to level up and teams that want to ship better. 1-on-1 sessions or group training — backend, DevOps, modern architectures.</p>
+                <div class="tags">
+                    <span class="tag">#DevOps</span><span class="tag">#Backend</span><span class="tag">#Team Training</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="logs-section">
+        <h3><span class="section-prompt">></span> System_Logs</h3>
+        <div class="log-container" id="logBox"></div>
+    </section>
+
+    <section class="io-section">
+        <h3><span class="section-prompt">></span> I/O_Channels</h3>
+        <div class="io-grid">
+            <a href="https://www.linkedin.com/in/matteoveroni" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div class="io-value">LinkedIn</div>
+            </a>
+            <a href="https://github.com/mavek87" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="io-value">GitHub</div>
+            </a>
+            <a href="https://www.youtube.com/@MatteoVeroni" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="io-value">YouTube</div>
+            </a>
+            <a href="mailto:matver87@gmail.com" class="io-item">
+                <div class="io-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="io-value">Email</div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-status">
+            <div class="status-dot"></div>
+            <span>SYSTEM_UPTIME: 100%</span>
+        </div>
+        <span>© 2026 MATTEO_VERONI — ALL RIGHTS RESERVED</span>
+    </footer>
+</div>
+
+<script>
+    (function() {
+        const full = 'MATTEO_VERONI';
+        const textEl = document.getElementById('logo-text');
+        const cursorEl = document.getElementById('logo-cursor');
+        let i = 0;
+        function type() {
+            if (i < full.length) { textEl.textContent += full[i++]; setTimeout(type, 90); }
+            else { cursorEl.style.visibility = 'visible'; }
+        }
+        setTimeout(type, 300);
+    })();
+
+    // Sticky header scroll class
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+        siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    mobileNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+        });
+    });
+
+    // Language switcher — keep label in sync
+    const langSelect = document.getElementById('langSelect');
+    const langLabel = document.getElementById('langLabel');
+    const langSelectMobile = document.getElementById('langSelectMobile');
+    const langLabelMobile = document.getElementById('langLabelMobile');
+    function syncLang(val) {
+        langLabel.textContent = val.toUpperCase();
+        langLabelMobile.textContent = val.toUpperCase();
+        langSelect.value = val;
+        langSelectMobile.value = val;
+    }
+    langSelect.addEventListener('change', e => syncLang(e.target.value));
+    langSelectMobile.addEventListener('change', e => syncLang(e.target.value));
+
+    // Barra animata: aggiungo .loaded alle card con stagger
+    document.querySelectorAll('.card').forEach((card, idx) => {
+        setTimeout(() => card.classList.add('loaded'), 200 + idx * 180);
+    });
+
+    const logs = [
+        "Initializing core modules...", "Establishing secure connection to AWS-region-1...",
+        "Database migration [SHARD_01] complete. Zero downtime.",
+        "CI/CD pipeline deployed: release cycle reduced by 50%.",
+        "EventBus throughput optimized: 1.2M req/sec.",
+        "AI Agent 'UFO' deployed to production cluster.",
+        "Scaling infra: 4200 concurrent users — nominal.",
+        "System health: 99.99% uptime maintained.",
+        "Mentorship session committed. 3 devs leveled up.",
+        "Secure handshake with client environment established."
+    ];
+    const logBox = document.getElementById('logBox');
+    function addLog() {
+        const now = new Date().toLocaleTimeString();
+        const msg = logs[Math.floor(Math.random() * logs.length)];
+        const div = document.createElement('div');
+        div.className = 'log-line';
+        div.innerHTML = `<span class="ts">[${now}]</span><span class="lvl">INFO</span><span class="msg">${msg}</span>`;
+        logBox.prepend(div);
+        if (logBox.children.length > 15) logBox.lastChild.remove();
+    }
+    setInterval(addLog, 2800);
+    addLog();
+</script>
+</body>
+</html>
