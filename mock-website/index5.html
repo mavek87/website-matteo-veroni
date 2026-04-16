@@ -53,7 +53,7 @@
         }
 
         /* [1.] Logo Terminal Lampeggiante Corretto: Testo Bianco, Cursore Cyan */
-        header .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; color: #f4f4f5;}
+        header .logo { font-size: 1.85rem; font-weight: 800; letter-spacing: -1px; color: #f4f4f5;}
         header .logo .cursor {
             color: #00e5ff; /* Cyan Elettrico */
             animation: blink-cursor 1.1s step-end infinite;
@@ -265,7 +265,7 @@
 
 <div class="container">
     <header>
-        <div class="logo">MATTEO_VERONI<span class="cursor">_</span></div>
+        <div class="logo"><span id="logo-text"></span><span class="cursor" id="logo-cursor" style="visibility:hidden;">_</span></div>
         <nav class="lang-nav">
             <a href="#" class="lang-btn">EN</a>
             <span class="lang-sep">|</span>
@@ -348,6 +348,29 @@
 
 
 <script>
+    // --- Typing animation (one-shot, on load) ---
+    (function() {
+        const full = 'MATTEO_VERONI';
+        const textEl = document.getElementById('logo-text');
+        const cursorEl = document.getElementById('logo-cursor');
+        let i = 0;
+        const speed = 90; // ms per character
+
+        function type() {
+            if (i < full.length) {
+                textEl.textContent += full[i];
+                i++;
+                setTimeout(type, speed);
+            } else {
+                // Typing done: show blinking cursor permanently
+                cursorEl.style.visibility = 'visible';
+            }
+        }
+
+        // Small initial delay so the page has rendered
+        setTimeout(type, 300);
+    })();
+
     const logs = [
         "Initializing core modules...",
         "Establishing secure connection to AWS-region-1...",
