@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Engineering & DevOps</title>
+    <style>
+        /* Importazione font ottimizzata */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@700;800&display=swap');
+
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing: antialiased; }
+
+        html, body {
+            min-height: 100%;
+            background-color: #08080C;
+        }
+
+        .p {
+            font-family:'JetBrains Mono', monospace;
+            background: linear-gradient(165deg,#0D0D14 0%,#0A0A0F 40%,#08080C 100%);
+            color:#F4F4F5;
+            min-height: 100vh;
+            position:relative;
+            overflow-x:hidden;
+            padding-bottom: 50px;
+        }
+
+        .gr { position:absolute; inset:0; z-index:0; background-image:linear-gradient(rgba(255,176,0,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,176,0,0.045) 1px,transparent 1px),linear-gradient(rgba(255,176,0,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,176,0,0.015) 1px,transparent 1px); background-size:80px 80px,80px 80px,16px 16px,16px 16px; pointer-events:none; filter:blur(0.6px) }
+        .gd { position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 80% 60% at 25% 10%,rgba(255,176,0,0.025) 0%,transparent 50%),radial-gradient(ellipse 60% 50% at 75% 90%,rgba(255,176,0,0.015) 0%,transparent 50%); pointer-events:none }
+        .w { position:relative; z-index:1; max-width:960px; margin:0 auto; padding:1.5rem }
+
+        .tb { display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid #1C1C22; margin-bottom:2rem; flex-wrap:wrap; gap:10px }
+        .tb-left { display:flex; align-items:center; gap:6px; font-size:11px; color:#22c55e; letter-spacing:1px }
+        .tb-left::before { content:''; width:6px; height:6px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite; flex-shrink:0 }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        .nv { display:flex; gap:6px; flex-wrap:wrap }
+        .nv a { font-size:10px; padding:5px 12px; border:1px solid #1C1C22; color:#52525B; text-decoration:none; transition:all .2s; letter-spacing:1px; text-transform:uppercase; background:#0D0D13 }
+        .nv a:hover { border-color:#FFB000; color:#FFB000 }
+
+        .hero-box { border:1px solid #1C1C22; padding:32px 28px; margin-bottom:2.5rem; position:relative; background:#0D0D13 }
+        .hero-box .ref { position:absolute; top:8px; right:12px; font-size:8px; color:rgba(100,116,139,0.4); letter-spacing:1px }
+        .hflex { display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap }
+        .htxt { flex:1; min-width:280px }
+
+        /* NOME: Leggibile e stabile in JetBrains Mono */
+        .hname {
+            font-family:'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 500;
+            color: #F4F4F5;
+            margin-bottom: 16px;
+            letter-spacing: 0px;
+        }
+        .hname b { color:#FFB000; font-weight: 700; }
+        .hname .bk { color:#FFB000; font-weight: 700; animation:bl 1s step-end infinite }
+        @keyframes bl { 50%{opacity:0} }
+
+        /* HEADER TITOLO: Syne con rendering forzato a blocchi per evitare schiacciamenti */
+        .htxt h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            text-transform: none;
+        }
+        .htxt h1 .a { color:#FFB000 }
+
+        .hrole { font-size:11px; color:#52525B; letter-spacing:2.5px; text-transform:uppercase; margin-top:14px }
+        .hdesc { font-size:14px; color:#71717A; line-height:1.75; margin-top:14px; max-width:520px; font-weight:300; font-family: 'JetBrains Mono', monospace; }
+        .hbtns { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap }
+        .bt { display:inline-block; padding:11px 26px; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; border:1px solid #27272A; color:#A1A1AA; background:#0D0D13; cursor:pointer; transition:all .25s; letter-spacing:.5px }
+        .bt:hover { border-color:#FFB000; color:#0A0A0F; background:#FFB000 }
+        .bt.pr { border-color:#FFB000; color:#FFB000; background:#0D0D13 }
+
+        .mets { display:flex; flex-direction:column; gap:10px; min-width:170px }
+        .mb { background:#101016; border-left:3px solid #FFB000; padding:14px 18px }
+        .mb .v { font-size:24px; font-weight:700; color:#FFB000; font-family:'Syne',sans-serif }
+        .mb .l { font-size:10px; color:#3F3F46; letter-spacing:1.5px; margin-top:2px }
+
+        .sec { margin-bottom:2.5rem }
+        .sh { font-size:10px; color:#FFB000; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid rgba(255,176,0,.12); display:flex; justify-content:space-between }
+        .sh .r { color:#27272A; font-size:9px }
+
+        .sg { display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+        .sv { background:#0D0D13; padding:18px; padding-bottom:22px; position:relative; transition:transform .2s; border-radius:2px; overflow:hidden }
+        .sv::before { content:''; position:absolute; inset:0; border-radius:2px; padding:1px; background:linear-gradient(180deg,#1C1C22 0%,#1C1C22 60%,var(--gc) 100%); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none }
+        .sv::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gc),var(--gc2)); opacity:0.9 }
+        .sv:hover { transform:translateY(-2px) }
+
+        .sv:nth-child(1) { --gc:#00E5FF; --gc2:#0088FF }
+        .sv:nth-child(2) { --gc:#FFB000; --gc2:#FF6B00 }
+        .sv:nth-child(3) { --gc:#FF4D6A; --gc2:#FF0080 }
+        .sv:nth-child(4) { --gc:#A855F7; --gc2:#6D28D9 }
+
+        .sv .st { font-size:11px; color:var(--gc); font-weight:500; margin-bottom:6px }
+        .sv h3 { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; margin-bottom:6px; color:#E4E4E7 }
+        .sv p { font-size:11px; color:#52525B; line-height:1.6 }
+
+        .lg { border:1px solid #1C1C22; background:#0D0D13; padding:16px 20px }
+        .li { font-size:12px; padding:7px 0; border-bottom:1px solid #1C1C22; display:flex; align-items:center; gap:10px }
+        .li:last-child { border:none }
+        .li .s { color:#22c55e; font-weight:500; font-size:11px; min-width:65px }
+        .li .m { color:#A1A1AA; font-weight:300 }
+
+        .ab { border:1px solid #1C1C22; background:#0D0D13; padding:24px; border-left:3px solid #FFB000 }
+        .ab p { font-size:13px; color:#71717A; line-height:1.85; font-weight:300 }
+
+        .io { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:8px }
+        .ioi { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border:1px solid #1C1C22; font-size:12px; transition:all .2s; background:#0D0D13 }
+        .ioi:hover { border-color:#FFB000 }
+        .ioi a { color:#71717A; text-decoration:none; }
+
+        .ft { margin-top:2rem; padding-top:1.5rem; border-top:1px solid #1C1C22; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom: 2rem; }
+        .ft .cp { font-size:9px; color:#27272A }
+        .lns { display:flex; gap:4px; flex-wrap:wrap }
+        .lns span { font-size:9px; padding:3px 7px; color:#3F3F46; border:1px solid #1C1C22; cursor:pointer; background:#0D0D13 }
+
+        @media(max-width:680px) { .hflex{flex-direction:column} .sg{grid-template-columns:1fr} }
+    </style>
+</head>
+<body>
+<div class="p">
+    <div class="gr"></div><div class="gd"></div>
+    <div class="w">
+        <div class="tb">
+            <div class="tb-left">ALL SERVICES OPERATIONAL</div>
+            <div class="nv"><a href="#">Services</a><a href="#">Track record</a><a href="#">About</a><a href="#">Contact</a></div>
+        </div>
+
+        <div class="hero-box">
+            <span class="ref">SEC-001</span>
+            <div class="hflex">
+                <div class="htxt">
+                    <div class="hname">matteo_<b>veroni</b><span class="bk">_</span></div>
+                    <h1>Engineering <span class="a">resilience.</span><br>Architecting <span class="a">scale.</span></h1>
+                    <div class="hrole">Fullstack developer • DevOps engineer • AI integrator</div>
+                    <div class="hdesc">Gestisco sistemi critici dalla A alla Z. Costruisco da zero, scalo fino a migliaia di utenti e integro l'Intelligenza Artificiale dove crea vero valore di business.</div>
+                    <div class="hbtns"><button class="bt pr">BOOK A CALL</button><button class="bt">VIEW SERVICES</button></div>
+                </div>
+                <div class="mets">
+                    <div class="mb"><div class="v">10+</div><div class="l">YEARS EXP</div></div>
+                    <div class="mb"><div class="v">99.9%</div><div class="l">UPTIME</div></div>
+                    <div class="mb"><div class="v">A-Z</div><div class="l">FULL CYCLE</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">Core daemons — services <span class="r">PID 001 — 004</span></div>
+            <div class="sg">
+                <div class="sv"><div class="st">SYS.ARCH</div><h3>Full-cycle architecture</h3><p>Progettazione da 0 alla produzione. Backend robusto (Java/AWS) e frontend moderno.</p></div>
+                <div class="sv"><div class="st">OPS.ORCHESTRATION</div><h3>DevOps & scalability</h3><p>Migrazioni da containerless a Kubernetes. CI/CD pipeline da zero. Infrastructure as code.</p></div>
+                <div class="sv"><div class="st">AI.INTEGRATION</div><h3>AI & business automation</h3><p>Agenti autonomi su WhatsApp/Telegram. Automazione processi aziendali con AI.</p></div>
+                <div class="sv"><div class="st">EDU.TRAINING</div><h3>Technical mentorship</h3><p>Formazione di alto livello per team di sviluppo e aziende.</p></div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">Execution logs — track record <span class="r">STDOUT</span></div>
+            <div class="lg">
+                <div class="li"><span class="s">[SUCCESS]</span><span class="m">Migrazione sistemi su AWS con zero downtime</span></div>
+                <div class="li"><span class="s">[SUCCESS]</span><span class="m">Pipeline CI/CD create da zero — tempi di rilascio dimezzati</span></div>
+                <div class="li"><span class="s">[SUCCESS]</span><span class="m">Migrazione infrastrutture da containerless a Kubernetes</span></div>
+                <div class="li"><span class="s">[SUCCESS]</span><span class="m">Uptime garantito per sistemi con migliaia di utenti simultanei</span></div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">The pragmatic protocol <span class="r">PROFILE</span></div>
+            <div class="ab"><p><strong>Metodico per natura, pragmatico per necessità.</strong> Affronto i problemi architetturali capendoli fino in fondo. Scrivo codice pulito, evito il debito tecnico, ma so che il software deve generare valore per il business.</p></div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">I/O channels <span class="r">NET</span></div>
+            <div class="io">
+                <div class="ioi"><a href="#">matver87@gmail.com</a></div>
+                <div class="ioi"><a href="#">LinkedIn</a></div>
+                <div class="ioi"><a href="#">GitHub</a></div>
+                <div class="ioi"><a href="#">YouTube</a></div>
+                <div class="ioi"><a href="#">Discord</a></div>
+            </div>
+        </div>
+
+        <div class="ft">
+            <span class="cp">© 2026 Matteo Veroni — v1.0.0</span>
+            <div class="lns"><span>EN</span><span>IT</span><span>ES</span></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Lead Architect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@700;800&display=swap');
+
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing: antialiased; }
+
+        html { background-color: #08080C; height: 100%; }
+
+        body {
+            min-height: 100%;
+            background: linear-gradient(165deg,#0D0D14 0%,#0A0A0F 40%,#08080C 100%);
+            color: #F4F4F5;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.5;
+        }
+
+        .p { position:relative; overflow-x:hidden; width: 100%; }
+
+        /* Griglia più definita */
+        .gr { position:absolute; inset:0; z-index:0; background-image:linear-gradient(rgba(255,176,0,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,176,0,0.06) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+        .gd { position:absolute; inset:0; z-index:0; background:radial-gradient(circle at 20% 20%, rgba(255,176,0,0.05) 0%, transparent 50%); pointer-events:none }
+
+        /* Larghezza aumentata per non sembrare piccolo */
+        .w { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:4rem 2rem; }
+
+        .tb { display:flex; justify-content:space-between; align-items:center; padding-bottom:20px; border-bottom:1px solid #1C1C22; margin-bottom:4rem; }
+        .tb-left { font-size:12px; color:#22c55e; letter-spacing:2px; display:flex; align-items:center; gap:10px; }
+        .tb-left::before { content:''; width:8px; height:8px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1; transform:scale(1)} 50%{opacity:0.4; transform:scale(1.2)} }
+
+        .nv a { font-size:12px; padding:8px 16px; border:1px solid #1C1C22; color:#71717A; text-decoration:none; margin-left:10px; text-transform:uppercase; transition: 0.3s; }
+        .nv a:hover { border-color:#FFB000; color:#FFB000; background: rgba(255,176,0,0.05); }
+
+        .hero-box { border:1px solid #1C1C22; padding:60px; margin-bottom:4rem; background: rgba(13, 13, 19, 0.8); backdrop-filter: blur(10px); }
+
+        .hflex { display:flex; gap:60px; align-items:center; flex-wrap:wrap; }
+        .htxt { flex: 2; }
+
+        .hname { font-size: 22px; margin-bottom: 20px; letter-spacing: 1px; }
+        .hname b { color:#FFB000; }
+        .hname .bk { color:#FFB000; animation:bl 1s step-end infinite }
+        @keyframes bl { 50%{opacity:0} }
+
+        /* TITOLO: Finalmente leggibile e grande */
+        .htxt h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(40px, 6vw, 72px); /* Gigante e fluido */
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -1px; /* Ridotto il negativo per evitare schiacciamento */
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        .htxt h1 .a { color:#FFB000; }
+
+        .hrole { font-size:14px; color:#52525B; letter-spacing:4px; text-transform:uppercase; margin-bottom: 20px; }
+        .hdesc { font-size:18px; color:#A1A1AA; line-height:1.6; max-width:650px; font-weight:300; }
+
+        .hbtns { display:flex; gap:20px; margin-top:40px; }
+        .bt { padding:18px 36px; font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700; border:1px solid #FFB000; background:transparent; color:#FFB000; cursor:pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .bt:hover { background: #FFB000; color: #000; transform: translateY(-3px); }
+        .bt.sec-btn { border-color: #27272A; color: #71717A; }
+
+        .mets { flex: 1; display:flex; flex-direction:column; gap:20px; min-width:200px; }
+        .mb { background:#101016; border-left:4px solid #FFB000; padding:24px; }
+        .mb .v { font-size:36px; font-weight:800; color:#FFB000; font-family:'Syne',sans-serif; }
+        .mb .l { font-size:12px; color:#52525B; letter-spacing:2px; text-transform: uppercase; }
+
+        .sec { margin-bottom:5rem; }
+        .sh { font-size:12px; color:#FFB000; letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid rgba(255,176,0,0.2); display:flex; justify-content:space-between; }
+
+        .sg { display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+        .sv { background:#0D0D13; padding:40px; border: 1px solid #1C1C22; border-bottom: 4px solid var(--gc); transition: 0.3s; }
+        .sv:hover { transform: translateY(-10px); background: #16161D; }
+        .sv:nth-child(1) { --gc:#00E5FF; }
+        .sv:nth-child(2) { --gc:#FFB000; }
+        .sv:nth-child(3) { --gc:#FF4D6A; }
+        .sv:nth-child(4) { --gc:#A855F7; }
+
+        .sv h3 { font-family:'Syne',sans-serif; font-size:24px; font-weight:700; margin-bottom:15px; color:#fff; }
+        .sv p { font-size:15px; color:#71717A; line-height:1.6; }
+
+        .lg { border:1px solid #1C1C22; background:rgba(13,13,19,0.5); padding:30px; }
+        .li { font-size:16px; padding:15px 0; border-bottom:1px solid #1C1C22; display:flex; align-items:center; gap:20px; }
+        .li:last-child { border:none; }
+        .li .s { color:#22c55e; font-weight:700; }
+
+        .io { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px; }
+        .ioi { padding:20px; border:1px solid #1C1C22; background:#0D0D13; text-align:center; transition: 0.3s; }
+        .ioi:hover { border-color: #FFB000; transform: scale(1.05); }
+        .ioi a { color:#A1A1AA; text-decoration:none; font-size: 14px; }
+
+        .ft { margin-top:4rem; padding: 4rem 0; border-top:1px solid #1C1C22; display:flex; justify-content:space-between; opacity: 0.5; font-size: 12px; }
+
+        @media(max-width:900px) { .hflex{flex-direction:column} .sg{grid-template-columns:1fr} .w{padding: 2rem 1.5rem;} }
+    </style>
+</head>
+<body>
+<div class="p">
+    <div class="gr"></div><div class="gd"></div>
+    <div class="w">
+        <div class="tb">
+            <div class="tb-left">SYSTEM STATUS: ALL SERVICES OPERATIONAL</div>
+            <div class="nv"><a href="#">Services</a><a href="#">Record</a><a href="#">About</a><a href="#">Contact</a></div>
+        </div>
+
+        <div class="hero-box">
+            <div class="hflex">
+                <div class="htxt">
+                    <div class="hname">matteo_<b>veroni</b><span class="bk">_</span></div>
+                    <h1>Engineering <span class="a">resilience.</span><br>Architecting <span class="a">scale.</span></h1>
+                    <div class="hrole">Fullstack Developer • DevOps Engineer • AI Integrator</div>
+                    <div class="hdesc">Gestisco sistemi critici dalla A alla Z. Costruisco da zero, scalo fino a migliaia di utenti e integro l'Intelligenza Artificiale dove crea valore.</div>
+                    <div class="hbtns">
+                        <button class="bt">BOOK A CALL</button>
+                        <button class="bt sec-btn">VIEW GITHUB</button>
+                    </div>
+                </div>
+                <div class="mets">
+                    <div class="mb"><div class="v">10+</div><div class="l">Years Exp</div></div>
+                    <div class="mb"><div class="v">99.9%</div><div class="l">Uptime</div></div>
+                    <div class="mb"><div class="v">A-Z</div><div class="l">Full Cycle</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">Core Daemons — Services <span>PID 001-004</span></div>
+            <div class="sg">
+                <div class="sv"><h3>Full-cycle Architecture</h3><p>Progettazione da zero alla produzione. Backend robusto (Java/AWS) e frontend moderno.</p></div>
+                <div class="sv"><h3>DevOps & Scalability</h3><p>Migrazioni da containerless a Kubernetes. CI/CD pipeline da zero. Infrastructure as Code.</p></div>
+                <div class="sv"><h3>AI & Business Automation</h3><p>Agenti autonomi su WhatsApp/Telegram. Automazione processi aziendali con AI.</p></div>
+                <div class="sv"><h3>Technical Mentorship</h3><p>Formazione di alto livello per team di sviluppo e aziende d'élite.</p></div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">Execution Logs — Track Record <span>STDOUT</span></div>
+            <div class="lg">
+                <div class="li"><span class="s">[SUCCESS]</span><span>Migrazione sistemi su AWS con zero downtime</span></div>
+                <div class="li"><span class="s">[SUCCESS]</span><span>Pipeline CI/CD create da zero — tempi di rilascio dimezzati</span></div>
+                <div class="li"><span class="s">[SUCCESS]</span><span>Uptime garantito per sistemi con migliaia di utenti simultanei</span></div>
+            </div>
+        </div>
+
+        <div class="sec">
+            <div class="sh">I/O Channels <span>NET_SOCKETS</span></div>
+            <div class="io">
+                <div class="ioi"><a href="#">LinkedIn</a></div>
+                <div class="ioi"><a href="#">GitHub</a></div>
+                <div class="ioi"><a href="#">Email</a></div>
+                <div class="ioi"><a href="#">Discord</a></div>
+            </div>
+        </div>
+
+        <div class="ft">
+            <span>© 2026 MATTEO VERONI — v1.0.0-STABLE</span>
+            <span>LOCATED IN ITALY // 44.4949° N, 11.3426° E</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

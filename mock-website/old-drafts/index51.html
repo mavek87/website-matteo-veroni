@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Cyber-Brutalism (vFinal)</title>
+    <style>
+        /* =========================================
+           RESET, FONTS, & BASE
+           ========================================= */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+
+        body {
+            background-color: #09090b; /* Zinc 950 */
+            color: #f4f4f5;
+            font-family: 'Space Grotesk', sans-serif;
+            /* Griglia Blueprint invisibile, ma presente (come richiesto) */
+            background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+
+        /* Bagliori di fondo (Glassmorphism) */
+        body::before {
+            content: ''; position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+        body::after {
+            content: ''; position: fixed; bottom: -10%; right: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; }
+
+        /* =========================================
+           HEADER, LOGO & HERO
+           ========================================= */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 80px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* [1.] Logo Terminal Lampeggiante Corretto: Testo Bianco, Cursore Cyan */
+        header .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; color: #f4f4f5;}
+        header .logo .cursor {
+            color: #00e5ff; /* Cyan Elettrico */
+            animation: blink-cursor 1.1s step-end infinite;
+        }
+        @keyframes blink-cursor { from, to { color: transparent; } 50% { color: #00e5ff; } }
+
+        .hero { margin-bottom: 100px; }
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1;
+            margin-bottom: 30px; letter-spacing: -1.5px;
+        }
+        .hero p {
+            font-size: 1.25rem; line-height: 1.6; color: #a1a1aa;
+            max-width: 650px; margin-bottom: 40px;
+        }
+
+        /* [BOTTONE] CTA (Consistenza Cyan) */
+        .cta-btn {
+            display: inline-block;
+            background: transparent; color: #00e5ff;
+            font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700;
+            padding: 16px 32px; text-decoration: none; cursor: pointer;
+            border: 2px solid #00e5ff;
+            /* Ombra Brutalist Neon */
+            box-shadow: 6px 6px 0px rgba(0, 229, 255, 0.3);
+            border-radius: 4px;
+        }
+        .cta-btn:hover {
+            background: #00e5ff; color: #09090b;
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px rgba(0, 229, 255, 0.8);
+        }
+
+        /* =========================================
+           SERVICES GRID (Nuovo Layout 3x2, Senza Bug, Con Varieta Colori)
+           ========================================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 2px solid #27272a;
+            padding: 30px; border-radius: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:nth-child(1) { box-shadow: 8px 8px 0px #00e5ff; }
+        .card:nth-child(2) { box-shadow: 8px 8px 0px #10b981; }
+        .card:nth-child(3) { box-shadow: 8px 8px 0px #fde047; }
+        .card:nth-child(4) { box-shadow: 8px 8px 0px #8b5cf6; }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 30, 35, 0.85);
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        /* Titoli: dimensione IDENTICA su tutte le card */
+        .card h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card:nth-child(1) h2 span { color: #00e5ff; }
+        .card:nth-child(2) h2 span { color: #10b981; }
+        .card:nth-child(3) h2 span { color: #fde047; }
+        .card:nth-child(4) h2 span { color: #8b5cf6; }
+
+        .card p { color: #a1a1aa; line-height: 1.6; }
+
+        /* =========================================
+           EXECUTION LOGS
+           ========================================= */
+        .section-prompt { color: #00e5ff; }
+        .logs-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .logs-container {
+            background: rgba(0,0,0,0.4); border: 1px solid #27272a;
+            border-radius: 12px; padding: 30px;
+        }
+        .log-box {
+            padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #d4d4d8;
+        }
+        .log-box:last-child { border-bottom: none; }
+        .log-box .accent {
+            color: #10b981; font-weight: bold;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .log-box .accent::before {
+            content: ''; width: 8px; height: 8px; background: #10b981;
+            border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; } 50% { opacity: 0.3; box-shadow: none; } }
+
+        /* =========================================
+           I/O CHANNELS
+           ========================================= */
+        .io-section { margin-top: 80px; }
+        .io-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .io-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .io-item {
+            display: block;
+            padding: 28px 24px;
+            border: 1px solid #27272a;
+            background: rgba(24, 24, 27, 0.4);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #a1a1aa;
+            text-align: center;
+            transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+            border-radius: 8px;
+        }
+        .io-item .io-icon { font-size: 1.8rem; color: #3f3f46; margin-bottom: 12px; transition: all 0.25s; }
+        .io-item .io-label { font-size: 0.7rem; color: #52525b; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+        .io-item .io-value { font-size: 1rem; color: #f4f4f5; }
+        .io-item:hover {
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.05);
+            color: #00e5ff;
+            transform: translateY(-4px);
+        }
+        .io-item:hover .io-value { color: #00e5ff; }
+        .io-item:hover .io-icon { color: #00e5ff; }
+
+        /* =========================================
+           I/O CHANNELS
+           ========================================= */
+        .io-section { margin-top: 80px; }
+        .io-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .io-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .io-item {
+            display: block;
+            padding: 28px 24px;
+            border: 1px solid #27272a;
+            background: rgba(24, 24, 27, 0.4);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .io-item .io-icon { font-size: 1.8rem; color: #3f3f46; margin-bottom: 12px; transition: all 0.25s; }
+        .io-item .io-value { font-size: 1rem; color: #f4f4f5; }
+        .io-item:hover {
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.05);
+            transform: translateY(-4px);
+        }
+        .io-item:hover .io-value { color: #00e5ff; }
+        .io-item:hover .io-icon { color: #00e5ff; }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #27272a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #52525b;
+        }
+        @media (max-width: 600px) { .footer { flex-direction: column; gap: 10px; text-align: center; } }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">MATTEO_VERONI<span class="cursor">_</span></div>
+        <div style="opacity: 0.7;">EN | IT | ES</div>
+    </header>
+
+    <section class="hero">
+        <h1>Engineering <span style="color:#00e5ff;">Resilience.</span><br>Architecting <span style="color:#00e5ff;">Scale.</span></h1>
+        <p>Fullstack Developer. DevOps Engineer. AI Integrator. Gestisco sistemi critici dalla A alla Z. Costruisco da zero, scalo fino a migliaia di utenti e integro l'IA dove crea vero valore.</p>
+        <a href="#" class="cta-btn">> RUN_CONSULTATION</a>
+    </section>
+
+    <section style="margin-bottom: 30px;">
+        <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem;"><span class="section-prompt">></span> Services</h3>
+    </section>
+
+    <section class="services-grid">
+
+        <!-- Card 1: Architecture & Scale -->
+        <div class="card">
+            <h2><span>[ARCH]</span> Architecture & Scale</h2>
+            <p>Dal foglio bianco alla produzione. Progetto sistemi backend distribuiti, orchestro infrastrutture cloud su AWS e costruisco pipeline CI/CD che reggono carichi reali — senza downtime.</p>
+        </div>
+
+        <!-- Card 2: Software Engineering -->
+        <div class="card">
+            <h2><span>[BUILD]</span> Software Engineering</h2>
+            <p>Codice pulito, performante e manutenibile nel tempo. Progetto e sviluppo soluzioni Java ecosystem, dalla scrittura di nuove feature al refactoring di sistemi legacy.</p>
+        </div>
+
+        <!-- Card 3: AI & Automation -->
+        <div class="card">
+            <h2><span>[AUTO]</span> AI & Automation</h2>
+            <p>Agenti autonomi, chatbot e workflow automatizzati per eliminare i colli di bottiglia operativi. Integro l'AI dove crea valore reale — non solo dove fa scena.</p>
+        </div>
+
+        <!-- Card 4: Mentorship & Training -->
+        <div class="card">
+            <h2><span>[EDU]</span> Mentorship & Training</h2>
+            <p>Formazione tecnica ad alto impatto per team di sviluppo. Backend, DevOps, architetture moderne: accelero la crescita dei tuoi developer.</p>
+        </div>
+
+    </section>
+
+    <section class="logs-section">
+        <h3><span class="section-prompt">></span> Execution_Logs</h3>
+        <div class="logs-container">
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Migrazione database e sistemi cloud su AWS con zero downtime.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Creazione pipeline CI/CD da zero: tempi di rilascio dimezzati.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Manutenzione e scaling infrastruttura per migliaia di utenti simultanei.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Sviluppo UFO EventBus: Ultra Fast Object-Oriented Event Bus per Java.</div>
+        </div>
+    </section>
+
+    <section class="io-section">
+        <h3><span class="section-prompt">></span> I/O_Channels</h3>
+        <div class="io-grid">
+            <a href="https://www.linkedin.com/in/matteoveroni" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div class="io-value">LinkedIn</div>
+            </a>
+            <a href="https://github.com/mavek87" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="io-value">GitHub</div>
+            </a>
+            <a href="https://www.youtube.com/@MatteoVeroni" class="io-item" target="_blank" rel="noopener">
+                <div class="io-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="io-value">YouTube</div>
+            </a>
+            <a href="mailto:matver87@gmail.com" class="io-item">
+                <div class="io-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="io-value">Email</div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span>© 2026 MATTEO_VERONI // v2.0.0-PROD</span>
+        <span>EN | IT</span>
+    </footer>
+</div>
+
+</body>
+</html>

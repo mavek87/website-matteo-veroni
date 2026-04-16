@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Software Architect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@800&display=swap');
+
+        /* RESET & CORE */
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --primary: #FFB000;
+            --bg: #08080C;
+            --surface: #0D0D13;
+            --text: #F4F4F5;
+            --text-dim: #71717A;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 1. FIX GRIGLIA: Visibile ma non invasiva */
+        .p {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(165deg, #0D0D14 0%, #08080C 100%);
+            z-index: 1;
+        }
+
+        .p::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                    linear-gradient(rgba(255, 176, 0, 0.1) 1.5px, transparent 1.5px),
+                    linear-gradient(90deg, rgba(255, 176, 0, 0.1) 1.5px, transparent 1.5px);
+            background-size: 80px 80px;
+            z-index: -1; /* Sotto i contenuti */
+            pointer-events: none;
+        }
+
+        .w {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* 2. FIX HEADER: Pulsanti grandi e stabili */
+        .tb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid #1C1C22;
+            margin-bottom: 4rem;
+        }
+
+        .tb-left {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #22c55e;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .tb-left::before {
+            content: ''; width: 12px; height: 12px; background: #22c55e;
+            border-radius: 50%; box-shadow: 0 0 10px #22c55e;
+        }
+
+        .nv { display: flex; gap: 1rem; }
+        .nv a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border: 2px solid #27272A;
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+            background: var(--surface);
+        }
+        .nv a:hover { border-color: var(--primary); color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .tb { flex-direction: column; gap: 2rem; align-items: flex-start; }
+            .nv { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+            .nv a { text-align: center; }
+        }
+
+        /* 3. FIX HERO & FONT: Basta schiacciamenti */
+        .hero-box {
+            background: rgba(13, 13, 19, 0.9);
+            border: 2px solid #1C1C22;
+            padding: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .hname {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+        .hname b { color: var(--primary); }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+        h1 span { color: var(--primary); }
+
+        .hdesc {
+            font-size: 22px;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .hbtns { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .bt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 1.5rem 3rem;
+            border: 3px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+        .bt:hover { background: var(--primary); color: #000; }
+        .bt-sec { border-color: #27272A; color: var(--text-dim); }
+
+        .mets { display: flex; flex-direction: column; gap: 1.5rem; min-width: 250px; }
+        .mb { border-left: 6px solid var(--primary); padding: 1.5rem 2rem; background: #101016; }
+        .mb .v { font-size: 42px; font-weight: 900; color: var(--primary); font-family: 'Space Grotesk', sans-serif; }
+        .mb .l { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; }
+
+        .hflex { display: flex; gap: 4rem; flex-wrap: wrap; }
+        .htxt { flex: 2; }
+
+        /* GRID SERVICES */
+        .sg { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem; }
+        .sv { background: var(--surface); padding: 3rem; border: 2px solid #1C1C22; border-bottom: 6px solid var(--gc); }
+        .sv h3 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin-bottom: 1rem; }
+        .sv p { color: var(--text-dim); font-size: 18px; }
+
+        @media (max-width: 900px) { .sg { grid-template-columns: 1fr; } .hflex { flex-direction: column; } .hero-box { padding: 2rem; } }
+
+        /* I/O CHANNELS */
+        .io-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .io-item {
+            padding: 2rem; background: var(--surface); border: 2px solid #1C1C22;
+            text-align: center; text-decoration: none; color: var(--primary);
+            font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px;
+        }
+        .io-item:hover { border-color: var(--primary); background: #16161D; }
+
+    </style>
+</head>
+<body>
+
+<div class="p">
+    <div class="w">
+        <header class="tb">
+            <div class="tb-left">Status: All Systems Operational</div>
+            <nav class="nv">
+                <a href="#">Services</a>
+                <a href="#">Record</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero-box">
+            <div class="hflex">
+                <div class="htxt">
+                    <div class="hname">matteo_<b>veroni</b>_</div>
+                    <h1>Engineering <span>resilience.</span><br>Architecting <span>scale.</span></h1>
+                    <p class="hdesc">Software Architect & DevOps Lead. Gestisco sistemi complessi dalla A alla Z con precisione chirurgica.</p>
+                    <div class="hbtns">
+                        <button class="bt">Book a Call</button>
+                        <button class="bt bt-sec">GitHub</button>
+                    </div>
+                </div>
+                <div class="mets">
+                    <div class="mb"><div class="v">10+</div><div class="l">Years Experience</div></div>
+                    <div class="mb"><div class="v">99.9%</div><div class="l">System Uptime</div></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="sg">
+            <div class="sv" style="--gc: #00E5FF;"><h3>Architecture</h3><p>Progettazione di sistemi scalabili e robusti in ambiente AWS/Java.</p></div>
+            <div class="sv" style="--gc: #FFB000;"><h3>DevOps</h3><p>Automazione CI/CD e orchestrazione Kubernetes per zero downtime.</p></div>
+        </div>
+
+        <footer class="io-grid">
+            <a href="#" class="io-item">LinkedIn</a>
+            <a href="#" class="io-item">GitHub</a>
+            <a href="#" class="io-item">Email</a>
+        </footer >
+
+        <div style="padding: 4rem 0; text-align: center; opacity: 0.5; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+            © 2026 MATTEO VERONI // v1.0-STABLE
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

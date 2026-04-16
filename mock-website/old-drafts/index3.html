@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Veroni | Cyber-Brutalism</title>
+    <style>
+        /* =========================================
+           TYPOGRAPHY & RESET
+           ========================================= */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+
+        body {
+            /* 1. Sfondo Scuro + Griglia leggerissima (Blueprint) */
+            background-color: #09090b; /* Zinc 950 */
+            color: #f4f4f5;
+            font-family: 'Space Grotesk', sans-serif;
+            background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 4. Bagliori di fondo (Glassmorphism) */
+        body::before {
+            content: ''; position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+        body::after {
+            content: ''; position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1; pointer-events: none;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        /* =========================================
+           HEADER & HERO
+           ========================================= */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 80px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        header .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        header .logo span { color: #00e5ff; }
+
+        .hero { margin-bottom: 100px; }
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1;
+            margin-bottom: 30px; letter-spacing: -1.5px;
+        }
+        .hero p {
+            font-size: 1.25rem; line-height: 1.6; color: #a1a1aa;
+            max-width: 650px; margin-bottom: 40px;
+        }
+
+        /* BOTTONE CALL TO ACTION (Hover Blueprint + Struttura Brutalist) */
+        .cta-btn {
+            display: inline-block;
+            background: transparent; color: #00e5ff;
+            font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700;
+            padding: 16px 32px; text-decoration: none; cursor: pointer;
+            border: 2px solid #00e5ff;
+            /* Ombra Brutalist Neon */
+            box-shadow: 6px 6px 0px rgba(0, 229, 255, 0.3);
+            border-radius: 4px;
+        }
+        .cta-btn:hover {
+            background: #00e5ff; color: #09090b;
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px rgba(0, 229, 255, 0.8);
+        }
+
+        /* =========================================
+           SERVICES GRID (The "Wow" Factor)
+           ========================================= */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-bottom: 100px; }
+
+        .card {
+            background: rgba(24, 24, 27, 0.6); /* Vetro scuro */
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 2px solid #27272a;
+            padding: 30px; border-radius: 12px;
+            /* Ombra Brutalist ma Tech (Viola e Ciano) */
+            box-shadow: 8px 8px 0px #8b5cf6;
+            position: relative;
+        }
+        /* Colori alternati per le ombre brutali per dare dinamicita */
+        .card:nth-child(2) { box-shadow: 8px 8px 0px #00e5ff; }
+        .card:nth-child(3) { box-shadow: 8px 8px 0px #fde047; }
+        .card:nth-child(4) { box-shadow: 8px 8px 0px #f43f5e; }
+
+        /* Hover Effect (Dashboard luminescente + Brutalist click) */
+        .card:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px inherit; /* Si abbassa e l'ombra si restringe */
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .card h2 {
+            font-family: 'JetBrains Mono', monospace; font-size: 1.2rem;
+            margin-bottom: 15px; display: flex; align-items: center; gap: 10px;
+        }
+        .card p { color: #a1a1aa; line-height: 1.6; }
+
+        /* =========================================
+           EXECUTION LOGS
+           ========================================= */
+        .logs-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+        .logs-container {
+            background: rgba(0,0,0,0.4); border: 1px solid #27272a;
+            border-radius: 12px; padding: 30px;
+        }
+        .log-box {
+            padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #d4d4d8;
+        }
+        .log-box:last-child { border-bottom: none; }
+        .log-box .accent { color: #10b981; font-weight: bold; } /* Verde successo */
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">MATTEO_VERONI<span>.</span></div>
+        <div style="opacity: 0.7;">EN | IT | ES</div>
+    </header>
+
+    <section class="hero">
+        <h1>Engineering Resilience.<br>Architecting Scale.</h1>
+        <p>Fullstack Developer. DevOps Engineer. AI Integrator. Gestisco sistemi critici dalla A alla Z. Costruisco da zero, scalo fino a migliaia di utenti e integro l'IA dove crea vero valore.</p>
+        <a href="#" class="cta-btn">> RUN_CONSULTATION</a>
+    </section>
+
+    <section class="services-grid">
+        <div class="card">
+            <h2><span style="color: #8b5cf6;">[SYS]</span> Architecture</h2>
+            <p>Progettazione da zero alla produzione. Backend robusto (Java/AWS) e interfacce frontend moderne per sistemi complessi.</p>
+        </div>
+        <div class="card">
+            <h2><span style="color: #00e5ff;">[OPS]</span> DevOps & Scale</h2>
+            <p>Migrazioni complesse e CI/CD. Da containerless a Kubernetes cluster. L'infrastruttura come codice per zero downtime.</p>
+        </div>
+        <div class="card">
+            <h2><span style="color: #fde047;">[AI]</span> Automation</h2>
+            <p>Sviluppo di agenti autonomi e informatizzazione aziendale per azzerare i colli di bottiglia operativi (Telegram/WhatsApp).</p>
+        </div>
+        <div class="card">
+            <h2><span style="color: #f43f5e;">[EDU]</span> Mentorship</h2>
+            <p>Formazione di alto livello sulle tecnologie backend, DevOps e automazione per team di sviluppo moderni.</p>
+        </div>
+    </section>
+
+    <section class="logs-section">
+        <h3>> Execution_Logs</h3>
+        <div class="logs-container">
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Migrazione database e sistemi cloud su AWS con zero downtime.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Creazione pipeline CI/CD da zero: tempi di rilascio dimezzati.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Manutenzione e scaling infrastruttura per migliaia di utenti simultanei.</div>
+            <div class="log-box"><span class="accent">[SUCCESS]</span> Sviluppo UFO EventBus: Ultra Fast Object-Oriented Event Bus per Java.</div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
