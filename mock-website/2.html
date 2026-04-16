@@ -57,6 +57,10 @@
         /* HERO */
         .hero { margin-bottom: 100px; }
         h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1; margin-bottom: 30px; letter-spacing: -1.5px; }
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+            color: #00e5ff; letter-spacing: 2px; margin-bottom: 18px; opacity: 0.85;
+        }
         .hero p { font-size: 1.25rem; line-height: 1.6; color: #ababb3; max-width: 650px; margin-bottom: 40px; }
         .cta-btn {
             display: inline-block; background: transparent; color: #00e5ff;
@@ -75,15 +79,12 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 100px;
         }
-        .card:first-child { grid-column: 1 / -1; }
         @media (max-width: 900px) {
             .services-grid { grid-template-columns: 1fr; }
-            .card:first-child { grid-column: 1; }
         }
 
         /* Colori per card */
@@ -129,7 +130,7 @@
         .card.loaded .card-bar { width: 100%; }
 
 
-        .card-body { padding: 28px 36px 36px; display: flex; flex-direction: column; gap: 22px; flex-grow: 1; }
+        .card-body { padding: 34px; display: flex; flex-direction: column; gap: 22px; flex-grow: 1; }
 
         .card:nth-child(1) { box-shadow: 8px 8px 0px var(--c1); }
         .card:nth-child(2) { box-shadow: 8px 8px 0px var(--c2); }
@@ -137,6 +138,7 @@
         .card:nth-child(4) { box-shadow: 8px 8px 0px var(--c4); }
 
         .card:hover { transform: translateY(-8px); background: rgba(30,30,35,0.85); border-color: rgba(255,255,255,0.2); }
+        .card:hover p { color: #c0c0c6; }
 
         .card h2 {
             font-family: 'JetBrains Mono', monospace;
@@ -148,19 +150,19 @@
         .card:nth-child(3) h2 span { color: var(--c3); }
         .card:nth-child(4) h2 span { color: var(--c4); }
 
-        .card p { color: #a1a1aa; line-height: 1.6; flex-grow: 1; font-size: 1.05rem; }
+        .card p { color: #b4b4bc; line-height: 1.6; flex-grow: 1; font-size: 1.1rem; }
 
         /* Tech tags */
         .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
         .tag {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
             padding: 4px 10px; border-radius: 4px; border: 1px solid;
-            letter-spacing: 0.5px; opacity: 0.8;
+            letter-spacing: 0.5px;
         }
-        .card:nth-child(1) .tag { border-color: var(--c1); color: var(--c1); background: rgba(28,203,223,0.07); }
-        .card:nth-child(2) .tag { border-color: var(--c2); color: var(--c2); background: rgba(24,168,118,0.07); }
-        .card:nth-child(3) .tag { border-color: var(--c3); color: var(--c3); background: rgba(124,98,224,0.07); }
-        .card:nth-child(4) .tag { border-color: var(--c4); color: var(--c4); background: rgba(221,188,56,0.07); }
+        .card:nth-child(1) .tag { border-color: rgba(28,203,223,0.35); color: var(--c1); background: rgba(28,203,223,0.07); }
+        .card:nth-child(2) .tag { border-color: rgba(27,174,122,0.35); color: var(--c2); background: rgba(24,168,118,0.07); }
+        .card:nth-child(3) .tag { border-color: rgba(168,85,247,0.35); color: var(--c3); background: rgba(124,98,224,0.07); }
+        .card:nth-child(4) .tag { border-color: rgba(221,188,56,0.35); color: var(--c4); background: rgba(221,188,56,0.07); }
 
         /* CTA link */
         .card-cta {
@@ -211,7 +213,7 @@
 <body>
 <div class="container">
     <header>
-        <div class="logo"><span id="logo-text"></span><span class="cursor" id="logo-cursor" style="visibility:hidden;">_</span></div>
+        <div class="logo"><span style="color:#00e5ff;">></span> <span id="logo-text"></span><span class="cursor" id="logo-cursor" style="visibility:hidden;">_</span></div>
         <nav class="lang-nav">
             <a href="#" class="lang-btn">EN</a><span class="lang-sep">|</span>
             <a href="#" class="lang-btn">IT</a><span class="lang-sep">|</span>
@@ -220,7 +222,7 @@
     </header>
 
     <section class="hero">
-        <h1>Engineering <span style="color:#00e5ff;">Resilience.</span><br>Architecting <span style="color:#00e5ff;">Scale.</span></h1>
+<h1>Engineering <span style="color:#00e5ff;">Resilience.</span><br>Architecting <span style="color:#00e5ff;">Scale.</span></h1>
         <p>Fullstack Developer. DevOps Engineer. AI Integrator. Gestisco sistemi critici dalla A alla Z. Costruisco da zero, scalo fino a migliaia di utenti e integro l'IA dove crea vero valore.</p>
         <a href="#" class="cta-btn">> RUN_CONSULTATION</a>
     </section>
