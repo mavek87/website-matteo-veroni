@@ -199,10 +199,16 @@
             display: block; padding: 28px 24px; border: 1px solid #27272a;
             background: rgba(24,24,27,0.4); text-decoration: none;
             font-family: 'JetBrains Mono', monospace; text-align: center; border-radius: 8px;
+            position: relative; overflow: hidden;
         }
+        .io-item::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px;
+            background: #00e5ff; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .io-item:hover::before { opacity: 0.5; }
         .io-item .io-icon { font-size: 1.8rem; color: #71717a; margin-bottom: 12px; }
         .io-item .io-value { font-size: 1rem; color: #f4f4f5; }
-        .io-item:hover { border-color: #00e5ff; background: rgba(0,229,255,0.05); transform: translateY(-4px); }
+        .io-item:hover { border-color: rgba(255,255,255,0.2); border-width: 0.75px; background: rgba(30,30,35,0.85); transform: translateY(-4px); box-shadow: 5px 5px 0px rgba(0,229,255,0.3); }
         .io-item:hover .io-value, .io-item:hover .io-icon { color: #00e5ff; }
 
         /* FOOTER */
