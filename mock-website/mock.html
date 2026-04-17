@@ -98,7 +98,7 @@
         /* Hamburger */
         .hamburger {
             display: none; flex-direction: column; gap: 5px;
-            background: none; border: none; cursor: pointer; padding: 4px;
+            background: none; border: none; cursor: pointer; padding: 12px; margin: -8px;
         }
         .hamburger span {
             display: block; width: 22px; height: 2px;
@@ -117,9 +117,9 @@
             gap: 36px;
         }
         .mobile-nav.open { display: flex; }
-        .mobile-nav .nav-link { font-size: 1.4rem; color: #f4f4f5; }
+        .mobile-nav .nav-link { font-size: 1.4rem; color: #f4f4f5; padding: 12px 24px; }
         .mobile-nav .nav-link:hover { color: #00e5ff; }
-        .mobile-nav .lang-select-wrapper { font-size: 1.4rem; color: #f4f4f5; margin-top: 16px; }
+        .mobile-nav .lang-select-wrapper { font-size: 1.4rem; color: #f4f4f5; margin-top: 16px; padding: 12px 24px; }
 
         @media (max-width: 768px) {
             .header-nav { display: none; }
@@ -136,6 +136,11 @@
         /* HERO */
         .hero { margin-bottom: 100px; }
         h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1; margin-bottom: 24px; letter-spacing: -1.5px; }
+        
+        @media (max-width: 480px) {
+            .header-logo { font-size: 1.4rem; }
+            h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+        }
 
         .hero-roles {
             font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
@@ -344,6 +349,7 @@
 
         /* CTA link */
         .card-cta {
+            display: inline-block; padding: 10px 0; margin-top: -10px; margin-bottom: -10px;
             font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700;
             text-decoration: none; white-space: nowrap;
             transition: opacity 0.2s ease, letter-spacing 0.2s ease;
