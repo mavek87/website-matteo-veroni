@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/blog.css';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const posts = (await getCollection('blog', ({ data }) =>
+  data.lang === lang && !data.draft
+))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+---
+
+{posts.length > 0 && (
+  <section class="blog-preview-section" id="blog">
+    <p class="section-prompt">&gt; Blog</p>
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="blog-preview-grid">
+      {posts.map(post => (
+        <a href={`/${lang}/blog/${post.id.split('/').pop()}/`} class="blog-card reveal">
+          <div class="blog-card-meta">
+            <span class="blog-card-date">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+            {post.data.tags.length > 0 && (
+              <div class="blog-card-tags">
+                {post.data.tags.map(tag => <span class="blog-card-tag">#{tag}</span>)}
+              </div>
+            )}
+          </div>
+          <h3 class="blog-card-title">{post.data.title}</h3>
+          <p class="blog-card-desc">{post.data.description}</p>
+          <span class="blog-card-cta">&gt; READ_MORE →</span>
+        </a>
+      ))}
+    </div>
+    <a href={`/${lang}/blog/`} class="cta-btn blog-preview-cta">&gt; VIEW_ALL_ARTICLES →</a>
+  </section>
+)}
