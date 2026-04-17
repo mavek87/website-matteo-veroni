@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import BackToTop from '../components/BackToTop.astro';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/700.css';
 import '@fontsource/jetbrains-mono/800.css';
@@ -32,6 +33,7 @@ const {
   </head>
   <body>
     <slot />
+    <BackToTop />
     <script>
       import '../scripts/scroll-reveal.ts';
     </script>
