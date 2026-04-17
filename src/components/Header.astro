@@ -13,15 +13,15 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
 
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
-    <div class="header-logo">
+    <a href={`/${lang}/`} class="header-logo" aria-label="Home">
       <span style="color:#00e5ff;">></span>
       <span id="logo-text"></span><span class="cursor" id="logo-cursor" style="visibility:hidden;">_</span>
-    </div>
+    </a>
     <div class="header-right">
       <nav class="header-nav" aria-label="Site navigation">
-        <a href="#services" class="nav-link">{t.navServices}</a>
-        <a href="#about" class="nav-link">{t.navAbout}</a>
-        <a href="#blog" class="nav-link">{t.navBlog}</a>
+        <a href={`/${lang}/#services`} class="nav-link">{t.navServices}</a>
+        <a href={`/${lang}/#about`} class="nav-link">{t.navAbout}</a>
+        <a href={`/${lang}/blog/`} class="nav-link">{t.navBlog}</a>
       </nav>
       <div class="lang-dropdown" id="langDropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
         <i class="fa-solid fa-globe"></i>
@@ -44,9 +44,9 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
 </header>
 
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <a href="#services" class="nav-link">{t.navServices}</a>
-  <a href="#about" class="nav-link">{t.navAbout}</a>
-  <a href="#blog" class="nav-link">{t.navBlog}</a>
+  <a href={`/${lang}/#services`} class="nav-link">{t.navServices}</a>
+  <a href={`/${lang}/#about`} class="nav-link">{t.navAbout}</a>
+  <a href={`/${lang}/blog/`} class="nav-link">{t.navBlog}</a>
   <div class="lang-dropdown" id="langDropdownMobile" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
     <i class="fa-solid fa-globe"></i>
     <span class="lang-label" id="langLabelMobile">{lang.toUpperCase()}</span>
