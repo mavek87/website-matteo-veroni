@@ -852,5 +852,5 @@ Log level colors: `INFO` → green `#10b981`, `NEW` → cyan `#00e5ff`, `PROMO` 
 
 | Point | Trigger |
 |---|---|
-| 11 — Blog with Content Collections | When 1–2 real articles are ready |
+| 11 — Blog with Content Collections | ✅ Completed |
 | 12 — System Logs Real Content | When announcements/posts exist to populate |
