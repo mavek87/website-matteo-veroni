@@ -1,0 +1,40 @@
+[build]
+  base    = "astro-site"
+  command = "pnpm build"
+  publish = "astro-site/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Language-based redirects — first visit, no cookie present
+# Rules are evaluated in order; first match wins.
+
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302
+  conditions = { Language = ["it"] }
+
+[[redirects]]
+  from = "/"
+  to = "/de/"
+  status = 302
+  conditions = { Language = ["de"] }
+
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  conditions = { Language = ["es"] }
+
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  conditions = { Language = ["fr"] }
+
+# Final fallback — English for everything else
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302

@@ -1,0 +1,58 @@
+---
+import '../styles/hero.css';
+---
+
+<section class="hero">
+  <p class="hero-roles">Software Architect<span>.</span>DevOps Engineer<span>.</span></p>
+  <h1>Architecting <span style="color:#00e5ff;">Scale.</span><br>Engineering <span style="color:#00e5ff;">Resilience.</span></h1>
+  <p>Software should solve your problems — not become one.<br>
+  I engineer software, infrastructure and AI workflows that evolve and grow with your business.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-value" data-count="10" data-suffix="+">10+</div>
+      <div class="stat-label">Years experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" data-count="100" data-suffix="K+">100K+</div>
+      <div class="stat-label">Daily active users</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" data-count="3" data-suffix="+">3+</div>
+      <div class="stat-label">Years leading backend team</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">E2E</div>
+      <div class="stat-label">Systems built from scratch</div>
+    </div>
+  </div>
+  <a href="#" class="cta-btn">&gt; START_CONVERSATION</a>
+</section>
+
+<script>
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countObserver.unobserve(entry.target);
+      entry.target.querySelectorAll<HTMLElement>('.stat-value[data-count]').forEach((el, i) => {
+        const target = parseInt(el.dataset.count!, 10);
+        const suffix = el.dataset.suffix ?? '';
+        const duration = 1100;
+        const delay = i * 80;
+        let start: number | null = null;
+        setTimeout(() => {
+          function step(ts: number) {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, delay);
+      });
+    });
+  }, { threshold: 0.5 });
+
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) countObserver.observe(statsEl);
+</script>

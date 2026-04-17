@@ -1,0 +1,19 @@
+---
+// Redirect-only page — no content rendered here.
+---
+<html>
+  <head>
+    <script>
+      const match = document.cookie.split(';').find(c => c.trim().startsWith('preferred_lang='));
+      if (match) {
+        const lang = match.split('=')[1].trim();
+        window.location.replace('/' + lang + '/');
+      }
+      // No cookie: Netlify Accept-Language redirect handles first-visit at CDN level.
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/en/" />
+    </noscript>
+  </head>
+  <body></body>
+</html>

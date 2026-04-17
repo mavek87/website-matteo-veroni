@@ -1,0 +1,62 @@
+@import './animations.css';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.card { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.card p { transition: color 0.3s ease; }
+.cta-btn { transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+.lang-btn { transition: color 0.2s ease, opacity 0.2s ease; }
+.io-item { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.io-item .io-icon, .io-item .io-value { transition: color 0.3s ease; }
+.io-item::before { transition: opacity 0.3s ease; }
+.card-cta { transition: opacity 0.2s ease, letter-spacing 0.2s ease; }
+
+:root {
+    --c1: #1ccbdf;
+    --c2: #20c48a;
+    --c3: #b96ef9;
+    --c4: #d4b235;
+}
+
+body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-family: 'Space Grotesk', sans-serif;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+}
+body::before {
+    content: ''; position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(0,229,255,0.14) 0%, rgba(0,0,0,0) 60%);
+    z-index: -1; pointer-events: none;
+}
+body::after {
+    content: ''; position: fixed; bottom: -10%; right: -10%; width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(0,229,255,0.05) 0%, rgba(0,0,0,0) 60%);
+    z-index: -1; pointer-events: none;
+}
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px 60px; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-ping {
+    opacity: 0;
+}
+.reveal-ping.visible {
+    animation: pingMaterialize 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--ad, 0s);
+}

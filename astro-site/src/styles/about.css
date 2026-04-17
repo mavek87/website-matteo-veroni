@@ -1,0 +1,30 @@
+.about-section { margin-bottom: 100px; }
+.about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+.about-pull {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    line-height: 1.55;
+    color: #f4f4f5;
+    border-left: 2px solid #00e5ff;
+    padding-left: 24px;
+}
+.about-pull .cyan { color: #00e5ff; }
+.about-body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #ababb3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .about-inner { grid-template-columns: 1fr; gap: 32px; }
+}

@@ -1,0 +1,110 @@
+.section-prompt { color: #96969f; }
+.section-title { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 30px; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+@media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+    background: rgba(24,24,27,0.6);
+    backdrop-filter: blur(10px);
+    border: 0.75px solid #323238;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 8px 8px 0px var(--card-color);
+}
+
+.card-bar {
+    height: 1px;
+    width: 0%;
+    background: var(--card-color);
+    opacity: 0.35;
+    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+.card:hover .card-bar { opacity: 1; height: 2px; box-shadow: 0 0 6px var(--card-color); }
+.card.loaded .card-bar { width: 100%; }
+
+.card-body { padding: 34px; display: flex; flex-direction: column; gap: 22px; flex-grow: 1; position: relative; }
+
+.card:hover { transform: translateY(-8px); background: rgba(30,30,35,0.85); border-color: rgba(255,255,255,0.2); }
+.card:hover p { color: #c0c0c6; }
+
+.card-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+.card-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--card-color) 30%, transparent);
+    color: var(--card-color);
+    background: color-mix(in srgb, var(--card-color) 6%, transparent);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.card-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.card:hover .card-icon { opacity: 1; }
+
+.card h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    display: flex; align-items: center; gap: 10px;
+}
+.card h2 span { color: var(--card-color); }
+
+.card p { color: #b4b4bc; line-height: 1.6; flex-grow: 1; font-size: 1.15rem; margin-top: 12px; margin-bottom: 12px; }
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 16px;
+    margin-top: auto;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 0%; min-width: 150px; }
+.tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
+    padding: 4px 10px; border-radius: 4px;
+    border: 1px solid color-mix(in srgb, var(--card-color) 35%, transparent);
+    color: var(--card-color);
+    background: color-mix(in srgb, var(--card-color) 7%, transparent);
+    letter-spacing: 0.5px;
+}
+
+.card-cta {
+    display: inline-block; padding: 10px 0; margin-top: -10px; margin-bottom: -10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700;
+    text-decoration: none; white-space: nowrap;
+    color: var(--card-color);
+}
+.card-cta:hover { opacity: 0.7; letter-spacing: 1px; }

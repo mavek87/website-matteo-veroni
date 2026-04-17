@@ -1,0 +1,44 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  description: string;
+  tags: string[];
+  colorVar: string;
+  ctaText?: string;
+  ctaHref?: string;
+  iconSvg: string;
+  revealDelay?: string;
+}
+
+const {
+  label,
+  title,
+  description,
+  tags,
+  colorVar,
+  ctaText = '&gt; LEARN_MORE →',
+  ctaHref = '#',
+  iconSvg,
+  revealDelay,
+} = Astro.props;
+---
+
+<div class="card reveal" style={`--card-color: var(${colorVar});${revealDelay ? ` transition-delay: ${revealDelay};` : ''}`}>
+  <div class="card-bar"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <h2><span>{label}</span> {title}</h2>
+      <span class="card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" set:html={iconSvg} />
+      </span>
+    </div>
+    <p>{description}</p>
+    <div class="card-footer">
+      <div class="tags">
+        {tags.map(tag => <span class="tag">{tag}</span>)}
+      </div>
+      <a href={ctaHref} class="card-cta" set:html={ctaText} />
+    </div>
+  </div>
+</div>

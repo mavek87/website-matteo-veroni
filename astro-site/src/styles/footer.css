@@ -1,0 +1,16 @@
+.footer {
+    margin-top: 80px; padding-top: 30px; border-top: 1px solid #27272a;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.87rem; color: #52525b;
+}
+.footer-status { display: flex; align-items: center; gap: 8px; line-height: 1; }
+.status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #16a34a;
+    box-shadow: 0 0 5px rgba(34,197,94,0.5);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    .footer { flex-direction: column; gap: 10px; text-align: center; }
+}

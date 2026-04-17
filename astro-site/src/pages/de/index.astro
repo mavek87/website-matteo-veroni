@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import About from '../../components/About.astro';
+import SystemLogs from '../../components/SystemLogs.astro';
+import IOChannels from '../../components/IOChannels.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'de';
+---
+<BaseLayout title="Matteo Veroni | Software Architect & Engineer" lang={lang}>
+  <Header lang={lang} />
+  <div class="container">
+    <div class="header-spacer"></div>
+    <Hero lang={lang} />
+    <Services lang={lang} />
+    <About lang={lang} />
+    <SystemLogs />
+    <IOChannels />
+    <Footer />
+  </div>
+</BaseLayout>
