@@ -238,7 +238,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 0;
             overflow: hidden; /* necessario per la barra */
             padding: 0; /* padding gestito internamente */
         }
@@ -319,10 +319,19 @@
         .card:nth-child(3) h2 span { color: var(--c3); }
         .card:nth-child(4) h2 span { color: var(--c4); }
 
-        .card p { color: #b4b4bc; line-height: 1.6; flex-grow: 1; font-size: 1.1rem; margin-top: 14px; }
+        .card p { color: #b4b4bc; line-height: 1.6; flex-grow: 1; font-size: 1.1rem; margin-top: 14px; margin-bottom: 4px; }
+
+        .card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px 16px;
+            margin-top: auto;
+        }
 
         /* Tech tags */
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 0%; min-width: 150px; }
         .tag {
             font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;
             padding: 4px 10px; border-radius: 4px; border: 1px solid;
@@ -336,7 +345,8 @@
         /* CTA link */
         .card-cta {
             font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700;
-            text-decoration: none; margin-left: auto; white-space: nowrap; align-self: center;
+            text-decoration: none; white-space: nowrap;
+            transition: opacity 0.2s ease, letter-spacing 0.2s ease;
         }
         .card:nth-child(1) .card-cta { color: var(--c1); }
         .card:nth-child(2) .card-cta { color: var(--c2); }
@@ -559,8 +569,10 @@
                         <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
                     </div>
                     <p>Before you build, make sure you're building the right thing. I review, design, and validate system architectures — so you don't pay to redo it in two years.</p>
-                    <div class="tags">
-                        <span class="tag">#System Design</span><span class="tag">#Cloud</span><span class="tag">#Infrastructure</span>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">#System Design</span><span class="tag">#Cloud</span><span class="tag">#Infrastructure</span>
+                        </div>
                         <a href="#" class="card-cta">&gt; LEARN_MORE →</a>
                     </div>
                 </div>
@@ -574,8 +586,10 @@
                         <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg></span>
                     </div>
                     <p>New features, legacy rescue, or full systems from scratch. Clean, maintainable code that your team can evolve — without calling me every time.</p>
-                    <div class="tags">
-                        <span class="tag">#Develop</span><span class="tag">#Refactoring</span><span class="tag">#Legacy Rescue</span>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">#Develop</span><span class="tag">#Refactoring</span><span class="tag">#Legacy Rescue</span>
+                        </div>
                         <a href="#" class="card-cta">&gt; LEARN_MORE →</a>
                     </div>
                 </div>
@@ -589,8 +603,10 @@
                         <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
                     </div>
                     <p>Repetitive tasks, slow deployments, manual workflows — I automate what slows you down. From CI/CD pipelines to AI agents that work while you sleep.</p>
-                    <div class="tags">
-                        <span class="tag">#DevOps</span><span class="tag">#CI/CD</span><span class="tag">#LLM</span><span class="tag">#Agents</span>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">#DevOps</span><span class="tag">#CI/CD</span><span class="tag">#LLM</span><span class="tag">#Agents</span>
+                        </div>
                         <a href="#" class="card-cta">&gt; LEARN_MORE →</a>
                     </div>
                 </div>
@@ -604,8 +620,10 @@
                         <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                     </div>
                     <p>For developers who want to level up and teams that want to ship better. 1-on-1 sessions or group training — backend, DevOps, modern architectures.</p>
-                    <div class="tags">
-                        <span class="tag">#Mentorship</span><span class="tag">#Training</span><span class="tag">#Online</span>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">#Mentorship</span><span class="tag">#Training</span><span class="tag">#Online</span>
+                        </div>
                         <a href="#" class="card-cta">&gt; LEARN_MORE →</a>
                     </div>
                 </div>
