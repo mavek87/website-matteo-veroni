@@ -23,15 +23,18 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
         <a href="#about" class="nav-link">{t.navAbout}</a>
         <a href="#blog" class="nav-link">{t.navBlog}</a>
       </nav>
-      <div class="lang-select-wrapper" title="Change language">
+      <div class="lang-dropdown" id="langDropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
         <i class="fa-solid fa-globe"></i>
         <span class="lang-label" id="langLabel">{lang.toUpperCase()}</span>
         <span class="lang-caret">▾</span>
-        <select class="lang-select" id="langSelect" aria-label="Select language">
+        <ul class="lang-options" role="listbox" id="langOptions">
           {locales.map(l => (
-            <option value={l} selected={l === lang}>{l.toUpperCase()}</option>
+            <li class={`lang-option${l === lang ? ' selected' : ''}`} role="option" aria-selected={l === lang} data-value={l}>
+              {l === lang ? <span class="lang-option-arrow">&gt;</span> : <span class="lang-option-arrow"> </span>}
+              {l.toUpperCase()}
+            </li>
           ))}
-        </select>
+        </ul>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -44,15 +47,18 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
   <a href="#services" class="nav-link">{t.navServices}</a>
   <a href="#about" class="nav-link">{t.navAbout}</a>
   <a href="#blog" class="nav-link">{t.navBlog}</a>
-  <div class="lang-select-wrapper" title="Change language">
+  <div class="lang-dropdown" id="langDropdownMobile" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
     <i class="fa-solid fa-globe"></i>
     <span class="lang-label" id="langLabelMobile">{lang.toUpperCase()}</span>
     <span class="lang-caret">▾</span>
-    <select class="lang-select" id="langSelectMobile" aria-label="Select language">
+    <ul class="lang-options" role="listbox" id="langOptionsMobile">
       {locales.map(l => (
-        <option value={l} selected={l === lang}>{l.toUpperCase()}</option>
+        <li class={`lang-option${l === lang ? ' selected' : ''}`} role="option" aria-selected={l === lang} data-value={l}>
+          {l === lang ? <span class="lang-option-arrow">&gt;</span> : <span class="lang-option-arrow"> </span>}
+          {l.toUpperCase()}
+        </li>
       ))}
-    </select>
+    </ul>
   </div>
 </nav>
 
@@ -92,29 +98,53 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
     });
   });
 
-  // Language switcher — cookie + navigation
+  // Language switcher — custom dropdown
   function onLangChange(locale: string) {
     document.cookie = `preferred_lang=${locale}; max-age=${60 * 60 * 24 * 365}; path=/; SameSite=Lax`;
     window.location.href = `/${locale}/`;
   }
 
-  const langSelect = document.getElementById('langSelect') as HTMLSelectElement;
-  const langLabel = document.getElementById('langLabel')!;
-  const langSelectMobile = document.getElementById('langSelectMobile') as HTMLSelectElement;
-  const langLabelMobile = document.getElementById('langLabelMobile')!;
+  function setupDropdown(dropdownId: string, labelId: string) {
+    const dropdown = document.getElementById(dropdownId)!;
+    const label = document.getElementById(labelId)!;
+    const options = dropdown.querySelectorAll<HTMLElement>('.lang-option');
 
-  langSelect.addEventListener('change', (e) => {
-    const val = (e.target as HTMLSelectElement).value;
-    langLabel.textContent = val.toUpperCase();
-    langLabelMobile.textContent = val.toUpperCase();
-    langSelectMobile.value = val;
-    onLangChange(val);
-  });
-  langSelectMobile.addEventListener('change', (e) => {
-    const val = (e.target as HTMLSelectElement).value;
-    langLabel.textContent = val.toUpperCase();
-    langLabelMobile.textContent = val.toUpperCase();
-    langSelect.value = val;
-    onLangChange(val);
+    function toggleOpen(force?: boolean) {
+      const isOpen = force !== undefined ? force : dropdown.getAttribute('aria-expanded') !== 'true';
+      dropdown.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    dropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const option = (e.target as HTMLElement).closest<HTMLElement>('.lang-option');
+      if (option) {
+        const val = option.dataset.value!;
+        label.textContent = val.toUpperCase();
+        options.forEach(o => {
+          const arrow = o.querySelector('.lang-option-arrow')!;
+          const isSelected = o.dataset.value === val;
+          o.classList.toggle('selected', isSelected);
+          o.setAttribute('aria-selected', String(isSelected));
+          arrow.textContent = isSelected ? '>' : ' ';
+        });
+        toggleOpen(false);
+        onLangChange(val);
+      } else {
+        toggleOpen();
+      }
+    });
+
+    dropdown.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleOpen(); }
+      if (e.key === 'Escape') toggleOpen(false);
+    });
+  }
+
+  setupDropdown('langDropdown', 'langLabel');
+  setupDropdown('langDropdownMobile', 'langLabelMobile');
+
+  document.addEventListener('click', () => {
+    document.getElementById('langDropdown')!.setAttribute('aria-expanded', 'false');
+    document.getElementById('langDropdownMobile')!.setAttribute('aria-expanded', 'false');
   });
 </script>
