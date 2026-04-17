@@ -1,0 +1,65 @@
+---
+import '../styles/hero.css';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="hero">
+  <p class="hero-roles">{t.heroRole1}<span>.</span>{t.heroRole2}<span>.</span></p>
+  <h1>{t.heroH1Line1} <span style="color:#00e5ff;">{t.heroH1Accent1}</span><br>{t.heroH1Line2} <span style="color:#00e5ff;">{t.heroH1Accent2}</span></h1>
+  <p>{t.heroBody1}<br>{t.heroBody2}</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-value" data-count="10" data-suffix="+">10+</div>
+      <div class="stat-label">{t.stat1Label}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" data-count="100" data-suffix="K+">100K+</div>
+      <div class="stat-label">{t.stat2Label}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" data-count="3" data-suffix="+">3+</div>
+      <div class="stat-label">{t.stat3Label}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">E2E</div>
+      <div class="stat-label">{t.stat4Label}</div>
+    </div>
+  </div>
+  <a href="#" class="cta-btn">{t.heroCta}</a>
+</section>
+
+<script>
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countObserver.unobserve(entry.target);
+      entry.target.querySelectorAll<HTMLElement>('.stat-value[data-count]').forEach((el, i) => {
+        const target = parseInt(el.dataset.count!, 10);
+        const suffix = el.dataset.suffix ?? '';
+        const duration = 1100;
+        const delay = i * 80;
+        let start: number | null = null;
+        setTimeout(() => {
+          function step(ts: number) {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, delay);
+      });
+    });
+  }, { threshold: 0.5 });
+
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) countObserver.observe(statsEl);
+</script>

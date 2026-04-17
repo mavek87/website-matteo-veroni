@@ -1,0 +1,29 @@
+---
+import '../styles/about.css';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="about-section" id="about">
+  <h3 class="section-title"><span class="section-prompt">></span> {t.aboutTitle}</h3>
+  <div class="about-inner">
+    <div class="about-pull reveal" style="display: flex; flex-direction: column; gap: 32px;">
+      <span>{t.aboutPull1}</span>
+      <span>{t.aboutPull2}</span>
+    </div>
+    <div class="about-body reveal" style="transition-delay: 0.12s;">
+      <p>{t.aboutBody1} <strong>{t.aboutBody1Strong}</strong></p>
+      <p>{t.aboutBody2} <strong>{t.aboutBody2Strong}</strong>{t.aboutBody2Rest}</p>
+      <p><strong>{t.aboutBody3Strong}</strong></p>
+    </div>
+  </div>
+  <div style="margin-top: 48px;">
+    <a href="#" class="cta-btn">{t.aboutCta}</a>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import '../styles/footer.css';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="footer">
+  <div class="footer-status">
+    <div class="status-dot"></div>
+    <span>{t.footerStatus}</span>
+  </div>
+  <span>{t.footerCopyright}</span>
+</footer>

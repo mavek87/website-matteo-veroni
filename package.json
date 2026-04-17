@@ -1,43 +1,24 @@
 {
-  "name": "website-matteo-veroni",
-  "version": "1.0.0",
-  "description": "<b>Matteo Veroni - This is the source code of my personal website.</b>",
-  "main": "index.js",
+  "name": "astro-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mavek87/website-matteo-veroni.git"
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "astro": "^6.1.7"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mavek87/website-matteo-veroni/issues"
-  },
-  "homepage": "https://github.com/mavek87/website-matteo-veroni#readme",
   "devDependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
-    "@playwright/test": "^1.59.1",
-    "babel-loader": "^9.2.1",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.11.0",
-    "css-minimizer-webpack-plugin": "^5.0.1",
-    "html-webpack-plugin": "^5.6.3",
-    "image-minimizer-webpack-plugin": "^3.8.3",
-    "imagemin": "^8.0.1",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^10.0.1",
-    "mini-css-extract-plugin": "^2.9.2",
-    "sass": "^1.89.2",
-    "sass-loader": "^13.3.3",
-    "terser-webpack-plugin": "^5.3.14",
-    "webpack": "^5.100.2",
-    "webpack-cli": "^5.1.4"
+    "@astrojs/check": "^0.9.8"
   }
 }

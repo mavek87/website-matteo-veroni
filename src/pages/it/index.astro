@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import About from '../../components/About.astro';
+import SystemLogs from '../../components/SystemLogs.astro';
+import IOChannels from '../../components/IOChannels.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/index.ts';
+
+const lang = 'it';
+const t = useTranslations(lang);
+---
+<BaseLayout title={t.pageTitle} description={t.pageDescription} lang={lang}>
+  <Header lang={lang} />
+  <div class="container">
+    <div class="header-spacer"></div>
+    <Hero lang={lang} />
+    <Services lang={lang} />
+    <About lang={lang} />
+    <SystemLogs lang={lang} />
+    <IOChannels lang={lang} />
+    <Footer lang={lang} />
+  </div>
+</BaseLayout>

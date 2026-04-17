@@ -1,7 +1,6 @@
 [build]
-  base    = "astro-site"
   command = "pnpm build"
-  publish = "astro-site/dist"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"

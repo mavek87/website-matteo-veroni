@@ -1,0 +1,38 @@
+---
+import '../styles/logs.css';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const logMessages = [
+  t.log1, t.log2, t.log3, t.log4, t.log5,
+  t.log6, t.log7, t.log8, t.log9, t.log10,
+];
+---
+
+<section class="logs-section reveal">
+  <h3><span class="section-prompt">></span> {t.logsTitle}</h3>
+  <div class="log-container" id="logBox"></div>
+</section>
+
+<script define:vars={{ logMessages }}>
+  const logBox = document.getElementById('logBox');
+
+  function addLog() {
+    const now = new Date().toLocaleTimeString();
+    const msg = logMessages[Math.floor(Math.random() * logMessages.length)];
+    const div = document.createElement('div');
+    div.className = 'log-line';
+    div.innerHTML = `<span class="ts">[${now}]</span><span class="lvl">INFO</span><span class="msg">${msg}</span>`;
+    logBox.prepend(div);
+    if (logBox.children.length > 15) logBox.lastChild.remove();
+  }
+
+  setInterval(addLog, 2800);
+  addLog();
+</script>
