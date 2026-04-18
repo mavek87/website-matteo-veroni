@@ -12,4 +12,9 @@
 .log-line { margin-bottom: 6px; display: flex; gap: 10px; align-items: baseline; }
 .log-line .ts { color: #52525b; white-space: nowrap; }
 .log-line .lvl { color: #10b981; font-weight: bold; white-space: nowrap; }
+.log-line .lvl.lvl-warn { color: #f97316; }
 .log-line .msg { color: #d4d4d8; }
+.log-line .log-sep { color: #52525b; }
+.log-line .log-arrow { color: #52525b; }
+.log-line .log-link { color: #00e5ff; text-decoration: none; }
+.log-line .log-link:hover { text-decoration: underline; }

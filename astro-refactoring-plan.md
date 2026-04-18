@@ -827,7 +827,50 @@ interface LogLine {
 }
 ```
 
-Log level colors: `INFO` → green `#10b981`, `NEW` → cyan `#00e5ff`, `PROMO` → amber `#ffb000`.
+Log level colors: `INFO` → green `#10b981`, `WARN` → yellow `#facc15`.
+
+Two levels only — no `NEW`, no `PROMO`.
+
+---
+
+### 12.3 Initial Log Content
+
+```
+WARN  ▎ Open to selected consulting projects — architecture, backend, DevOps
+WARN  ▎ Limited slots available for Q3 2026 — enquire early
+INFO  ▎ 10+ years building backend systems that don't break under pressure
+INFO  ▎ Currently leading backend & DevOps on a platform serving 100K+ daily users
+INFO  ▎ Specialties: distributed systems, CI/CD pipelines, Kubernetes, AWS
+WARN  ▎ AI integrations for companies — automate your workflows, not your headaches
+WARN  ▎ Custom web presence for any business — fast, multilingual, no templates
+WARN  ▎ Got repetitive tasks eating your team's time? Let's talk automations.
+INFO  ▎ Blog launching — first posts on backend architecture and AI automations coming soon
+```
+
+---
+
+### 12.4 Brand & Content Strategy Brief
+
+> This section is written for a frontend AI model executing the implementation.
+> It explains **why** the System Logs section exists and **what it must communicate** — not how to build it.
+
+**What this section is for:**
+
+The System Logs section is not a decorative animation. It is the site's living pulse — the place where visitors see that Matteo is active, available, and moving. A static site looks abandoned; logs make it feel like a running system with a human behind it.
+
+**Two types of content live here:**
+
+1. **Matteo's own messages** — written manually and committed to the repo. These can be news ("I'm available for new projects from June"), promotions ("Architecture review — discounted rate until May 2026"), or announcements ("New service: AI integration consulting"). These appear first because Matteo controls what gets noticed. A `WARN` level (orange) exists specifically for time-sensitive or high-priority messages — e.g. limited availability, expiring offers — so they stand out without breaking the terminal aesthetic.
+
+2. **Latest blog posts** — pulled automatically at build time from the blog collection. Show the 3 most recent posts for the current language. If no posts exist in that language, show nothing (no fallbacks, no filler). Blog entries use the `NEW` level (cyan) and link directly to the post. They appear after manual messages.
+
+**Content rules:**
+- Manual messages appear before blog posts — Matteo decides what visitors see first.
+- Show at most 3 blog posts — this is a teaser, not an archive.
+- If a manual message has no expiry relevance, use `INFO`. Use `WARN` only for urgency. Use `PROMO` for offers with a commercial angle.
+- Messages without a `lang` restriction appear in all languages. Messages with a `lang` field appear only in the specified locales.
+- No timestamps are needed on manual messages — they are editorial choices, not events.
+- Blog entries should show the publication date as the log timestamp.
 
 ---
 

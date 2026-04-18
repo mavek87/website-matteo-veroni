@@ -75,6 +75,14 @@ export const translations: Translations = {
 
   // System Logs
   logsTitle: 'System_Logs',
+  logManual1: 'Disponibile per consulenze selezionate — architettura, backend, DevOps',
+  logManual2: 'Oltre 10 anni a costruire sistemi backend che non cedono sotto pressione',
+  logManual3: 'Attualmente lead backend & DevOps su una piattaforma con 100K+ utenti al giorno',
+  logManual4: 'Specializzazioni: sistemi distribuiti, pipeline CI/CD, Kubernetes, AWS',
+  logManual5: 'Integrazioni AI per aziende — automatizza i workflow, non i problemi',
+  logManual6: 'Presenza web su misura per qualsiasi business — veloce, multilingua, senza template',
+  logManual7: 'Hai task ripetitivi che divorano il tempo del tuo team? Parliamo di automazioni.',
+  logManual8: 'Blog in arrivo — primi articoli su architettura backend e automazioni AI',
   log1: 'Inizializzazione moduli core...',
   log2: 'Connessione sicura a AWS-region-1 stabilita...',
   log3: 'Migrazione database [SHARD_01] completata. Zero downtime.',

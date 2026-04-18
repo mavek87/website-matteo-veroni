@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M8 0H0V8" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <clipPath id="notch">
+      <polygon points="0,0 128,0 128,110 110,128 0,128"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background tile with cut corner -->
+  <polygon points="0,0 128,0 128,110 110,128 0,128" fill="#09090b"/>
+
+  <!-- Grid echo -->
+  <rect width="128" height="128" fill="url(#g)" clip-path="url(#notch)"/>
+
+  <!-- Inner border frame -->
+  <polygon points="3,3 125,3 125,109 109,125 3,125"
+           fill="none" stroke="rgba(0,229,255,0.14)" stroke-width="1"/>
+
+  <!-- MV monogram — three polylines forming the fused glyph -->
+  <g stroke="#00e5ff" stroke-width="8" fill="none"
+     stroke-linejoin="miter" stroke-miterlimit="12" stroke-linecap="butt">
+    <!-- M inner chevron (top inverted-V) -->
+    <polyline points="24,26 64,52 104,26"/>
+    <!-- Left: M left stem flowing into V left arm -->
+    <polyline points="24,26 24,72 64,104"/>
+    <!-- Right: M right stem flowing into V right arm -->
+    <polyline points="104,26 104,72 64,104"/>
+  </g>
+
+  <!-- Notch accent line -->
+  <line x1="110" y1="128" x2="128" y2="110"
+        stroke="#00e5ff" stroke-width="1.5" opacity="0.45"/>
+</svg>

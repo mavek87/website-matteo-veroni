@@ -1,5 +1,5 @@
 ---
-name: personal-brand-promoter
+name: personal-brand-team
 description: Build a powerful personal brand strategy and produce high-quality promotional content for a professional's profile, skills, and services. Use this skill whenever the user wants to promote themselves, write their bio, craft a pitch, create LinkedIn content, define their positioning, write website copy, or communicate their value to clients or employers — even if they just say "help me present myself better" or "I need to talk about what I do".
 ---
 

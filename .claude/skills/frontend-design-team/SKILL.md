@@ -1,5 +1,5 @@
 ---
-name: awesome-frontend-design
+name: frontend-design-team
 description: Create distinctive, production-grade frontend interfaces with bold aesthetic direction and high design quality. Use this skill whenever the user wants to build a web component, page, landing page, portfolio, dashboard, or any UI — even if they don't say "design". Applies a two-phase workflow: first a Design Direction Summary for approval, then full working code. Avoids generic AI aesthetics by default.
 ---
 

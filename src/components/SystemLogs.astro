@@ -1,5 +1,6 @@
 ---
 import '../styles/logs.css';
+import { getCollection } from 'astro:content';
 import { useTranslations } from '../i18n/index.ts';
 
 interface Props {
@@ -9,10 +10,35 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
 
-const logMessages = [
-  t.log1, t.log2, t.log3, t.log4, t.log5,
-  t.log6, t.log7, t.log8, t.log9, t.log10,
+interface LogEntry {
+  level: 'INFO' | 'WARN';
+  message: string;
+  href?: string;
+}
+
+const manualLogs: LogEntry[] = [
+  { level: 'WARN', message: t.logManual1 },
+  { level: 'INFO', message: t.logManual2 },
+  { level: 'INFO', message: t.logManual3 },
+  { level: 'INFO', message: t.logManual4 },
+  { level: 'WARN', message: t.logManual5 },
+  { level: 'WARN', message: t.logManual6 },
+  { level: 'WARN', message: t.logManual7 },
+  { level: 'INFO', message: t.logManual8 },
 ];
+
+const allPosts = await getCollection('blog', ({ data }) => data.lang === lang && !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+
+const blogLogs: LogEntry[] = recentPosts.map(post => ({
+  level: 'INFO' as const,
+  message: post.data.title,
+  href: `/${lang}/blog/${post.id.split('/').pop()}`,
+}));
+
+const logs: LogEntry[] = [...manualLogs, ...blogLogs];
 ---
 
 <section class="logs-section reveal">
@@ -20,15 +46,27 @@ const logMessages = [
   <div class="log-container" id="logBox"></div>
 </section>
 
-<script define:vars={{ logMessages }}>
+<script define:vars={{ logs }}>
   const logBox = document.getElementById('logBox');
+  let index = 0;
 
   function addLog() {
+    const entry = logs[index % logs.length];
+    index++;
+
     const now = new Date().toLocaleTimeString();
-    const msg = logMessages[Math.floor(Math.random() * logMessages.length)];
     const div = document.createElement('div');
     div.className = 'log-line';
-    div.innerHTML = `<span class="ts">[${now}]</span><span class="lvl">INFO</span><span class="msg">${msg}</span>`;
+
+    const lvlClass = entry.level === 'WARN' ? 'lvl lvl-warn' : 'lvl';
+    let msgHtml;
+    if (entry.href) {
+      msgHtml = `<span class="log-sep">▎</span> ${entry.message} <span class="log-arrow">→</span> <a href="${entry.href}" class="log-link">Read post</a>`;
+    } else {
+      msgHtml = `<span class="log-sep">▎</span> ${entry.message}`;
+    }
+
+    div.innerHTML = `<span class="ts">[${now}]</span><span class="${lvlClass}">${entry.level}</span><span class="msg">${msgHtml}</span>`;
     logBox.prepend(div);
     if (logBox.children.length > 15) logBox.lastChild.remove();
   }
