@@ -37,7 +37,7 @@
 }
 .lang-dropdown:hover,
 .lang-dropdown[aria-expanded="true"] { color: #00e5ff; }
-.lang-dropdown i { font-size: 0.85rem; }
+.lang-dropdown svg { flex-shrink: 0; }
 .lang-label { pointer-events: none; }
 .lang-caret {
     font-size: 0.65rem; pointer-events: none; opacity: 0.6;

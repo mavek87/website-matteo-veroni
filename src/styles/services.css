@@ -28,14 +28,16 @@
 
 .card-bar {
     height: 1px;
-    width: 0%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
     background: var(--card-color);
     opacity: 0.35;
-    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0;
 }
 .card:hover .card-bar { opacity: 1; height: 2px; box-shadow: 0 0 6px var(--card-color); }
-.card.loaded .card-bar { width: 100%; }
+.card.loaded .card-bar { transform: scaleX(1); }
 
 .card-body { padding: 34px; display: flex; flex-direction: column; gap: 22px; flex-grow: 1; position: relative; }
 

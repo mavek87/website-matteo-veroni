@@ -90,9 +90,9 @@ const cards = [
 ---
 
 <section id="services">
-  <h3 class="section-title" style="margin-bottom: 30px;">
+  <h2 class="section-title" style="margin-bottom: 30px;">
     <span class="section-prompt">></span> {t.servicesTitle}
-  </h3>
+  </h2>
   <div class="services-grid">
     {cards.map(card => <ServiceCard {...card} />)}
   </div>
@@ -111,6 +111,9 @@ const cards = [
       const isOpen = expand.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(isOpen));
       expand.setAttribute('aria-hidden', String(!isOpen));
+      expand.querySelectorAll<HTMLElement>('a, button').forEach(el => {
+        el.tabIndex = isOpen ? 0 : -1;
+      });
       const labelExpand = (btn as HTMLElement).dataset.labelExpand ?? '> LEARN_MORE →';
       const labelCollapse = (btn as HTMLElement).dataset.labelCollapse ?? '> COLLAPSE ↑';
       btn.innerHTML = isOpen ? labelCollapse : labelExpand;

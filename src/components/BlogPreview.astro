@@ -17,9 +17,9 @@ const posts = (await getCollection('blog', ({ data }) =>
 
 {posts.length > 0 && (
   <section class="blog-preview-section" id="blog">
-    <h3 class="section-title" style="margin-bottom: 30px;">
+    <h2 class="section-title" style="margin-bottom: 30px;">
       <span class="section-prompt">&gt;</span> Blog_Latest_Articles
-    </h3>
+    </h2>
     <div class="blog-preview-grid">
       {posts.map(post => (
         <a href={`/${lang}/blog/${post.id.split('/').pop()}/`} class="blog-card reveal">

@@ -82,7 +82,7 @@ const hasExpand = !!expandDetails;
             <span class="expand-label" set:html={expandDetails!.labelUseCase ?? '&gt; USE_CASE'} />
             <p class="expand-usecase">{expandDetails!.useCase}</p>
           </div>
-          <a href={expandDetails!.ctaHref} class="expand-cta">{expandDetails!.ctaLabel}</a>
+          <a href={expandDetails!.ctaHref} class="expand-cta" tabindex="-1">{expandDetails!.ctaLabel}</a>
         </div>
       </div>
     )}
