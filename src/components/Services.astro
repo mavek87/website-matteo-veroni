@@ -18,7 +18,16 @@ const cards = [
     tags: [t.card1Tag1, t.card1Tag2, t.card1Tag3],
     colorVar: '--c1',
     ctaText: t.cardCta,
+    ctaCollapse: t.cardCollapse,
     iconSvg: '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>',
+    expandDetails: {
+      deliverables: [t.card1Expand_del1, t.card1Expand_del2, t.card1Expand_del3, t.card1Expand_del4],
+      useCase: t.card1Expand_useCase,
+      ctaLabel: t.card1Expand_cta,
+      ctaHref: 'mailto:matver87@gmail.com?subject=Architecture%20%26%20Consulting',
+      labelDeliverables: t.expandLabelDeliverables,
+      labelUseCase: t.expandLabelUseCase,
+    },
   },
   {
     label: t.card2Label,
@@ -27,8 +36,17 @@ const cards = [
     tags: [t.card2Tag1, t.card2Tag2, t.card2Tag3],
     colorVar: '--c2',
     ctaText: t.cardCta,
+    ctaCollapse: t.cardCollapse,
     revealDelay: '0.1s',
     iconSvg: '<polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>',
+    expandDetails: {
+      deliverables: [t.card2Expand_del1, t.card2Expand_del2, t.card2Expand_del3, t.card2Expand_del4],
+      useCase: t.card2Expand_useCase,
+      ctaLabel: t.card2Expand_cta,
+      ctaHref: 'mailto:matver87@gmail.com?subject=Software%20Development',
+      labelDeliverables: t.expandLabelDeliverables,
+      labelUseCase: t.expandLabelUseCase,
+    },
   },
   {
     label: t.card3Label,
@@ -37,8 +55,17 @@ const cards = [
     tags: [t.card3Tag1, t.card3Tag2, t.card3Tag3, t.card3Tag4],
     colorVar: '--c3',
     ctaText: t.cardCta,
+    ctaCollapse: t.cardCollapse,
     revealDelay: '0.1s',
     iconSvg: '<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+    expandDetails: {
+      deliverables: [t.card3Expand_del1, t.card3Expand_del2, t.card3Expand_del3, t.card3Expand_del4],
+      useCase: t.card3Expand_useCase,
+      ctaLabel: t.card3Expand_cta,
+      ctaHref: 'mailto:matver87@gmail.com?subject=AI%20%26%20DevOps%20Automation',
+      labelDeliverables: t.expandLabelDeliverables,
+      labelUseCase: t.expandLabelUseCase,
+    },
   },
   {
     label: t.card4Label,
@@ -47,8 +74,17 @@ const cards = [
     tags: [t.card4Tag1, t.card4Tag2, t.card4Tag3],
     colorVar: '--c4',
     ctaText: t.cardCta,
+    ctaCollapse: t.cardCollapse,
     revealDelay: '0.2s',
     iconSvg: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    expandDetails: {
+      deliverables: [t.card4Expand_del1, t.card4Expand_del2, t.card4Expand_del3, t.card4Expand_del4],
+      useCase: t.card4Expand_useCase,
+      ctaLabel: t.card4Expand_cta,
+      ctaHref: 'mailto:matver87@gmail.com?subject=Mentorship%20%26%20Training',
+      labelDeliverables: t.expandLabelDeliverables,
+      labelUseCase: t.expandLabelUseCase,
+    },
   },
 ];
 ---
@@ -65,5 +101,19 @@ const cards = [
 <script>
   document.querySelectorAll('.card').forEach((card, idx) => {
     setTimeout(() => card.classList.add('loaded'), 200 + idx * 180);
+  });
+
+  document.querySelectorAll('.card-expand-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      const expand = card?.querySelector('.card-expand');
+      if (!expand) return;
+      const isOpen = expand.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      expand.setAttribute('aria-hidden', String(!isOpen));
+      const labelExpand = (btn as HTMLElement).dataset.labelExpand ?? '> LEARN_MORE →';
+      const labelCollapse = (btn as HTMLElement).dataset.labelCollapse ?? '> COLLAPSE ↑';
+      btn.innerHTML = isOpen ? labelCollapse : labelExpand;
+    });
   });
 </script>

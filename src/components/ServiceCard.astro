@@ -1,4 +1,13 @@
 ---
+interface ExpandDetails {
+  deliverables: string[];
+  useCase: string;
+  ctaLabel: string;
+  ctaHref: string;
+  labelDeliverables?: string;
+  labelUseCase?: string;
+}
+
 interface Props {
   label: string;
   title: string;
@@ -6,9 +15,11 @@ interface Props {
   tags: string[];
   colorVar: string;
   ctaText?: string;
+  ctaCollapse?: string;
   ctaHref?: string;
   iconSvg: string;
   revealDelay?: string;
+  expandDetails?: ExpandDetails;
 }
 
 const {
@@ -18,10 +29,14 @@ const {
   tags,
   colorVar,
   ctaText = '&gt; LEARN_MORE →',
+  ctaCollapse = '&gt; COLLAPSE ↑',
   ctaHref = '#',
   iconSvg,
   revealDelay,
+  expandDetails,
 } = Astro.props;
+
+const hasExpand = !!expandDetails;
 ---
 
 <div class="card reveal" style={`--card-color: var(${colorVar});${revealDelay ? ` transition-delay: ${revealDelay};` : ''}`}>
@@ -38,7 +53,38 @@ const {
       <div class="tags">
         {tags.map(tag => <span class="tag">{tag}</span>)}
       </div>
-      <a href={ctaHref} class="card-cta" set:html={ctaText} />
+      {hasExpand ? (
+        <button
+          class="card-cta card-expand-btn"
+          aria-expanded="false"
+          type="button"
+          data-label-expand={ctaText}
+          data-label-collapse={ctaCollapse}
+          set:html={ctaText}
+        />
+      ) : (
+        <a href={ctaHref} class="card-cta" set:html={ctaText} />
+      )}
     </div>
+
+    {hasExpand && (
+      <div class="card-expand" aria-hidden="true">
+        <div class="card-expand-inner">
+          <div class="expand-section">
+            <span class="expand-label" set:html={expandDetails!.labelDeliverables ?? '&gt; DELIVERABLES'} />
+            <ul class="expand-list">
+              {expandDetails!.deliverables.map((item, i) => (
+                <li style={`--line-delay: ${i * 80}ms`}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="expand-section">
+            <span class="expand-label" set:html={expandDetails!.labelUseCase ?? '&gt; USE_CASE'} />
+            <p class="expand-usecase">{expandDetails!.useCase}</p>
+          </div>
+          <a href={expandDetails!.ctaHref} class="expand-cta">{expandDetails!.ctaLabel}</a>
+        </div>
+      </div>
+    )}
   </div>
 </div>

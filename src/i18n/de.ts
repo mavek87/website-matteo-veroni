@@ -60,6 +60,38 @@ export const translations: Translations = {
   card4Tag3: '#Online',
 
   cardCta: '> MEHR_ERFAHREN →',
+  cardCollapse: '> EINKLAPPEN ↑',
+  expandLabelDeliverables: '> LEISTUNGEN',
+  expandLabelUseCase: '> ANWENDUNGSFALL',
+
+  // Services — expand details
+  card1Expand_del1: 'Ehrliche Einschätzung von Anfang an: was realistisch ist, wo die Risiken liegen, was es kosten wird, es richtig zu machen',
+  card1Expand_del2: 'Architekturprüfung mit schriftlicher Risikobewertung und Entscheidungsprotokoll',
+  card1Expand_del3: 'Tech-Stack-Validierung anhand deiner tatsächlichen Einschränkungen, nicht nur Best Practices',
+  card1Expand_del4: 'Umsetzbare Roadmap mit Meilensteinen, Trade-offs und den Fehlern, die man zuerst vermeiden sollte',
+  card1Expand_useCase: 'Du skalierst schnell, baust etwas Kritisches neu oder stehst kurz davor, dich auf eine Richtung festzulegen, die schwer umkehrbar ist. Ich habe Backend-Infrastruktur für 100K+ täglich aktive Nutzer in einer regulierten, fehlerintoleranten Domäne aufgebaut und geleitet. Ich weiß, was unter Druck bricht, bevor es bricht.',
+  card1Expand_cta: 'GESPRÄCH_STARTEN →',
+
+  card2Expand_del1: 'Sauberer, dokumentierter Code, den dein Team übernehmen kann. Keine Black Boxes.',
+  card2Expand_del2: 'Neue Features, die gebaut sind um zu halten, nicht nur um zu shippen',
+  card2Expand_del3: 'Legacy-Systeme diagnostiziert und stabilisiert, bevor irgendetwas angefasst wird',
+  card2Expand_del4: 'Übergabe mit vollständigem Kontext, damit dein Team nicht von mir abhängig ist',
+  card2Expand_useCase: 'Du brauchst jemanden, der produktionsreifen Backend-Code schreibt und das System um ihn herum versteht. Ich habe 10+ Jahre damit verbracht, Java/Spring-Boot-Systeme in großem Maßstab zu bauen und zu leiten. Ich liefere nicht nur Code, ich stelle sicher, dass der nächste Entwickler auch damit arbeiten kann.',
+  card2Expand_cta: 'GESPRÄCH_STARTEN →',
+
+  card3Expand_del1: 'CI/CD-Pipelines, die deinen Release-Zyklus tatsächlich verkürzen, statt nur die Zeremonie zu automatisieren',
+  card3Expand_del2: 'KI-Agenten und LLM-Workflows, die in deine bestehenden Systeme integriert werden',
+  card3Expand_del3: 'Kubernetes- und AWS-Infrastruktur, die skaliert, ohne unerwartete Rechnungen',
+  card3Expand_del4: 'Dokumentation, damit dein Team versteht, was läuft und warum',
+  card3Expand_useCase: 'Du verlierst Engineering-Zeit durch manuelle Arbeit, fragile Deployments oder Prozesse, die nicht skalieren. Ich automatisiere aus der Perspektive eines Backend-Engineers, was ich baue integriert sich sauber in deine Codebasis, nicht drum herum.',
+  card3Expand_cta: 'GESPRÄCH_STARTEN →',
+
+  card4Expand_del1: '1-on-1-Sitzungen, die auf deinen tatsächlichen Stand zugeschnitten sind, kein festes Curriculum',
+  card4Expand_del2: 'Echtes Code-Review und Architektur-Feedback zu deiner aktuellen Arbeit',
+  card4Expand_del3: 'Gruppentraining für Teams zu Backend, DevOps oder modernen Architekturen',
+  card4Expand_del4: 'Ehrliche Einschätzung deiner Lücken, mit einem klaren Weg, sie zu schließen',
+  card4Expand_useCase: 'Du willst schneller wachsen, als deine aktuelle Umgebung es erlaubt. Ich mentore aus 10+ Jahren Produktionserfahrung. Keine Theorie, keine Tutorials. Das Feedback, das du nur bekommst, wenn du neben einem Senior Engineer an einem echten System arbeitest.',
+  card4Expand_cta: 'GESPRÄCH_STARTEN →',
 
   // About
   aboutTitle: 'Über mich',

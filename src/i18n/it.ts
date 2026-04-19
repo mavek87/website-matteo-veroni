@@ -60,6 +60,38 @@ export const translations: Translations = {
   card4Tag3: '#Online',
 
   cardCta: '> SCOPRI_DI_PIÙ →',
+  cardCollapse: '> CHIUDI ↑',
+  expandLabelDeliverables: '> DELIVERABLES',
+  expandLabelUseCase: '> CASO_D\'USO',
+
+  // Services — expand details
+  card1Expand_del1: "Valutazione onesta fin dall'inizio: cosa è realistico, dove sono i rischi, quanto costerà farlo bene",
+  card1Expand_del2: 'Revisione dell\'architettura con risk assessment scritto e decision log',
+  card1Expand_del3: 'Validazione dello stack tecnologico rispetto ai tuoi vincoli reali, non solo alle best practice',
+  card1Expand_del4: 'Roadmap concreta con milestone, trade-off e gli errori da evitare per primi',
+  card1Expand_useCase: "Stai scalando velocemente, ricostruendo qualcosa di critico, o stai per impegnarti in una direzione difficile da invertire. Ho costruito e guidato infrastrutture backend per 100K+ utenti al giorno in un dominio regolamentato dove il fallimento non è ammesso. So cosa cede sotto pressione prima che ceda.",
+  card1Expand_cta: 'INIZIA_CONVERSAZIONE →',
+
+  card2Expand_del1: 'Codice pulito e documentato che il tuo team può fare proprio. Nessuna scatola nera.',
+  card2Expand_del2: 'Nuove funzionalità costruite per durare, non solo per essere rilasciate',
+  card2Expand_del3: 'Sistemi legacy diagnosticati e stabilizzati prima di toccare qualsiasi cosa',
+  card2Expand_del4: 'Passaggio di consegne con contesto completo, così il tuo team non dipende da me',
+  card2Expand_useCase: "Hai bisogno di qualcuno che scriva codice backend di livello produzione e capisca il sistema intorno ad esso. Ho trascorso 10+ anni a costruire e guidare sistemi Java/Spring Boot su larga scala. Non consegno solo codice: mi assicuro che il prossimo ingegnere possa lavorarci senza problemi.",
+  card2Expand_cta: 'INIZIA_CONVERSAZIONE →',
+
+  card3Expand_del1: 'Pipeline CI/CD che riducono davvero il ciclo di release, non solo automatizzano la burocrazia',
+  card3Expand_del2: 'Agenti AI e workflow LLM integrati nei tuoi sistemi esistenti',
+  card3Expand_del3: 'Infrastruttura Kubernetes e AWS che scala senza bollette a sorpresa',
+  card3Expand_del4: 'Documentazione perché il tuo team capisca cosa gira e perché',
+  card3Expand_useCase: "Stai perdendo tempo ingegneristico in lavoro manuale, deploy fragili o processi che non scalano. Automatizzo con la prospettiva di un backend engineer: quello che costruisco si integra nel tuo codebase, non gli gira intorno.",
+  card3Expand_cta: 'INIZIA_CONVERSAZIONE →',
+
+  card4Expand_del1: 'Sessioni 1-on-1 tarate su dove sei davvero, non su un curriculum fisso',
+  card4Expand_del2: 'Code review reale e feedback architetturale sul tuo lavoro attuale',
+  card4Expand_del3: 'Formazione di gruppo per team su backend, DevOps e architetture moderne',
+  card4Expand_del4: 'Valutazione onesta delle tue lacune, con un percorso chiaro per colmarle',
+  card4Expand_useCase: "Vuoi crescere più velocemente di quanto il tuo ambiente attuale ti permetta. Faccio mentoring da 10+ anni di esperienza in produzione. Non teoria, non tutorial. Il tipo di feedback che otterresti solo lavorando a fianco di un senior engineer su un sistema reale.",
+  card4Expand_cta: 'INIZIA_CONVERSAZIONE →',
 
   // About
   aboutTitle: 'Chi sono',

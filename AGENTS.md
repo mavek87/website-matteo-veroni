@@ -12,6 +12,7 @@ Project knowledge lives in `project-knowledge/`.
 
 ## Agent Rules
 
+- Never use symbol —
 - Always **use English** when you write into files.
 - Always **be honest and objective**. Unjustified complacency would harm me. In such cases, state your opposing views and provide your reasoning.
 - If in doubt, **ask questions to clarify unclear points**. Acting in a state of indecision or doubt would harm me.
