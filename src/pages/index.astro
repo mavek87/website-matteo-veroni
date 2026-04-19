@@ -5,11 +5,8 @@
   <head>
     <script>
       const match = document.cookie.split(';').find(c => c.trim().startsWith('preferred_lang='));
-      if (match) {
-        const lang = match.split('=')[1].trim();
-        window.location.replace('/' + lang + '/');
-      }
-      // No cookie: Netlify Accept-Language redirect handles first-visit at CDN level.
+      const lang = match ? match.split('=')[1].trim() : 'en';
+      window.location.replace('/' + lang + '/');
     </script>
     <noscript>
       <meta http-equiv="refresh" content="0; url=/en/" />
