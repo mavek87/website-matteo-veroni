@@ -8,9 +8,9 @@ html { scroll-behavior: smooth; }
 .card p { transition: color 0.3s ease; }
 .cta-btn { transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease; }
 .lang-btn { transition: color 0.2s ease, opacity 0.2s ease; }
-.io-item { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-.io-item .io-icon, .io-item .io-value { transition: color 0.3s ease; }
-.io-item::before { transition: opacity 0.3s ease; }
+.contacts-item { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.contacts-item .contacts-icon, .contacts-item .contacts-value { transition: color 0.3s ease; }
+.contacts-item::before { transition: opacity 0.3s ease; }
 .card-cta { transition: opacity 0.2s ease, letter-spacing 0.2s ease; }
 
 :root {

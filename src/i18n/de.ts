@@ -128,7 +128,7 @@ export const translations: Translations = {
   log10: 'Sicherer Handshake mit Client-Umgebung hergestellt.',
 
   // I/O Channels
-  ioTitle: 'I/O_Kanäle',
+  contactsTitle: 'Kontakt',
 
   // Footer
   footerStatus: 'SYSTEM_UPTIME: 100%',
