@@ -106,5 +106,6 @@
     font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700;
     text-decoration: none; white-space: nowrap;
     color: var(--card-color);
+    transition: filter 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
 }
-.card-cta:hover { opacity: 0.7; letter-spacing: 1px; }
+.card-cta:hover { filter: brightness(1.5); text-shadow: 0 0 10px var(--card-color); transform: translateX(4px); transition: filter 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease; }

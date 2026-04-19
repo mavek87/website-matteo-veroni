@@ -1,5 +1,5 @@
 ---
-name: translations-team
+name: language-translations-team
 description: Translate any text from a source language to a target language with impeccable quality, using a dynamically assembled team of experts tailored to the text's domain. Use this skill whenever the user wants to translate a document, paragraph, article, book excerpt, technical manual, legal text, literary passage, or any other content — even if they just say "translate this" or paste raw text. The skill automatically detects the domain, assembles the right expert team, and produces a translation that conveys meaning and tone — never a literal word-for-word rendering.
 ---
 
