@@ -40,11 +40,11 @@
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
 }
 
-.back-to-top:hover i {
+.back-to-top:hover svg {
     transform: translateY(-2px);
 }
 
-.back-to-top i {
+.back-to-top svg {
     transition: transform 0.2s ease;
 }
 
