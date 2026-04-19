@@ -1,43 +1,52 @@
-# Astro Starter Kit: Minimal
+# matteo-veroni.com
 
-```sh
-pnpm create astro@latest -- --template minimal
+Personal portfolio website for Matteo Veroni. Static site built with Astro, TypeScript, and plain CSS. Supports five languages and includes a blog.
+
+## Tech stack
+
+- **Astro 6** — static site generator, content collections, native i18n routing
+- **TypeScript** — strict mode
+- **CSS** — plain, modular per-component files
+- **Fonts** — JetBrains Mono, Space Grotesk (via `@fontsource`)
+- **Icons** — FontAwesome 7
+- **Sitemap** — `@astrojs/sitemap`
+
+## Project structure
+
+```
+src/
+  pages/         # Route pages, locale-prefixed (en/, it/, de/, es/, fr/)
+  components/    # Astro components (Hero, Services, About, BlogPreview, etc.)
+  layouts/       # BaseLayout.astro
+  i18n/          # Translation dictionaries + useTranslations() helper
+  styles/        # Modular CSS files
+  content/       # Blog markdown files, organized by language
+public/          # Static assets (favicon)
+dist/            # Build output — generated, do not edit
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command        | Action                                  |
+| :------------- | :-------------------------------------- |
+| `pnpm install` | Install dependencies                    |
+| `pnpm dev`     | Start dev server at `localhost:4321`    |
+| `pnpm build`   | Build production site to `./dist/`      |
+| `pnpm preview` | Preview production build locally        |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Localization
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Five languages are supported: English (default), Italian, German, Spanish, French.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Translation dictionaries: `src/i18n/{en,it,de,es,fr}.ts`
+- Helper: `useTranslations(lang)` returns a typed `t(key)` function
+- Routing: `/en/`, `/it/`, `/de/`, `/es/`, `/fr/`
+- The root path (`/`) redirects to the appropriate locale via Netlify redirects based on the browser's `Accept-Language` header
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deployment
 
-Any static assets, like images, can be placed in the `public/` directory.
+Hosted on Netlify. Push to `main` → automatic build and deploy.
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Build command: `pnpm build`
+- Publish directory: `dist/`
+- Node version: 20 (see `netlify.toml`)
