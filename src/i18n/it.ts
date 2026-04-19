@@ -7,8 +7,9 @@ export const translations: Translations = {
 
   // Header nav
   navServices: 'Servizi',
-  navAbout: 'Chi sono',
+  navAbout: 'Chi Sono',
   navBlog: 'Blog',
+  navContact: 'Contatti',
 
   // Hero
   heroRole1: 'Software Architect',

@@ -21,6 +21,7 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
       <nav class="header-nav" aria-label="Site navigation">
         <a href={`/${lang}/#services`} class="nav-link">{t.navServices}</a>
         <a href={`/${lang}/#about`} class="nav-link">{t.navAbout}</a>
+        <a href={`/${lang}/#io-channels`} class="nav-link">{t.navContact}</a>
         <a href={`/${lang}/blog/`} class="nav-link">{t.navBlog}</a>
       </nav>
       <div class="lang-dropdown" id="langDropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
@@ -46,6 +47,7 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
   <a href={`/${lang}/#services`} class="nav-link">{t.navServices}</a>
   <a href={`/${lang}/#about`} class="nav-link">{t.navAbout}</a>
+  <a href={`/${lang}/#io-channels`} class="nav-link">{t.navContact}</a>
   <a href={`/${lang}/blog/`} class="nav-link">{t.navBlog}</a>
   <div class="lang-dropdown" id="langDropdownMobile" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" tabindex="0">
     <i class="fa-solid fa-globe"></i>
@@ -95,6 +97,43 @@ const locales = ['de', 'en', 'es', 'fr', 'it'];
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Smooth scrolling for anchor links
+  function smoothScrollTo(targetY: number) {
+    const start = window.scrollY;
+    const distance = targetY - start;
+    const duration = Math.min(800, Math.max(400, Math.abs(distance) * 0.5));
+    const startTime = performance.now();
+    function easeInOutCubic(t: number) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    function step(now: number) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, start + distance * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href) return;
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      const hash = href.slice(hashIndex + 1);
+      const path = href.slice(0, hashIndex).replace(/\/$/, '');
+      const currentPath = window.location.pathname.replace(/\/$/, '');
+      if (!hash || (path !== '' && path !== currentPath)) return;
+      const target = document.getElementById(hash);
+      if (target) {
+        e.preventDefault();
+        history.pushState(null, '', `#${hash}`);
+        const headerH = (document.getElementById('siteHeader')?.offsetHeight ?? 0);
+        smoothScrollTo(target.getBoundingClientRect().top + window.scrollY - headerH);
+      }
     });
   });
 

@@ -9,6 +9,7 @@ export const translations: Translations = {
   navServices: 'Services',
   navAbout: 'À propos',
   navBlog: 'Blog',
+  navContact: 'Contact',
 
   // Hero
   heroRole1: 'Software Architect',

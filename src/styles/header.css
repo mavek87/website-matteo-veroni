@@ -100,7 +100,7 @@
 
 .header-spacer { height: 80px; }
 
-#services, #about, #blog { scroll-margin-top: 100px; }
+#services, #about, #blog, #io-channels { scroll-margin-top: 100px; }
 
 @media (max-width: 768px) {
     .header-nav { display: none; }

@@ -7,6 +7,7 @@ export const translations = {
   navServices: 'Services',
   navAbout: 'About',
   navBlog: 'Blog',
+  navContact: 'Contact',
 
   // Hero
   heroRole1: 'Software Architect',
