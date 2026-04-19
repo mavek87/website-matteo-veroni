@@ -40,8 +40,31 @@ Five languages are supported: English (default), Italian, German, Spanish, Frenc
 
 - Translation dictionaries: `src/i18n/{en,it,de,es,fr}.ts`
 - Helper: `useTranslations(lang)` returns a typed `t(key)` function
-- Routing: `/en/`, `/it/`, `/de/`, `/es/`, `/fr/`
-- The root path (`/`) redirects to the appropriate locale via Netlify redirects based on the browser's `Accept-Language` header
+- Routing: all locales are URL-prefixed — `/en/`, `/it/`, `/de/`, `/es/`, `/fr/`
+- The root `/` is redirect-only (no content)
+
+### Language detection flow
+
+| Scenario | What happens |
+|---|---|
+| First visit, IT browser | Netlify reads `Accept-Language: it` at CDN edge → redirects to `/it/` |
+| First visit, EN or unknown browser | No rule matches → Netlify fallback → `/en/` |
+| User changes language via selector | JS sets `preferred_lang` cookie (1y, `SameSite=Lax`), navigates to new locale |
+| Return visit with cookie | `src/pages/index.astro` inline script reads cookie → `window.location.replace('/<lang>/')` |
+| Return visit, no cookie | Same as first visit — Netlify Accept-Language fires again |
+
+The `preferred_lang` cookie is a functional cookie (remembers an explicit user choice) — no GDPR consent dialog required.
+
+## System Logs
+
+The System Logs section (`src/components/SystemLogs.astro`) displays a live terminal feed. Content is managed manually — no API, no external service.
+
+Two types of entries:
+
+- **Manual messages** — hardcoded in `SystemLogs.astro` frontmatter as a static array. Use `WARN` for urgent/time-sensitive items (availability, offers), `INFO` for general facts. These appear first.
+- **Blog posts** — fetched at build time from the blog content collection. The 3 most recent posts for the current locale appear automatically after manual messages.
+
+To add or update manual messages, edit the log entries array in `SystemLogs.astro`.
 
 ## Deployment
 

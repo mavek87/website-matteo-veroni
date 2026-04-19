@@ -20,7 +20,7 @@ export const translations: Translations = {
   heroH1Accent2: 'Résilience.',
   heroBody1: 'Le logiciel devrait résoudre vos problèmes — pas en devenir un.',
   heroBody2: 'Je conçois des logiciels, des infrastructures et des workflows IA qui évoluent et grandissent avec votre entreprise.',
-  heroCta: '> DÉMARRER_CONVERSATION',
+  heroCta: '> PARLONS →',
 
   // Stats
   stat1Label: 'Années d\'expérience',
@@ -71,28 +71,28 @@ export const translations: Translations = {
   card1Expand_del3: 'Validation de la stack technique selon vos contraintes réelles, pas seulement les bonnes pratiques',
   card1Expand_del4: 'Feuille de route concrète avec jalons, compromis et les erreurs à éviter en premier',
   card1Expand_useCase: "Vous scalez vite, reconstruisez quelque chose de critique, ou êtes sur le point de vous engager dans une direction difficile à inverser. J'ai construit et dirigé une infrastructure backend pour plus de 100K utilisateurs quotidiens dans un domaine régulé où l'échec n'est pas permis. Je sais ce qui cède sous la pression avant que ça cède.",
-  card1Expand_cta: 'DÉMARRER_CONVERSATION →',
+  card1Expand_cta: 'DEMANDER_CONSULTATION →',
 
   card2Expand_del1: 'Code propre et documenté que votre équipe peut s\'approprier. Aucune boîte noire.',
   card2Expand_del2: 'Nouvelles fonctionnalités conçues pour durer, pas seulement pour être livrées',
   card2Expand_del3: 'Systèmes legacy diagnostiqués et stabilisés avant de toucher quoi que ce soit',
   card2Expand_del4: 'Passation avec contexte complet pour que votre équipe ne dépende pas de moi',
   card2Expand_useCase: "Vous avez besoin de quelqu'un qui écrit du code backend de niveau production et comprend le système qui l'entoure. J'ai passé 10+ ans à construire et diriger des systèmes Java/Spring Boot à grande échelle. Je ne livre pas seulement du code, je m'assure que le prochain ingénieur puisse aussi travailler avec.",
-  card2Expand_cta: 'DÉMARRER_CONVERSATION →',
+  card2Expand_cta: 'DEMANDER_CONSULTATION →',
 
   card3Expand_del1: 'Pipelines CI/CD qui réduisent vraiment votre cycle de release, pas seulement automatisent la cérémonie',
   card3Expand_del2: 'Agents IA et workflows LLM intégrés dans vos systèmes existants',
   card3Expand_del3: "Infrastructure Kubernetes et AWS qui scale sans mauvaises surprises sur la facture",
   card3Expand_del4: 'Documentation pour que votre équipe comprenne ce qui tourne et pourquoi',
   card3Expand_useCase: "Vous perdez du temps d'ingénierie en travail manuel, déploiements fragiles ou processus qui ne scalent pas. J'automatise avec la perspective d'un backend engineer, ce que je construis s'intègre proprement dans votre codebase, pas autour.",
-  card3Expand_cta: 'DÉMARRER_CONVERSATION →',
+  card3Expand_cta: 'DEMANDER_CONSULTATION →',
 
   card4Expand_del1: 'Sessions 1-à-1 adaptées à où vous en êtes réellement, pas à un programme fixe',
   card4Expand_del2: "Vrai code review et feedback d'architecture sur votre travail actuel",
   card4Expand_del3: 'Formation en groupe pour les équipes sur le backend, DevOps ou les architectures modernes',
   card4Expand_del4: 'Évaluation honnête de vos lacunes, avec un chemin clair pour les combler',
   card4Expand_useCase: "Vous voulez progresser plus vite que votre environnement actuel ne le permet. Je mentor depuis 10+ ans d'expérience en production. Pas de théorie, pas de tutoriels. Le type de feedback que vous n'obtiendriez qu'en travaillant aux côtés d'un senior engineer sur un vrai système.",
-  card4Expand_cta: 'DÉMARRER_CONVERSATION →',
+  card4Expand_cta: 'DEMANDER_CONSULTATION →',
 
   // About
   aboutTitle: 'À propos',
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "une petite mauvaise décision à la fois",
   aboutBody2Rest: " : un système qui s'effondre sous la charge, une réécriture que vous n'aviez pas budgétée. Et pendant que vous éteignez ces incendies, vos concurrents automatisent déjà, réduisent leurs coûts, adoptent l'IA. Ils n'attendent pas.",
   aboutBody3Strong: "Si votre technologie vous empêche de dormir, ou si vous savez qu'elle le fera bientôt, je suis l'appel que vous passez avant que ça devienne coûteux.",
-  aboutCta: '> LANCER_CONSULTATION',
+  aboutCta: '> DEMANDER_CONSULTATION →',
 
   // System Logs
   logsTitle: 'System_Logs',

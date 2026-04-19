@@ -20,7 +20,7 @@ export const translations: Translations = {
   heroH1Accent2: 'Resiliencia.',
   heroBody1: 'El software debería resolver tus problemas — no convertirse en uno.',
   heroBody2: 'Diseño software, infraestructura y flujos de trabajo con IA que evolucionan y crecen con tu negocio.',
-  heroCta: '> INICIAR_CONVERSACIÓN',
+  heroCta: '> HABLEMOS →',
 
   // Stats
   stat1Label: 'Años de experiencia',
@@ -71,28 +71,28 @@ export const translations: Translations = {
   card1Expand_del3: 'Validación del stack tecnológico según tus restricciones reales, no solo las mejores prácticas',
   card1Expand_del4: 'Hoja de ruta accionable con hitos, compromisos y los errores que conviene evitar primero',
   card1Expand_useCase: "Estás escalando rápido, reconstruyendo algo crítico o a punto de comprometerte con una dirección difícil de revertir. He construido y liderado infraestructura backend para más de 100K usuarios diarios en un dominio regulado donde el fallo no es una opción. Sé qué cede bajo presión antes de que ceda.",
-  card1Expand_cta: 'INICIAR_CONVERSACIÓN →',
+  card1Expand_cta: 'SOLICITAR_CONSULTA →',
 
   card2Expand_del1: 'Código limpio y documentado que tu equipo puede apropiarse. Sin cajas negras.',
   card2Expand_del2: 'Nuevas funcionalidades construidas para durar, no solo para entregar',
   card2Expand_del3: 'Sistemas legacy diagnosticados y estabilizados antes de tocar nada',
   card2Expand_del4: 'Traspaso con contexto completo para que tu equipo no dependa de mí',
   card2Expand_useCase: "Necesitas a alguien que escriba código backend de nivel productivo y entienda el sistema que lo rodea. Llevo 10+ años construyendo y liderando sistemas Java/Spring Boot a gran escala. No solo entrego código, me aseguro de que el próximo ingeniero también pueda trabajar con él.",
-  card2Expand_cta: 'INICIAR_CONVERSACIÓN →',
+  card2Expand_cta: 'SOLICITAR_CONSULTA →',
 
   card3Expand_del1: 'Pipelines CI/CD que realmente reducen tu ciclo de release, no solo automatizan la ceremonia',
   card3Expand_del2: 'Agentes IA y flujos de trabajo LLM integrados en tus sistemas existentes',
   card3Expand_del3: 'Infraestructura Kubernetes y AWS que escala sin facturas sorpresa',
   card3Expand_del4: 'Documentación para que tu equipo entienda qué corre y por qué',
   card3Expand_useCase: "Estás perdiendo tiempo de ingeniería en trabajo manual, despliegues frágiles o procesos que no escalan. Automatizo desde la perspectiva de un backend engineer, lo que construyo se integra limpiamente en tu codebase, no a su alrededor.",
-  card3Expand_cta: 'INICIAR_CONVERSACIÓN →',
+  card3Expand_cta: 'SOLICITAR_CONSULTA →',
 
   card4Expand_del1: 'Sesiones 1-a-1 adaptadas a donde estás realmente, sin un currículo fijo',
   card4Expand_del2: 'Revisión de código real y feedback de arquitectura sobre tu trabajo actual',
   card4Expand_del3: 'Formación grupal para equipos en backend, DevOps o arquitecturas modernas',
   card4Expand_del4: 'Evaluación honesta de tus carencias, con un camino claro para cerrarlas',
   card4Expand_useCase: "Quieres crecer más rápido de lo que tu entorno actual te permite. Hago mentoría desde 10+ años de experiencia en producción. No teoría, no tutoriales. El tipo de feedback que solo obtendrías trabajando junto a un senior engineer en un sistema real.",
-  card4Expand_cta: 'INICIAR_CONVERSACIÓN →',
+  card4Expand_cta: 'SOLICITAR_CONSULTA →',
 
   // About
   aboutTitle: 'Sobre mí',
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "una pequeña decisión incorrecta a la vez",
   aboutBody2Rest: ": un sistema que falla bajo carga, una reconstrucción que no presupuestaste. Y mientras apagas esos incendios, tus competidores ya están automatizando, reduciendo costes y adoptando IA. No te están esperando.",
   aboutBody3Strong: "Si tu tecnología te quita el sueño, o sabes que pronto lo hará, soy la llamada que haces antes de que se vuelva costoso.",
-  aboutCta: '> SOLICITAR_CONSULTA',
+  aboutCta: '> SOLICITAR_CONSULTA →',
 
   // System Logs
   logsTitle: 'System_Logs',
