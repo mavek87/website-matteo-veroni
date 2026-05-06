@@ -14,18 +14,18 @@ export const translations: Translations = {
   // Hero
   heroRole1: 'Software Architect',
   heroRole2: 'DevOps Engineer',
-  heroH1Line1: 'Architecturer pour la',
-  heroH1Accent1: 'Scalabilité.',
-  heroH1Line2: 'Construire pour la',
-  heroH1Accent2: 'Résilience.',
+  heroH1Line1: "De l'idée au",
+  heroH1Accent1: 'logiciel.',
+  heroH1Line2: 'Conçu pour',
+  heroH1Accent2: 'durer.',
   heroBody1: 'Le logiciel devrait résoudre vos problèmes — pas en devenir un.',
   heroBody2: 'Je conçois des logiciels, des infrastructures et des workflows IA qui évoluent et grandissent avec votre entreprise.',
-  heroCta: '> PARLONS →',
+  heroCta: '> RÉSERVER_UNE_CONSULTATION →',
 
   // Stats
-  stat1Label: 'Années d\'expérience',
-  stat2Label: 'Utilisateurs actifs par jour',
-  stat3Label: 'Années à diriger l\'équipe backend',
+  stat1Label: 'Années de programmation',
+  stat2Label: 'Années comme ingénieur logiciel',
+  stat3Label: 'Années comme backend lead',
   stat4Label: 'Systèmes construits de zéro',
 
   // Services
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "une petite mauvaise décision à la fois",
   aboutBody2Rest: " : un système qui s'effondre sous la charge, une réécriture que vous n'aviez pas budgétée. Et pendant que vous éteignez ces incendies, vos concurrents automatisent déjà, réduisent leurs coûts, adoptent l'IA. Ils n'attendent pas.",
   aboutBody3Strong: "Si votre technologie vous empêche de dormir, ou si vous savez qu'elle le fera bientôt, je suis l'appel que vous passez avant que ça devienne coûteux.",
-  aboutCta: '> DEMANDER_CONSULTATION →',
+  aboutCta: '> RÉSERVER_UNE_CONSULTATION →',
 
   // System Logs
   logsTitle: 'System_Logs',

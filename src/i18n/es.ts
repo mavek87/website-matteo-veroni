@@ -14,18 +14,18 @@ export const translations: Translations = {
   // Hero
   heroRole1: 'Software Architect',
   heroRole2: 'DevOps Engineer',
-  heroH1Line1: 'Arquitectura para',
-  heroH1Accent1: 'Escalar.',
-  heroH1Line2: 'Ingeniería para la',
-  heroH1Accent2: 'Resiliencia.',
+  heroH1Line1: 'De la idea al',
+  heroH1Accent1: 'software.',
+  heroH1Line2: 'Construido para',
+  heroH1Accent2: 'durar.',
   heroBody1: 'El software debería resolver tus problemas — no convertirse en uno.',
   heroBody2: 'Diseño software, infraestructura y flujos de trabajo con IA que evolucionan y crecen con tu negocio.',
-  heroCta: '> HABLEMOS →',
+  heroCta: '> RESERVAR_CONSULTA →',
 
   // Stats
-  stat1Label: 'Años de experiencia',
-  stat2Label: 'Usuarios activos diarios',
-  stat3Label: 'Años liderando el equipo backend',
+  stat1Label: 'Años programando',
+  stat2Label: 'Años como ingeniero de software',
+  stat3Label: 'Años como backend lead',
   stat4Label: 'Sistemas construidos desde cero',
 
   // Services
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "una pequeña decisión incorrecta a la vez",
   aboutBody2Rest: ": un sistema que falla bajo carga, una reconstrucción que no presupuestaste. Y mientras apagas esos incendios, tus competidores ya están automatizando, reduciendo costes y adoptando IA. No te están esperando.",
   aboutBody3Strong: "Si tu tecnología te quita el sueño, o sabes que pronto lo hará, soy la llamada que haces antes de que se vuelva costoso.",
-  aboutCta: '> SOLICITAR_CONSULTA →',
+  aboutCta: '> RESERVAR_CONSULTA →',
 
   // System Logs
   logsTitle: 'System_Logs',

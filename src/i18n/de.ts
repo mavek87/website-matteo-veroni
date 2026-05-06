@@ -14,18 +14,18 @@ export const translations: Translations = {
   // Hero
   heroRole1: 'Software Architect',
   heroRole2: 'DevOps Engineer',
-  heroH1Line1: 'Architektur für',
-  heroH1Accent1: 'Skalierung.',
-  heroH1Line2: 'Engineering für',
-  heroH1Accent2: 'Resilienz.',
+  heroH1Line1: 'Von der Idee zur',
+  heroH1Accent1: 'Software.',
+  heroH1Line2: 'Gebaut um zu',
+  heroH1Accent2: 'bleiben.',
   heroBody1: 'Software sollte deine Probleme lösen — nicht selbst eines werden.',
   heroBody2: 'Ich entwickle Software, Infrastruktur und KI-Workflows, die mit deinem Unternehmen wachsen.',
-  heroCta: '> LASS_UNS_REDEN →',
+  heroCta: '> BERATUNG_BUCHEN →',
 
   // Stats
-  stat1Label: 'Jahre Erfahrung',
-  stat2Label: 'Täglich aktive Nutzer',
-  stat3Label: 'Jahre Teamleitung Backend',
+  stat1Label: 'Jahre Programmierung',
+  stat2Label: 'Jahre als Software Engineer',
+  stat3Label: 'Jahre als Backend Lead',
   stat4Label: 'Systeme von Grund auf gebaut',
 
   // Services
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "eine kleine Fehlentscheidung nach der anderen",
   aboutBody2Rest: ": ein System, das unter Last zusammenbricht, ein Neuaufbau, für den kein Budget eingeplant war. Und während du diese Brände löschst, automatisieren deine Wettbewerber bereits, senken Kosten und setzen auf KI. Sie warten nicht.",
   aboutBody3Strong: "Wenn deine Technik dich nachts wachhält oder du weißt, dass sie es bald tun wird — ich bin der Anruf, den du machst, bevor es teuer wird.",
-  aboutCta: '> BERATUNG_ANFRAGEN →',
+  aboutCta: '> BERATUNG_BUCHEN →',
 
   // System Logs
   logsTitle: 'System_Logs',

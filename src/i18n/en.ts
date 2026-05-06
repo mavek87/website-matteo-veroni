@@ -12,18 +12,18 @@ export const translations = {
   // Hero
   heroRole1: 'Software Architect',
   heroRole2: 'DevOps Engineer',
-  heroH1Line1: 'Architecting',
-  heroH1Accent1: 'Scale.',
-  heroH1Line2: 'Engineering',
-  heroH1Accent2: 'Resilience.',
+  heroH1Line1: 'From idea to',
+  heroH1Accent1: 'software.',
+  heroH1Line2: 'Engineered to',
+  heroH1Accent2: 'last.',
   heroBody1: 'Software should solve your problems — not become one.',
   heroBody2: 'I engineer software, infrastructure and AI workflows that evolve and grow with your business.',
-  heroCta: "> LET'S_TALK →",
+  heroCta: '> BOOK_A_CONSULTATION →',
 
   // Stats
-  stat1Label: 'Years experience',
-  stat2Label: 'Daily active users',
-  stat3Label: 'Years leading backend team',
+  stat1Label: 'Years coding',
+  stat2Label: 'Years as software engineer',
+  stat3Label: 'Years as backend lead',
   stat4Label: 'Systems built from scratch',
 
   // Services
@@ -102,7 +102,7 @@ export const translations = {
   aboutBody2Strong: "one small wrong decision at a time",
   aboutBody2Rest: ": a system that breaks under load, a rebuild you didn't budget for. And while you're putting out those fires, your competitors are already automating, cutting costs, adopting AI. They're not waiting.",
   aboutBody3Strong: "If your tech is keeping you up at night, or if you know it soon will, I'm the call you make before it gets expensive.",
-  aboutCta: '> REQUEST_CONSULTATION →',
+  aboutCta: '> BOOK_A_CONSULTATION →',
 
   // System Logs
   logsTitle: 'System_Logs',

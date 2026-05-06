@@ -14,18 +14,18 @@ export const translations: Translations = {
   // Hero
   heroRole1: 'Software Architect',
   heroRole2: 'DevOps Engineer',
-  heroH1Line1: 'Progettato per',
-  heroH1Accent1: 'Scalare.',
-  heroH1Line2: 'Sviluppato per',
-  heroH1Accent2: 'Resistere.',
+  heroH1Line1: "Dall'idea al",
+  heroH1Accent1: 'software.',
+  heroH1Line2: 'Costruito per',
+  heroH1Accent2: 'durare.',
   heroBody1: 'Il software dovrebbe risolvere i tuoi problemi — non diventarne uno.',
   heroBody2: 'Progetto software, infrastrutture e workflow AI che evolvono e crescono con il tuo business.',
-  heroCta: '> PARLIAMO →',
+  heroCta: '> PRENOTA_UNA_CONSULENZA →',
 
   // Stats
-  stat1Label: 'Anni di esperienza',
-  stat2Label: 'Utenti attivi al giorno',
-  stat3Label: 'Anni a guidare il team backend',
+  stat1Label: 'Anni di programmazione',
+  stat2Label: 'Anni come software engineer',
+  stat3Label: 'Anni come backend lead',
   stat4Label: 'Sistemi costruiti da zero',
 
   // Services
@@ -104,7 +104,7 @@ export const translations: Translations = {
   aboutBody2Strong: "una piccola decisione sbagliata alla volta",
   aboutBody2Rest: ": un sistema che crolla sotto il carico, una riscrittura che non avevi previsto nel budget. E mentre stai spegnendo quegli incendi, i tuoi concorrenti stanno già automatizzando, tagliando i costi, adottando l'AI. Non ti stanno aspettando.",
   aboutBody3Strong: "Se la tua tecnologia ti tiene sveglio la notte, o sai che lo farà presto, sono la chiamata che fai prima che diventi costoso.",
-  aboutCta: '> RICHIEDI_CONSULENZA →',
+  aboutCta: '> PRENOTA_UNA_CONSULENZA →',
 
   // System Logs
   logsTitle: 'System_Logs',
